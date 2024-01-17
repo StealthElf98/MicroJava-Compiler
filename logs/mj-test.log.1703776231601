@@ -1,0 +1,26 @@
+INFO  16:03:44,121 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  16:03:44,183 - #2 program
+INFO  16:03:44,183 - #41 MJProgram
+INFO  16:03:44,183 - #17 namespace
+INFO  16:03:44,185 - #41 testNamespace1
+INFO  16:03:44,186 - #3 {
+INFO  16:03:44,186 - #18 const
+INFO  16:03:44,188 - #41 int
+INFO  16:03:44,189 - #41 zz
+INFO  16:03:44,194 - #22 =
+INFO  16:03:44,195 - #42 4
+INFO  16:03:44,196 - #10 ,
+INFO  16:03:44,197 - #41 uu
+INFO  16:03:44,199 - #22 =
+INFO  16:03:44,199 - #42 10
+INFO  16:03:44,199 - #5 ;
+INFO  16:03:44,200 - #41 double
+INFO  16:03:44,202 - #41 dd
+INFO  16:03:44,203 - #5 ;
+INFO  16:03:44,204 - #41 int
+INFO  16:03:44,206 - #41 xx
+INFO  16:03:44,207 - #10 ,
+INFO  16:03:44,208 - #41 yy
+INFO  16:03:44,208 - #5 ;
+INFO  16:03:44,209 - #3 {
+INFO  16:03:44,209 - #15 void

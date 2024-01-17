@@ -1,0 +1,50 @@
+INFO  15:16:22,176 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  15:16:22,241 - #2 program
+INFO  15:16:22,241 - #41 MJProgram
+INFO  15:16:22,241 - #17 namespace
+INFO  15:16:22,243 - #41 testNamespace1
+INFO  15:16:22,243 - #3 {
+INFO  15:16:22,243 - #18 const
+INFO  15:16:22,245 - #41 int
+INFO  15:16:22,245 - #41 zz
+INFO  15:16:22,248 - #22 =
+INFO  15:16:22,249 - #42 4
+INFO  15:16:22,249 - #10 ,
+INFO  15:16:22,251 - #41 uu
+INFO  15:16:22,252 - #22 =
+INFO  15:16:22,252 - #42 10
+INFO  15:16:22,253 - #5 ;
+INFO  15:16:22,253 - #41 double
+INFO  15:16:22,264 - #41 dd
+INFO  15:16:22,265 - #5 ;
+INFO  15:16:22,266 - #41 int
+INFO  15:16:22,269 - #41 xx
+INFO  15:16:22,277 - #10 ,
+INFO  15:16:22,278 - #41 yy
+INFO  15:16:22,279 - #5 ;
+INFO  15:16:22,286 - #4 }
+INFO  15:16:22,287 - #18 const
+INFO  15:16:22,288 - #41 int
+INFO  15:16:22,289 - #41 z
+INFO  15:16:22,293 - #22 =
+INFO  15:16:22,293 - #42 4
+INFO  15:16:22,294 - #10 ,
+INFO  15:16:22,294 - #41 u
+INFO  15:16:22,294 - #22 =
+INFO  15:16:22,294 - #42 10
+INFO  15:16:22,294 - #5 ;
+INFO  15:16:22,294 - #41 int
+INFO  15:16:22,296 - #41 x
+INFO  15:16:22,296 - #10 ,
+INFO  15:16:22,297 - #41 y
+INFO  15:16:22,297 - #8 [
+INFO  15:16:22,297 - #9 ]
+INFO  15:16:22,298 - #10 ,
+INFO  15:16:22,301 - #41 q
+INFO  15:16:22,302 - #5 ;
+INFO  15:16:22,303 - #15 void
+ERROR 15:16:22,303 - 
+Sintaksna greska na liniji 12
+ERROR 15:16:22,303 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12
+INFO  15:16:22,316 - Print calls = 0
+ERROR 15:16:22,317 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,14 @@
+INFO  18:10:42,914 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  18:10:42,994 - #2 program
+INFO  18:10:42,995 - #41 MJProgram
+INFO  18:10:42,995 - #17 namespace
+INFO  18:10:42,998 - #41 sizes
+INFO  18:10:42,998 - #3 {
+INFO  18:10:42,999 - #18 const
+INFO  18:10:43,001 - #41 int
+INFO  18:10:43,001 - #41 tableSize
+INFO  18:10:43,003 - #22 =
+INFO  18:10:43,004 - #41 asdasd
+ERROR 18:10:43,004 - 
+Sintaksna greska na liniji 4
+ERROR 18:10:43,004 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 4

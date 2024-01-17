@@ -1,0 +1,1577 @@
+INFO  21:09:42,548 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  21:09:42,709 - #2 program
+INFO  21:09:42,710 - #41 test301
+INFO  21:09:42,710 - #17 namespace
+INFO  21:09:42,712 - #41 Konstante
+INFO  21:09:42,713 - #3 {
+INFO  21:09:42,714 - #18 const
+INFO  21:09:42,715 - #41 int
+INFO  21:09:42,715 - #41 nula
+INFO  21:09:42,718 - #22 =
+INFO  21:09:42,718 - #42 0
+INFO  21:09:42,718 - #5 ;
+INFO  21:09:42,743 - #18 const
+INFO  21:09:42,746 - #41 int
+INFO  21:09:42,746 - #41 jedan
+INFO  21:09:42,746 - #22 =
+INFO  21:09:42,746 - #42 1
+INFO  21:09:42,747 - #5 ;
+INFO  21:09:42,747 - #18 const
+INFO  21:09:42,747 - #41 int
+INFO  21:09:42,747 - #41 pet
+INFO  21:09:42,751 - #22 =
+INFO  21:09:42,751 - #42 5
+INFO  21:09:42,751 - #5 ;
+INFO  21:09:42,751 - #3 {
+INFO  21:09:42,751 - #4 }
+INFO  21:09:42,752 - #4 }
+INFO  21:09:42,752 - #17 namespace
+INFO  21:09:42,756 - #41 Nizovi
+INFO  21:09:42,756 - #3 {
+INFO  21:09:42,756 - #41 int
+INFO  21:09:42,756 - #41 niz
+INFO  21:09:42,757 - #8 [
+INFO  21:09:42,758 - #9 ]
+INFO  21:09:42,758 - #5 ;
+INFO  21:09:42,758 - #41 char
+INFO  21:09:42,760 - #41 nizch
+INFO  21:09:42,760 - #8 [
+INFO  21:09:42,760 - #9 ]
+INFO  21:09:42,760 - #5 ;
+INFO  21:09:42,760 - #3 {
+INFO  21:09:42,760 - #4 }
+INFO  21:09:42,760 - #4 }
+INFO  21:09:42,760 - #18 const
+INFO  21:09:42,761 - #41 char
+INFO  21:09:42,761 - #41 karakter
+INFO  21:09:42,761 - #22 =
+INFO  21:09:42,761 - #44 c
+INFO  21:09:42,761 - #5 ;
+INFO  21:09:42,762 - #41 int
+INFO  21:09:42,762 - #41 a
+INFO  21:09:42,762 - #5 ;
+INFO  21:09:42,762 - #3 {
+INFO  21:09:42,763 - #15 void
+INFO  21:09:42,763 - #41 main
+INFO  21:09:42,763 - #6 (
+INFO  21:09:42,763 - #7 )
+INFO  21:09:42,764 - #41 int
+INFO  21:09:42,765 - #41 bodovi
+INFO  21:09:42,765 - #5 ;
+INFO  21:09:42,766 - #41 bool
+INFO  21:09:42,767 - #41 bt
+INFO  21:09:42,768 - #5 ;
+INFO  21:09:42,768 - #3 {
+INFO  21:09:42,768 - #41 bodovi
+INFO  21:09:42,769 - #22 =
+INFO  21:09:42,770 - #42 0
+INFO  21:09:42,772 - #5 ;
+INFO  21:09:42,773 - #41 bodovi
+INFO  21:09:42,773 - #30 ++
+INFO  21:09:42,773 - #5 ;
+INFO  21:09:42,773 - #41 bodovi
+INFO  21:09:42,773 - #22 =
+INFO  21:09:42,773 - #41 bodovi
+INFO  21:09:42,773 - #13 +
+INFO  21:09:42,774 - #41 Konstante
+INFO  21:09:42,775 - #20 ::
+INFO  21:09:42,775 - #41 jedan
+INFO  21:09:42,775 - #5 ;
+INFO  21:09:42,776 - #41 bodovi
+INFO  21:09:42,776 - #22 =
+INFO  21:09:42,776 - #41 bodovi
+INFO  21:09:42,776 - #36 *
+INFO  21:09:42,776 - #41 Konstante
+INFO  21:09:42,778 - #20 ::
+INFO  21:09:42,778 - #41 pet
+INFO  21:09:42,778 - #5 ;
+INFO  21:09:42,778 - #41 bodovi
+INFO  21:09:42,778 - #31 --
+INFO  21:09:42,779 - #5 ;
+INFO  21:09:42,779 - #11 print
+INFO  21:09:42,779 - #6 (
+INFO  21:09:42,779 - #41 bodovi
+INFO  21:09:42,779 - #7 )
+INFO  21:09:42,779 - #5 ;
+INFO  21:09:42,779 - #41 Nizovi
+INFO  21:09:42,785 - #20 ::
+INFO  21:09:42,786 - #41 niz
+INFO  21:09:42,786 - #22 =
+INFO  21:09:42,787 - #35 new
+INFO  21:09:42,787 - #41 int
+INFO  21:09:42,787 - #8 [
+INFO  21:09:42,788 - #42 3
+INFO  21:09:42,788 - #9 ]
+INFO  21:09:42,788 - #5 ;
+INFO  21:09:42,788 - #41 Nizovi
+INFO  21:09:42,788 - #20 ::
+INFO  21:09:42,788 - #41 niz
+INFO  21:09:42,788 - #8 [
+INFO  21:09:42,788 - #41 Konstante
+INFO  21:09:42,788 - #20 ::
+INFO  21:09:42,789 - #41 nula
+INFO  21:09:42,789 - #9 ]
+INFO  21:09:42,789 - #22 =
+INFO  21:09:42,789 - #41 Konstante
+INFO  21:09:42,789 - #20 ::
+INFO  21:09:42,789 - #41 jedan
+INFO  21:09:42,789 - #5 ;
+INFO  21:09:42,790 - #41 Nizovi
+INFO  21:09:42,790 - #20 ::
+INFO  21:09:42,790 - #41 niz
+INFO  21:09:42,790 - #8 [
+INFO  21:09:42,790 - #42 1
+INFO  21:09:42,790 - #9 ]
+INFO  21:09:42,790 - #22 =
+INFO  21:09:42,790 - #42 2
+INFO  21:09:42,790 - #5 ;
+INFO  21:09:42,791 - #41 Nizovi
+INFO  21:09:42,791 - #20 ::
+INFO  21:09:42,791 - #41 niz
+INFO  21:09:42,791 - #8 [
+INFO  21:09:42,791 - #41 Nizovi
+INFO  21:09:42,791 - #20 ::
+INFO  21:09:42,792 - #41 niz
+INFO  21:09:42,792 - #8 [
+INFO  21:09:42,792 - #41 Konstante
+INFO  21:09:42,792 - #20 ::
+INFO  21:09:42,792 - #41 jedan
+INFO  21:09:42,792 - #9 ]
+INFO  21:09:42,792 - #9 ]
+INFO  21:09:42,792 - #22 =
+INFO  21:09:42,793 - #41 Nizovi
+INFO  21:09:42,819 - #20 ::
+INFO  21:09:42,819 - #41 niz
+INFO  21:09:42,819 - #8 [
+INFO  21:09:42,819 - #41 Nizovi
+INFO  21:09:42,820 - #20 ::
+INFO  21:09:42,820 - #41 niz
+INFO  21:09:42,820 - #8 [
+INFO  21:09:42,820 - #42 0
+INFO  21:09:42,820 - #9 ]
+INFO  21:09:42,820 - #9 ]
+INFO  21:09:42,820 - #36 *
+INFO  21:09:42,820 - #42 3
+INFO  21:09:42,820 - #5 ;
+INFO  21:09:42,821 - #41 bodovi
+INFO  21:09:42,821 - #22 =
+INFO  21:09:42,821 - #41 Nizovi
+INFO  21:09:42,821 - #20 ::
+INFO  21:09:42,821 - #41 niz
+INFO  21:09:42,821 - #8 [
+INFO  21:09:42,821 - #42 2
+INFO  21:09:42,822 - #9 ]
+INFO  21:09:42,822 - #37 /
+INFO  21:09:42,822 - #41 Nizovi
+INFO  21:09:42,823 - #20 ::
+INFO  21:09:42,823 - #41 niz
+INFO  21:09:42,823 - #8 [
+INFO  21:09:42,823 - #42 0
+INFO  21:09:42,823 - #9 ]
+INFO  21:09:42,823 - #5 ;
+INFO  21:09:42,823 - #11 print
+INFO  21:09:42,824 - #6 (
+INFO  21:09:42,824 - #41 bodovi
+INFO  21:09:42,824 - #7 )
+INFO  21:09:42,824 - #5 ;
+INFO  21:09:42,824 - #11 print
+INFO  21:09:42,824 - #6 (
+INFO  21:09:42,824 - #41 Nizovi
+INFO  21:09:42,824 - #20 ::
+INFO  21:09:42,824 - #41 niz
+INFO  21:09:42,824 - #8 [
+INFO  21:09:42,824 - #42 2
+INFO  21:09:42,825 - #9 ]
+INFO  21:09:42,825 - #7 )
+INFO  21:09:42,825 - #5 ;
+INFO  21:09:42,825 - #41 Nizovi
+INFO  21:09:42,825 - #20 ::
+INFO  21:09:42,825 - #41 nizch
+INFO  21:09:42,825 - #22 =
+INFO  21:09:42,825 - #35 new
+INFO  21:09:42,825 - #41 char
+INFO  21:09:42,826 - #8 [
+INFO  21:09:42,826 - #44 a
+INFO  21:09:42,826 - #9 ]
+INFO  21:09:42,826 - #5 ;
+INFO  21:09:42,826 - #41 Nizovi
+INFO  21:09:42,826 - #20 ::
+INFO  21:09:42,826 - #41 nizch
+INFO  21:09:42,826 - #8 [
+INFO  21:09:42,826 - #42 0
+INFO  21:09:42,826 - #9 ]
+INFO  21:09:42,827 - #22 =
+INFO  21:09:42,827 - #44 a
+INFO  21:09:42,827 - #5 ;
+INFO  21:09:42,827 - #41 Nizovi
+INFO  21:09:42,827 - #20 ::
+INFO  21:09:42,827 - #41 nizch
+INFO  21:09:42,827 - #8 [
+INFO  21:09:42,827 - #41 Konstante
+INFO  21:09:42,828 - #20 ::
+INFO  21:09:42,828 - #41 jedan
+INFO  21:09:42,828 - #9 ]
+INFO  21:09:42,828 - #22 =
+INFO  21:09:42,828 - #44 b
+INFO  21:09:42,828 - #5 ;
+INFO  21:09:42,828 - #41 Nizovi
+INFO  21:09:42,828 - #20 ::
+INFO  21:09:42,828 - #41 nizch
+INFO  21:09:42,828 - #8 [
+INFO  21:09:42,828 - #41 Konstante
+INFO  21:09:42,828 - #20 ::
+INFO  21:09:42,828 - #41 pet
+INFO  21:09:42,828 - #34 -
+INFO  21:09:42,829 - #42 3
+INFO  21:09:42,830 - #9 ]
+INFO  21:09:42,830 - #22 =
+INFO  21:09:42,830 - #44 c
+INFO  21:09:42,830 - #5 ;
+INFO  21:09:42,830 - #11 print
+INFO  21:09:42,831 - #6 (
+INFO  21:09:42,831 - #41 Nizovi
+INFO  21:09:42,831 - #20 ::
+INFO  21:09:42,831 - #41 nizch
+INFO  21:09:42,831 - #8 [
+INFO  21:09:42,831 - #42 1
+INFO  21:09:42,831 - #9 ]
+INFO  21:09:42,831 - #7 )
+INFO  21:09:42,832 - #5 ;
+INFO  21:09:42,832 - #11 print
+INFO  21:09:42,832 - #6 (
+INFO  21:09:42,832 - #41 Nizovi
+INFO  21:09:42,832 - #20 ::
+INFO  21:09:42,832 - #41 nizch
+INFO  21:09:42,832 - #8 [
+INFO  21:09:42,832 - #41 Konstante
+INFO  21:09:42,832 - #20 ::
+INFO  21:09:42,832 - #41 jedan
+INFO  21:09:42,832 - #36 *
+INFO  21:09:42,833 - #42 2
+INFO  21:09:42,833 - #9 ]
+INFO  21:09:42,833 - #7 )
+INFO  21:09:42,833 - #5 ;
+INFO  21:09:42,833 - #41 a
+INFO  21:09:42,833 - #22 =
+INFO  21:09:42,833 - #42 1
+INFO  21:09:42,834 - #5 ;
+INFO  21:09:42,834 - #16 read
+INFO  21:09:42,834 - #6 (
+INFO  21:09:42,834 - #41 bodovi
+INFO  21:09:42,834 - #7 )
+INFO  21:09:42,834 - #5 ;
+INFO  21:09:42,834 - #41 bodovi
+INFO  21:09:42,834 - #22 =
+INFO  21:09:42,835 - #34 -
+INFO  21:09:42,835 - #41 bodovi
+INFO  21:09:42,835 - #13 +
+INFO  21:09:42,835 - #6 (
+INFO  21:09:42,835 - #41 Konstante
+INFO  21:09:42,836 - #20 ::
+INFO  21:09:42,836 - #41 pet
+INFO  21:09:42,836 - #36 *
+INFO  21:09:42,836 - #41 a
+INFO  21:09:42,836 - #37 /
+INFO  21:09:42,836 - #42 2
+INFO  21:09:42,836 - #34 -
+INFO  21:09:42,837 - #41 Konstante
+INFO  21:09:42,837 - #20 ::
+INFO  21:09:42,837 - #41 jedan
+INFO  21:09:42,837 - #7 )
+INFO  21:09:42,837 - #36 *
+INFO  21:09:42,839 - #41 bodovi
+INFO  21:09:42,839 - #34 -
+INFO  21:09:42,840 - #6 (
+INFO  21:09:42,840 - #42 3
+INFO  21:09:42,840 - #38 %
+INFO  21:09:42,840 - #42 2
+INFO  21:09:42,841 - #13 +
+INFO  21:09:42,841 - #42 3
+INFO  21:09:42,841 - #36 *
+INFO  21:09:42,842 - #42 2
+INFO  21:09:42,842 - #34 -
+INFO  21:09:42,842 - #42 3
+INFO  21:09:42,842 - #7 )
+INFO  21:09:42,842 - #5 ;
+INFO  21:09:42,842 - #11 print
+INFO  21:09:42,842 - #6 (
+INFO  21:09:42,842 - #41 bodovi
+INFO  21:09:42,842 - #7 )
+INFO  21:09:42,842 - #5 ;
+INFO  21:09:42,842 - #4 }
+INFO  21:09:42,843 - #4 }
+INFO  21:09:42,854 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NamespaceListt(
+    NamespaceListt(
+      NoNamespaceListt(
+      ) [NoNamespaceListt]
+      Namespace(
+        NamespaceName(
+         Konstante
+        ) [NamespaceName]
+        DeclListt(
+          DeclListt(
+            DeclListt(
+              NoDeclListt(
+              ) [NoDeclListt]
+              DeclConstt(
+                ConstDecll(
+                  ConstType(
+                    Type(
+                     int
+                    ) [Type]
+                  ) [ConstType]
+                 nula
+                  IntValue(
+                   0
+                  ) [IntValue]
+                  NoConstDeclExtensionn(
+                  ) [NoConstDeclExtensionn]
+                  ConstDeclListEndd(
+                  ) [ConstDeclListEndd]
+                ) [ConstDecll]
+              ) [DeclConstt]
+            ) [DeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               jedan
+                IntValue(
+                 1
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclConstt(
+            ConstDecll(
+              ConstType(
+                Type(
+                 int
+                ) [Type]
+              ) [ConstType]
+             pet
+              IntValue(
+               5
+              ) [IntValue]
+              NoConstDeclExtensionn(
+              ) [NoConstDeclExtensionn]
+              ConstDeclListEndd(
+              ) [ConstDeclListEndd]
+            ) [ConstDecll]
+          ) [DeclConstt]
+        ) [DeclListt]
+        NoMethodDeclListt(
+        ) [NoMethodDeclListt]
+      ) [Namespace]
+    ) [NamespaceListt]
+    Namespace(
+      NamespaceName(
+       Nizovi
+      ) [NamespaceName]
+      DeclListt(
+        DeclListt(
+          NoDeclListt(
+          ) [NoDeclListt]
+          DeclVarr(
+            VarDecll(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              VarDeclListOneArr(
+               niz
+              ) [VarDeclListOneArr]
+              VarDeclEndDerived1(
+              ) [VarDeclEndDerived1]
+            ) [VarDecll]
+          ) [DeclVarr]
+        ) [DeclListt]
+        DeclVarr(
+          VarDecll(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            VarDeclListOneArr(
+             nizch
+            ) [VarDeclListOneArr]
+            VarDeclEndDerived1(
+            ) [VarDeclEndDerived1]
+          ) [VarDecll]
+        ) [DeclVarr]
+      ) [DeclListt]
+      NoMethodDeclListt(
+      ) [NoMethodDeclListt]
+    ) [Namespace]
+  ) [NamespaceListt]
+  DeclListt(
+    DeclListt(
+      NoDeclListt(
+      ) [NoDeclListt]
+      DeclConstt(
+        ConstDecll(
+          ConstType(
+            Type(
+             char
+            ) [Type]
+          ) [ConstType]
+         karakter
+          CharValue(
+           c
+          ) [CharValue]
+          NoConstDeclExtensionn(
+          ) [NoConstDeclExtensionn]
+          ConstDeclListEndd(
+          ) [ConstDeclListEndd]
+        ) [ConstDecll]
+      ) [DeclConstt]
+    ) [DeclListt]
+    DeclVarr(
+      VarDecll(
+        VarType(
+          Type(
+           int
+          ) [Type]
+        ) [VarType]
+        VarDeclListOneVar(
+         a
+        ) [VarDeclListOneVar]
+        VarDeclEndDerived1(
+        ) [VarDeclEndDerived1]
+      ) [VarDecll]
+    ) [DeclVarr]
+  ) [DeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          NoMethodVarDeclListt(
+          ) [NoMethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarr(
+               bodovi
+              ) [MethodVarr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           bool
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             bt
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        StmList(
+          StmList(
+            StmList(
+              StmList(
+                StmList(
+                  StmList(
+                    StmList(
+                      StmList(
+                        StmList(
+                          StmList(
+                            StmList(
+                              StmList(
+                                StmList(
+                                  StmList(
+                                    StmList(
+                                      StmList(
+                                        StmList(
+                                          StmList(
+                                            StmList(
+                                              StmList(
+                                                StmList(
+                                                  StmList(
+                                                    EmptyStatementList(
+                                                    ) [EmptyStatementList]
+                                                    MatchedStm(
+                                                      DesigStatement(
+                                                        DesigStatementAssign(
+                                                          Designatorr(
+                                                            DesignatorNameNoNs(
+                                                             bodovi
+                                                            ) [DesignatorNameNoNs]
+                                                            NoDesignatorList(
+                                                            ) [NoDesignatorList]
+                                                          ) [Designatorr]
+                                                          Assignop(
+                                                          ) [Assignop]
+                                                          ExprTerm(
+                                                            Termm(
+                                                              MulFacListOne(
+                                                                FactorInt(
+                                                                 0
+                                                                ) [FactorInt]
+                                                              ) [MulFacListOne]
+                                                            ) [Termm]
+                                                          ) [ExprTerm]
+                                                        ) [DesigStatementAssign]
+                                                      ) [DesigStatement]
+                                                    ) [MatchedStm]
+                                                  ) [StmList]
+                                                  MatchedStm(
+                                                    DesigStatement(
+                                                      DesignatorStatementInc(
+                                                        Designatorr(
+                                                          DesignatorNameNoNs(
+                                                           bodovi
+                                                          ) [DesignatorNameNoNs]
+                                                          NoDesignatorList(
+                                                          ) [NoDesignatorList]
+                                                        ) [Designatorr]
+                                                      ) [DesignatorStatementInc]
+                                                    ) [DesigStatement]
+                                                  ) [MatchedStm]
+                                                ) [StmList]
+                                                MatchedStm(
+                                                  DesigStatement(
+                                                    DesigStatementAssign(
+                                                      Designatorr(
+                                                        DesignatorNameNoNs(
+                                                         bodovi
+                                                        ) [DesignatorNameNoNs]
+                                                        NoDesignatorList(
+                                                        ) [NoDesignatorList]
+                                                      ) [Designatorr]
+                                                      Assignop(
+                                                      ) [Assignop]
+                                                      AddopExpr(
+                                                        ExprTerm(
+                                                          Termm(
+                                                            MulFacListOne(
+                                                              FactDesig(
+                                                                Designatorr(
+                                                                  DesignatorNameNoNs(
+                                                                   bodovi
+                                                                  ) [DesignatorNameNoNs]
+                                                                  NoDesignatorList(
+                                                                  ) [NoDesignatorList]
+                                                                ) [Designatorr]
+                                                              ) [FactDesig]
+                                                            ) [MulFacListOne]
+                                                          ) [Termm]
+                                                        ) [ExprTerm]
+                                                        AddopPlus(
+                                                        ) [AddopPlus]
+                                                        Termm(
+                                                          MulFacListOne(
+                                                            FactDesig(
+                                                              Designatorr(
+                                                                DesignatorNameNs(
+                                                                 Konstante
+                                                                 jedan
+                                                                ) [DesignatorNameNs]
+                                                                NoDesignatorList(
+                                                                ) [NoDesignatorList]
+                                                              ) [Designatorr]
+                                                            ) [FactDesig]
+                                                          ) [MulFacListOne]
+                                                        ) [Termm]
+                                                      ) [AddopExpr]
+                                                    ) [DesigStatementAssign]
+                                                  ) [DesigStatement]
+                                                ) [MatchedStm]
+                                              ) [StmList]
+                                              MatchedStm(
+                                                DesigStatement(
+                                                  DesigStatementAssign(
+                                                    Designatorr(
+                                                      DesignatorNameNoNs(
+                                                       bodovi
+                                                      ) [DesignatorNameNoNs]
+                                                      NoDesignatorList(
+                                                      ) [NoDesignatorList]
+                                                    ) [Designatorr]
+                                                    Assignop(
+                                                    ) [Assignop]
+                                                    ExprTerm(
+                                                      Termm(
+                                                        MulFacList(
+                                                          MulFacListOne(
+                                                            FactDesig(
+                                                              Designatorr(
+                                                                DesignatorNameNoNs(
+                                                                 bodovi
+                                                                ) [DesignatorNameNoNs]
+                                                                NoDesignatorList(
+                                                                ) [NoDesignatorList]
+                                                              ) [Designatorr]
+                                                            ) [FactDesig]
+                                                          ) [MulFacListOne]
+                                                          MulopMul(
+                                                          ) [MulopMul]
+                                                          FactDesig(
+                                                            Designatorr(
+                                                              DesignatorNameNs(
+                                                               Konstante
+                                                               pet
+                                                              ) [DesignatorNameNs]
+                                                              NoDesignatorList(
+                                                              ) [NoDesignatorList]
+                                                            ) [Designatorr]
+                                                          ) [FactDesig]
+                                                        ) [MulFacList]
+                                                      ) [Termm]
+                                                    ) [ExprTerm]
+                                                  ) [DesigStatementAssign]
+                                                ) [DesigStatement]
+                                              ) [MatchedStm]
+                                            ) [StmList]
+                                            MatchedStm(
+                                              DesigStatement(
+                                                DesignatorStatementDec(
+                                                  Designatorr(
+                                                    DesignatorNameNoNs(
+                                                     bodovi
+                                                    ) [DesignatorNameNoNs]
+                                                    NoDesignatorList(
+                                                    ) [NoDesignatorList]
+                                                  ) [Designatorr]
+                                                ) [DesignatorStatementDec]
+                                              ) [DesigStatement]
+                                            ) [MatchedStm]
+                                          ) [StmList]
+                                          MatchedStm(
+                                            PrintStatement(
+                                              ExprTerm(
+                                                Termm(
+                                                  MulFacListOne(
+                                                    FactDesig(
+                                                      Designatorr(
+                                                        DesignatorNameNoNs(
+                                                         bodovi
+                                                        ) [DesignatorNameNoNs]
+                                                        NoDesignatorList(
+                                                        ) [NoDesignatorList]
+                                                      ) [Designatorr]
+                                                    ) [FactDesig]
+                                                  ) [MulFacListOne]
+                                                ) [Termm]
+                                              ) [ExprTerm]
+                                            ) [PrintStatement]
+                                          ) [MatchedStm]
+                                        ) [StmList]
+                                        MatchedStm(
+                                          DesigStatement(
+                                            DesigStatementAssign(
+                                              Designatorr(
+                                                DesignatorNameNs(
+                                                 Nizovi
+                                                 niz
+                                                ) [DesignatorNameNs]
+                                                NoDesignatorList(
+                                                ) [NoDesignatorList]
+                                              ) [Designatorr]
+                                              Assignop(
+                                              ) [Assignop]
+                                              ExprTerm(
+                                                Termm(
+                                                  MulFacListOne(
+                                                    FactorNewExpr(
+                                                      Type(
+                                                       int
+                                                      ) [Type]
+                                                      ExprTerm(
+                                                        Termm(
+                                                          MulFacListOne(
+                                                            FactorInt(
+                                                             3
+                                                            ) [FactorInt]
+                                                          ) [MulFacListOne]
+                                                        ) [Termm]
+                                                      ) [ExprTerm]
+                                                    ) [FactorNewExpr]
+                                                  ) [MulFacListOne]
+                                                ) [Termm]
+                                              ) [ExprTerm]
+                                            ) [DesigStatementAssign]
+                                          ) [DesigStatement]
+                                        ) [MatchedStm]
+                                      ) [StmList]
+                                      MatchedStm(
+                                        DesigStatement(
+                                          DesigStatementAssign(
+                                            Designatorr(
+                                              DesignatorNameNs(
+                                               Nizovi
+                                               niz
+                                              ) [DesignatorNameNs]
+                                              DesignatorListExpr(
+                                                ExprTerm(
+                                                  Termm(
+                                                    MulFacListOne(
+                                                      FactDesig(
+                                                        Designatorr(
+                                                          DesignatorNameNs(
+                                                           Konstante
+                                                           nula
+                                                          ) [DesignatorNameNs]
+                                                          NoDesignatorList(
+                                                          ) [NoDesignatorList]
+                                                        ) [Designatorr]
+                                                      ) [FactDesig]
+                                                    ) [MulFacListOne]
+                                                  ) [Termm]
+                                                ) [ExprTerm]
+                                              ) [DesignatorListExpr]
+                                            ) [Designatorr]
+                                            Assignop(
+                                            ) [Assignop]
+                                            ExprTerm(
+                                              Termm(
+                                                MulFacListOne(
+                                                  FactDesig(
+                                                    Designatorr(
+                                                      DesignatorNameNs(
+                                                       Konstante
+                                                       jedan
+                                                      ) [DesignatorNameNs]
+                                                      NoDesignatorList(
+                                                      ) [NoDesignatorList]
+                                                    ) [Designatorr]
+                                                  ) [FactDesig]
+                                                ) [MulFacListOne]
+                                              ) [Termm]
+                                            ) [ExprTerm]
+                                          ) [DesigStatementAssign]
+                                        ) [DesigStatement]
+                                      ) [MatchedStm]
+                                    ) [StmList]
+                                    MatchedStm(
+                                      DesigStatement(
+                                        DesigStatementAssign(
+                                          Designatorr(
+                                            DesignatorNameNs(
+                                             Nizovi
+                                             niz
+                                            ) [DesignatorNameNs]
+                                            DesignatorListExpr(
+                                              ExprTerm(
+                                                Termm(
+                                                  MulFacListOne(
+                                                    FactorInt(
+                                                     1
+                                                    ) [FactorInt]
+                                                  ) [MulFacListOne]
+                                                ) [Termm]
+                                              ) [ExprTerm]
+                                            ) [DesignatorListExpr]
+                                          ) [Designatorr]
+                                          Assignop(
+                                          ) [Assignop]
+                                          ExprTerm(
+                                            Termm(
+                                              MulFacListOne(
+                                                FactorInt(
+                                                 2
+                                                ) [FactorInt]
+                                              ) [MulFacListOne]
+                                            ) [Termm]
+                                          ) [ExprTerm]
+                                        ) [DesigStatementAssign]
+                                      ) [DesigStatement]
+                                    ) [MatchedStm]
+                                  ) [StmList]
+                                  MatchedStm(
+                                    DesigStatement(
+                                      DesigStatementAssign(
+                                        Designatorr(
+                                          DesignatorNameNs(
+                                           Nizovi
+                                           niz
+                                          ) [DesignatorNameNs]
+                                          DesignatorListExpr(
+                                            ExprTerm(
+                                              Termm(
+                                                MulFacListOne(
+                                                  FactDesig(
+                                                    Designatorr(
+                                                      DesignatorNameNs(
+                                                       Nizovi
+                                                       niz
+                                                      ) [DesignatorNameNs]
+                                                      DesignatorListExpr(
+                                                        ExprTerm(
+                                                          Termm(
+                                                            MulFacListOne(
+                                                              FactDesig(
+                                                                Designatorr(
+                                                                  DesignatorNameNs(
+                                                                   Konstante
+                                                                   jedan
+                                                                  ) [DesignatorNameNs]
+                                                                  NoDesignatorList(
+                                                                  ) [NoDesignatorList]
+                                                                ) [Designatorr]
+                                                              ) [FactDesig]
+                                                            ) [MulFacListOne]
+                                                          ) [Termm]
+                                                        ) [ExprTerm]
+                                                      ) [DesignatorListExpr]
+                                                    ) [Designatorr]
+                                                  ) [FactDesig]
+                                                ) [MulFacListOne]
+                                              ) [Termm]
+                                            ) [ExprTerm]
+                                          ) [DesignatorListExpr]
+                                        ) [Designatorr]
+                                        Assignop(
+                                        ) [Assignop]
+                                        ExprTerm(
+                                          Termm(
+                                            MulFacList(
+                                              MulFacListOne(
+                                                FactDesig(
+                                                  Designatorr(
+                                                    DesignatorNameNs(
+                                                     Nizovi
+                                                     niz
+                                                    ) [DesignatorNameNs]
+                                                    DesignatorListExpr(
+                                                      ExprTerm(
+                                                        Termm(
+                                                          MulFacListOne(
+                                                            FactDesig(
+                                                              Designatorr(
+                                                                DesignatorNameNs(
+                                                                 Nizovi
+                                                                 niz
+                                                                ) [DesignatorNameNs]
+                                                                DesignatorListExpr(
+                                                                  ExprTerm(
+                                                                    Termm(
+                                                                      MulFacListOne(
+                                                                        FactorInt(
+                                                                         0
+                                                                        ) [FactorInt]
+                                                                      ) [MulFacListOne]
+                                                                    ) [Termm]
+                                                                  ) [ExprTerm]
+                                                                ) [DesignatorListExpr]
+                                                              ) [Designatorr]
+                                                            ) [FactDesig]
+                                                          ) [MulFacListOne]
+                                                        ) [Termm]
+                                                      ) [ExprTerm]
+                                                    ) [DesignatorListExpr]
+                                                  ) [Designatorr]
+                                                ) [FactDesig]
+                                              ) [MulFacListOne]
+                                              MulopMul(
+                                              ) [MulopMul]
+                                              FactorInt(
+                                               3
+                                              ) [FactorInt]
+                                            ) [MulFacList]
+                                          ) [Termm]
+                                        ) [ExprTerm]
+                                      ) [DesigStatementAssign]
+                                    ) [DesigStatement]
+                                  ) [MatchedStm]
+                                ) [StmList]
+                                MatchedStm(
+                                  DesigStatement(
+                                    DesigStatementAssign(
+                                      Designatorr(
+                                        DesignatorNameNoNs(
+                                         bodovi
+                                        ) [DesignatorNameNoNs]
+                                        NoDesignatorList(
+                                        ) [NoDesignatorList]
+                                      ) [Designatorr]
+                                      Assignop(
+                                      ) [Assignop]
+                                      ExprTerm(
+                                        Termm(
+                                          MulFacList(
+                                            MulFacListOne(
+                                              FactDesig(
+                                                Designatorr(
+                                                  DesignatorNameNs(
+                                                   Nizovi
+                                                   niz
+                                                  ) [DesignatorNameNs]
+                                                  DesignatorListExpr(
+                                                    ExprTerm(
+                                                      Termm(
+                                                        MulFacListOne(
+                                                          FactorInt(
+                                                           2
+                                                          ) [FactorInt]
+                                                        ) [MulFacListOne]
+                                                      ) [Termm]
+                                                    ) [ExprTerm]
+                                                  ) [DesignatorListExpr]
+                                                ) [Designatorr]
+                                              ) [FactDesig]
+                                            ) [MulFacListOne]
+                                            MulopDiv(
+                                            ) [MulopDiv]
+                                            FactDesig(
+                                              Designatorr(
+                                                DesignatorNameNs(
+                                                 Nizovi
+                                                 niz
+                                                ) [DesignatorNameNs]
+                                                DesignatorListExpr(
+                                                  ExprTerm(
+                                                    Termm(
+                                                      MulFacListOne(
+                                                        FactorInt(
+                                                         0
+                                                        ) [FactorInt]
+                                                      ) [MulFacListOne]
+                                                    ) [Termm]
+                                                  ) [ExprTerm]
+                                                ) [DesignatorListExpr]
+                                              ) [Designatorr]
+                                            ) [FactDesig]
+                                          ) [MulFacList]
+                                        ) [Termm]
+                                      ) [ExprTerm]
+                                    ) [DesigStatementAssign]
+                                  ) [DesigStatement]
+                                ) [MatchedStm]
+                              ) [StmList]
+                              MatchedStm(
+                                PrintStatement(
+                                  ExprTerm(
+                                    Termm(
+                                      MulFacListOne(
+                                        FactDesig(
+                                          Designatorr(
+                                            DesignatorNameNoNs(
+                                             bodovi
+                                            ) [DesignatorNameNoNs]
+                                            NoDesignatorList(
+                                            ) [NoDesignatorList]
+                                          ) [Designatorr]
+                                        ) [FactDesig]
+                                      ) [MulFacListOne]
+                                    ) [Termm]
+                                  ) [ExprTerm]
+                                ) [PrintStatement]
+                              ) [MatchedStm]
+                            ) [StmList]
+                            MatchedStm(
+                              PrintStatement(
+                                ExprTerm(
+                                  Termm(
+                                    MulFacListOne(
+                                      FactDesig(
+                                        Designatorr(
+                                          DesignatorNameNs(
+                                           Nizovi
+                                           niz
+                                          ) [DesignatorNameNs]
+                                          DesignatorListExpr(
+                                            ExprTerm(
+                                              Termm(
+                                                MulFacListOne(
+                                                  FactorInt(
+                                                   2
+                                                  ) [FactorInt]
+                                                ) [MulFacListOne]
+                                              ) [Termm]
+                                            ) [ExprTerm]
+                                          ) [DesignatorListExpr]
+                                        ) [Designatorr]
+                                      ) [FactDesig]
+                                    ) [MulFacListOne]
+                                  ) [Termm]
+                                ) [ExprTerm]
+                              ) [PrintStatement]
+                            ) [MatchedStm]
+                          ) [StmList]
+                          MatchedStm(
+                            DesigStatement(
+                              DesigStatementAssign(
+                                Designatorr(
+                                  DesignatorNameNs(
+                                   Nizovi
+                                   nizch
+                                  ) [DesignatorNameNs]
+                                  NoDesignatorList(
+                                  ) [NoDesignatorList]
+                                ) [Designatorr]
+                                Assignop(
+                                ) [Assignop]
+                                ExprTerm(
+                                  Termm(
+                                    MulFacListOne(
+                                      FactorNewExpr(
+                                        Type(
+                                         char
+                                        ) [Type]
+                                        ExprTerm(
+                                          Termm(
+                                            MulFacListOne(
+                                              FactorChar(
+                                               a
+                                              ) [FactorChar]
+                                            ) [MulFacListOne]
+                                          ) [Termm]
+                                        ) [ExprTerm]
+                                      ) [FactorNewExpr]
+                                    ) [MulFacListOne]
+                                  ) [Termm]
+                                ) [ExprTerm]
+                              ) [DesigStatementAssign]
+                            ) [DesigStatement]
+                          ) [MatchedStm]
+                        ) [StmList]
+                        MatchedStm(
+                          DesigStatement(
+                            DesigStatementAssign(
+                              Designatorr(
+                                DesignatorNameNs(
+                                 Nizovi
+                                 nizch
+                                ) [DesignatorNameNs]
+                                DesignatorListExpr(
+                                  ExprTerm(
+                                    Termm(
+                                      MulFacListOne(
+                                        FactorInt(
+                                         0
+                                        ) [FactorInt]
+                                      ) [MulFacListOne]
+                                    ) [Termm]
+                                  ) [ExprTerm]
+                                ) [DesignatorListExpr]
+                              ) [Designatorr]
+                              Assignop(
+                              ) [Assignop]
+                              ExprTerm(
+                                Termm(
+                                  MulFacListOne(
+                                    FactorChar(
+                                     a
+                                    ) [FactorChar]
+                                  ) [MulFacListOne]
+                                ) [Termm]
+                              ) [ExprTerm]
+                            ) [DesigStatementAssign]
+                          ) [DesigStatement]
+                        ) [MatchedStm]
+                      ) [StmList]
+                      MatchedStm(
+                        DesigStatement(
+                          DesigStatementAssign(
+                            Designatorr(
+                              DesignatorNameNs(
+                               Nizovi
+                               nizch
+                              ) [DesignatorNameNs]
+                              DesignatorListExpr(
+                                ExprTerm(
+                                  Termm(
+                                    MulFacListOne(
+                                      FactDesig(
+                                        Designatorr(
+                                          DesignatorNameNs(
+                                           Konstante
+                                           jedan
+                                          ) [DesignatorNameNs]
+                                          NoDesignatorList(
+                                          ) [NoDesignatorList]
+                                        ) [Designatorr]
+                                      ) [FactDesig]
+                                    ) [MulFacListOne]
+                                  ) [Termm]
+                                ) [ExprTerm]
+                              ) [DesignatorListExpr]
+                            ) [Designatorr]
+                            Assignop(
+                            ) [Assignop]
+                            ExprTerm(
+                              Termm(
+                                MulFacListOne(
+                                  FactorChar(
+                                   b
+                                  ) [FactorChar]
+                                ) [MulFacListOne]
+                              ) [Termm]
+                            ) [ExprTerm]
+                          ) [DesigStatementAssign]
+                        ) [DesigStatement]
+                      ) [MatchedStm]
+                    ) [StmList]
+                    MatchedStm(
+                      DesigStatement(
+                        DesigStatementAssign(
+                          Designatorr(
+                            DesignatorNameNs(
+                             Nizovi
+                             nizch
+                            ) [DesignatorNameNs]
+                            DesignatorListExpr(
+                              AddopExpr(
+                                ExprTerm(
+                                  Termm(
+                                    MulFacListOne(
+                                      FactDesig(
+                                        Designatorr(
+                                          DesignatorNameNs(
+                                           Konstante
+                                           pet
+                                          ) [DesignatorNameNs]
+                                          NoDesignatorList(
+                                          ) [NoDesignatorList]
+                                        ) [Designatorr]
+                                      ) [FactDesig]
+                                    ) [MulFacListOne]
+                                  ) [Termm]
+                                ) [ExprTerm]
+                                AddopMinus(
+                                ) [AddopMinus]
+                                Termm(
+                                  MulFacListOne(
+                                    FactorInt(
+                                     3
+                                    ) [FactorInt]
+                                  ) [MulFacListOne]
+                                ) [Termm]
+                              ) [AddopExpr]
+                            ) [DesignatorListExpr]
+                          ) [Designatorr]
+                          Assignop(
+                          ) [Assignop]
+                          ExprTerm(
+                            Termm(
+                              MulFacListOne(
+                                FactorChar(
+                                 c
+                                ) [FactorChar]
+                              ) [MulFacListOne]
+                            ) [Termm]
+                          ) [ExprTerm]
+                        ) [DesigStatementAssign]
+                      ) [DesigStatement]
+                    ) [MatchedStm]
+                  ) [StmList]
+                  MatchedStm(
+                    PrintStatement(
+                      ExprTerm(
+                        Termm(
+                          MulFacListOne(
+                            FactDesig(
+                              Designatorr(
+                                DesignatorNameNs(
+                                 Nizovi
+                                 nizch
+                                ) [DesignatorNameNs]
+                                DesignatorListExpr(
+                                  ExprTerm(
+                                    Termm(
+                                      MulFacListOne(
+                                        FactorInt(
+                                         1
+                                        ) [FactorInt]
+                                      ) [MulFacListOne]
+                                    ) [Termm]
+                                  ) [ExprTerm]
+                                ) [DesignatorListExpr]
+                              ) [Designatorr]
+                            ) [FactDesig]
+                          ) [MulFacListOne]
+                        ) [Termm]
+                      ) [ExprTerm]
+                    ) [PrintStatement]
+                  ) [MatchedStm]
+                ) [StmList]
+                MatchedStm(
+                  PrintStatement(
+                    ExprTerm(
+                      Termm(
+                        MulFacListOne(
+                          FactDesig(
+                            Designatorr(
+                              DesignatorNameNs(
+                               Nizovi
+                               nizch
+                              ) [DesignatorNameNs]
+                              DesignatorListExpr(
+                                ExprTerm(
+                                  Termm(
+                                    MulFacList(
+                                      MulFacListOne(
+                                        FactDesig(
+                                          Designatorr(
+                                            DesignatorNameNs(
+                                             Konstante
+                                             jedan
+                                            ) [DesignatorNameNs]
+                                            NoDesignatorList(
+                                            ) [NoDesignatorList]
+                                          ) [Designatorr]
+                                        ) [FactDesig]
+                                      ) [MulFacListOne]
+                                      MulopMul(
+                                      ) [MulopMul]
+                                      FactorInt(
+                                       2
+                                      ) [FactorInt]
+                                    ) [MulFacList]
+                                  ) [Termm]
+                                ) [ExprTerm]
+                              ) [DesignatorListExpr]
+                            ) [Designatorr]
+                          ) [FactDesig]
+                        ) [MulFacListOne]
+                      ) [Termm]
+                    ) [ExprTerm]
+                  ) [PrintStatement]
+                ) [MatchedStm]
+              ) [StmList]
+              MatchedStm(
+                DesigStatement(
+                  DesigStatementAssign(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       a
+                      ) [DesignatorNameNoNs]
+                      NoDesignatorList(
+                      ) [NoDesignatorList]
+                    ) [Designatorr]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      Termm(
+                        MulFacListOne(
+                          FactorInt(
+                           1
+                          ) [FactorInt]
+                        ) [MulFacListOne]
+                      ) [Termm]
+                    ) [ExprTerm]
+                  ) [DesigStatementAssign]
+                ) [DesigStatement]
+              ) [MatchedStm]
+            ) [StmList]
+            MatchedStm(
+              ReadStatement(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   bodovi
+                  ) [DesignatorNameNoNs]
+                  NoDesignatorList(
+                  ) [NoDesignatorList]
+                ) [Designatorr]
+              ) [ReadStatement]
+            ) [MatchedStm]
+          ) [StmList]
+          MatchedStm(
+            DesigStatement(
+              DesigStatementAssign(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   bodovi
+                  ) [DesignatorNameNoNs]
+                  NoDesignatorList(
+                  ) [NoDesignatorList]
+                ) [Designatorr]
+                Assignop(
+                ) [Assignop]
+                AddopExpr(
+                  AddopExpr(
+                    MinusExpr(
+                      Termm(
+                        MulFacListOne(
+                          FactDesig(
+                            Designatorr(
+                              DesignatorNameNoNs(
+                               bodovi
+                              ) [DesignatorNameNoNs]
+                              NoDesignatorList(
+                              ) [NoDesignatorList]
+                            ) [Designatorr]
+                          ) [FactDesig]
+                        ) [MulFacListOne]
+                      ) [Termm]
+                    ) [MinusExpr]
+                    AddopPlus(
+                    ) [AddopPlus]
+                    Termm(
+                      MulFacList(
+                        MulFacListOne(
+                          FactorExpr(
+                            AddopExpr(
+                              ExprTerm(
+                                Termm(
+                                  MulFacList(
+                                    MulFacList(
+                                      MulFacListOne(
+                                        FactDesig(
+                                          Designatorr(
+                                            DesignatorNameNs(
+                                             Konstante
+                                             pet
+                                            ) [DesignatorNameNs]
+                                            NoDesignatorList(
+                                            ) [NoDesignatorList]
+                                          ) [Designatorr]
+                                        ) [FactDesig]
+                                      ) [MulFacListOne]
+                                      MulopMul(
+                                      ) [MulopMul]
+                                      FactDesig(
+                                        Designatorr(
+                                          DesignatorNameNoNs(
+                                           a
+                                          ) [DesignatorNameNoNs]
+                                          NoDesignatorList(
+                                          ) [NoDesignatorList]
+                                        ) [Designatorr]
+                                      ) [FactDesig]
+                                    ) [MulFacList]
+                                    MulopDiv(
+                                    ) [MulopDiv]
+                                    FactorInt(
+                                     2
+                                    ) [FactorInt]
+                                  ) [MulFacList]
+                                ) [Termm]
+                              ) [ExprTerm]
+                              AddopMinus(
+                              ) [AddopMinus]
+                              Termm(
+                                MulFacListOne(
+                                  FactDesig(
+                                    Designatorr(
+                                      DesignatorNameNs(
+                                       Konstante
+                                       jedan
+                                      ) [DesignatorNameNs]
+                                      NoDesignatorList(
+                                      ) [NoDesignatorList]
+                                    ) [Designatorr]
+                                  ) [FactDesig]
+                                ) [MulFacListOne]
+                              ) [Termm]
+                            ) [AddopExpr]
+                            FactorEndd(
+                            ) [FactorEndd]
+                          ) [FactorExpr]
+                        ) [MulFacListOne]
+                        MulopMul(
+                        ) [MulopMul]
+                        FactDesig(
+                          Designatorr(
+                            DesignatorNameNoNs(
+                             bodovi
+                            ) [DesignatorNameNoNs]
+                            NoDesignatorList(
+                            ) [NoDesignatorList]
+                          ) [Designatorr]
+                        ) [FactDesig]
+                      ) [MulFacList]
+                    ) [Termm]
+                  ) [AddopExpr]
+                  AddopMinus(
+                  ) [AddopMinus]
+                  Termm(
+                    MulFacListOne(
+                      FactorExpr(
+                        AddopExpr(
+                          AddopExpr(
+                            ExprTerm(
+                              Termm(
+                                MulFacList(
+                                  MulFacListOne(
+                                    FactorInt(
+                                     3
+                                    ) [FactorInt]
+                                  ) [MulFacListOne]
+                                  MulopMod(
+                                  ) [MulopMod]
+                                  FactorInt(
+                                   2
+                                  ) [FactorInt]
+                                ) [MulFacList]
+                              ) [Termm]
+                            ) [ExprTerm]
+                            AddopPlus(
+                            ) [AddopPlus]
+                            Termm(
+                              MulFacList(
+                                MulFacListOne(
+                                  FactorInt(
+                                   3
+                                  ) [FactorInt]
+                                ) [MulFacListOne]
+                                MulopMul(
+                                ) [MulopMul]
+                                FactorInt(
+                                 2
+                                ) [FactorInt]
+                              ) [MulFacList]
+                            ) [Termm]
+                          ) [AddopExpr]
+                          AddopMinus(
+                          ) [AddopMinus]
+                          Termm(
+                            MulFacListOne(
+                              FactorInt(
+                               3
+                              ) [FactorInt]
+                            ) [MulFacListOne]
+                          ) [Termm]
+                        ) [AddopExpr]
+                        FactorEndd(
+                        ) [FactorEndd]
+                      ) [FactorExpr]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [AddopExpr]
+              ) [DesigStatementAssign]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              Termm(
+                MulFacListOne(
+                  FactDesig(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       bodovi
+                      ) [DesignatorNameNoNs]
+                      NoDesignatorList(
+                      ) [NoDesignatorList]
+                    ) [Designatorr]
+                  ) [FactDesig]
+                ) [MulFacListOne]
+              ) [Termm]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  21:09:42,902 - Constant [nula] in namespace:Konstante detected line 4
+INFO  21:09:42,903 - Constant [jedan] in namespace:Konstante detected line 5
+INFO  21:09:42,903 - Constant [pet] in namespace:Konstante detected line 6
+INFO  21:09:42,903 - Variable [niz] in namespace:Nizovi detected line 12
+INFO  21:09:42,904 - Variable [nizch] in namespace:Nizovi detected line 13
+INFO  21:09:42,904 - Constant [karakter] detected line 17
+INFO  21:09:42,904 - Variable [a] detected line 18
+INFO  21:09:42,904 - Variable [bodovi] access line 25
+INFO  21:09:42,905 - Variable [bodovi] assigned new value! line 25
+INFO  21:09:42,905 - Variable [bodovi] access line 26
+INFO  21:09:42,906 - Variable [bodovi] incremented line 26
+INFO  21:09:42,907 - Variable [bodovi] access line 27
+INFO  21:09:42,907 - Variable [bodovi] access line 27
+INFO  21:09:42,908 - Const [Konstante::jedan] access line 27
+ERROR 21:09:42,908 - ERROR: Operands must be of type int! line 27
+INFO  21:09:42,908 - Variable [bodovi] assigned new value! line 27
+INFO  21:09:42,909 - Variable [bodovi] access line 28
+INFO  21:09:42,909 - Variable [bodovi] access line 28
+INFO  21:09:42,909 - Const [Konstante::pet] access line 28
+ERROR 21:09:42,909 - ERROR: Operands must be of type int! line 28
+INFO  21:09:42,910 - Variable [bodovi] assigned new value! line 28
+INFO  21:09:42,910 - Variable [bodovi] access line 29
+INFO  21:09:42,910 - Variable [bodovi] decremented line 29
+INFO  21:09:42,910 - Variable [bodovi] access line 30
+INFO  21:09:42,911 - Variable [Nizovi::niz] access line 32
+INFO  21:09:42,911 - Variable [Nizovi::niz] assigned new value! line 32
+INFO  21:09:42,912 - Const [Konstante::nula] access line 33
+ERROR 21:09:42,912 - ERROR: Value inside [] must be int! line 33
+INFO  21:09:42,912 - Variable array[Nizovi::niz] access line 33
+INFO  21:09:42,912 - Const [Konstante::jedan] access line 33
+INFO  21:09:42,913 - Variable [Nizovi::niz] assigned new value! line 33
+ERROR 21:09:42,913 - ERROR: Value inside [] must be int! line 34
+INFO  21:09:42,913 - Variable array[Nizovi::niz] access line 34
+INFO  21:09:42,913 - Variable [Nizovi::niz] assigned new value! line 34
+INFO  21:09:42,913 - Const [Konstante::jedan] access line 35
+ERROR 21:09:42,913 - ERROR: Value inside [] must be int! line 35
+INFO  21:09:42,913 - Variable array[Nizovi::niz] access line 35
+ERROR 21:09:42,913 - ERROR: Value inside [] must be int! line 35
+INFO  21:09:42,914 - Variable array[Nizovi::niz] access line 35
+ERROR 21:09:42,914 - ERROR: Value inside [] must be int! line 35
+INFO  21:09:42,914 - Variable array[Nizovi::niz] access line 35
+ERROR 21:09:42,914 - ERROR: Value inside [] must be int! line 35
+INFO  21:09:42,914 - Variable array[Nizovi::niz] access line 35
+ERROR 21:09:42,914 - ERROR: Operands are different type! line 35
+INFO  21:09:42,914 - Variable [Nizovi::niz] assigned new value! line 35
+INFO  21:09:42,914 - Variable [bodovi] access line 36
+ERROR 21:09:42,915 - ERROR: Value inside [] must be int! line 36
+INFO  21:09:42,916 - Variable array[Nizovi::niz] access line 36
+ERROR 21:09:42,916 - ERROR: Value inside [] must be int! line 36
+INFO  21:09:42,916 - Variable array[Nizovi::niz] access line 36
+ERROR 21:09:42,917 - ERROR: Operands must be of type int! line 36
+INFO  21:09:42,917 - Variable [bodovi] assigned new value! line 36
+INFO  21:09:42,917 - Variable [bodovi] access line 37
+ERROR 21:09:42,917 - ERROR: Value inside [] must be int! line 38
+INFO  21:09:42,917 - Variable array[Nizovi::niz] access line 38
+INFO  21:09:42,917 - Variable [Nizovi::nizch] access line 41
+INFO  21:09:42,917 - Variable [Nizovi::nizch] assigned new value! line 41
+ERROR 21:09:42,918 - ERROR: Value inside [] must be int! line 42
+INFO  21:09:42,918 - Variable array[Nizovi::nizch] access line 42
+INFO  21:09:42,918 - Variable [Nizovi::nizch] assigned new value! line 42
+INFO  21:09:42,918 - Const [Konstante::jedan] access line 43
+ERROR 21:09:42,918 - ERROR: Value inside [] must be int! line 43
+INFO  21:09:42,918 - Variable array[Nizovi::nizch] access line 43
+INFO  21:09:42,918 - Variable [Nizovi::nizch] assigned new value! line 43
+INFO  21:09:42,918 - Const [Konstante::pet] access line 44
+ERROR 21:09:42,918 - ERROR: Value inside [] must be int! line 44
+INFO  21:09:42,918 - Variable array[Nizovi::nizch] access line 44
+INFO  21:09:42,918 - Variable [Nizovi::nizch] assigned new value! line 44
+ERROR 21:09:42,918 - ERROR: Value inside [] must be int! line 45
+INFO  21:09:42,918 - Variable array[Nizovi::nizch] access line 45
+INFO  21:09:42,918 - Const [Konstante::jedan] access line 46
+ERROR 21:09:42,919 - ERROR: Operands are different type! line 46
+ERROR 21:09:42,919 - ERROR: Value inside [] must be int! line 46
+INFO  21:09:42,921 - Variable array[Nizovi::nizch] access line 46
+INFO  21:09:42,921 - Variable [a] access line 48
+INFO  21:09:42,921 - Variable [a] assigned new value! line 48
+INFO  21:09:42,921 - Variable [bodovi] access line 49
+INFO  21:09:42,921 - Variable [bodovi] access line 51
+INFO  21:09:42,921 - Variable [bodovi] access line 51
+ERROR 21:09:42,921 - ERROR: Operand must be of type int! line 51
+INFO  21:09:42,922 - Const [Konstante::pet] access line 51
+INFO  21:09:42,922 - Variable [a] access line 51
+ERROR 21:09:42,922 - ERROR: Operands must be of type int! line 51
+ERROR 21:09:42,922 - ERROR: Operands are different type! line 51
+INFO  21:09:42,922 - Const [Konstante::jedan] access line 51
+ERROR 21:09:42,922 - ERROR: Operands must be of type int! line 51
+INFO  21:09:42,922 - Variable [bodovi] access line 51
+ERROR 21:09:42,923 - ERROR: Operands must be of type int! line 51
+ERROR 21:09:42,923 - ERROR: Operands must be of type int! line 51
+ERROR 21:09:42,923 - ERROR: Operands are different type! line 51
+ERROR 21:09:42,923 - ERROR: Operands are different type! line 51
+ERROR 21:09:42,923 - ERROR: Operands must be of type int! line 51
+INFO  21:09:42,923 - Variable [bodovi] assigned new value! line 51
+INFO  21:09:42,923 - Variable [bodovi] access line 52

@@ -1,0 +1,264 @@
+INFO  13:41:48,168 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  13:41:48,247 - #2 program
+INFO  13:41:48,247 - #41 test301
+INFO  13:41:48,248 - #17 namespace
+INFO  13:41:48,250 - #41 Konstante
+INFO  13:41:48,250 - #3 {
+INFO  13:41:48,251 - #18 const
+INFO  13:41:48,253 - #41 int
+INFO  13:41:48,253 - #41 nula
+INFO  13:41:48,255 - #22 =
+INFO  13:41:48,255 - #42 0
+INFO  13:41:48,259 - #5 ;
+INFO  13:41:48,269 - #18 const
+INFO  13:41:48,272 - #41 int
+INFO  13:41:48,272 - #41 jedan
+INFO  13:41:48,272 - #22 =
+INFO  13:41:48,272 - #42 1
+INFO  13:41:48,273 - #5 ;
+INFO  13:41:48,273 - #18 const
+INFO  13:41:48,273 - #41 int
+INFO  13:41:48,273 - #41 pet
+INFO  13:41:48,276 - #22 =
+INFO  13:41:48,276 - #42 5
+INFO  13:41:48,276 - #5 ;
+INFO  13:41:48,276 - #3 {
+INFO  13:41:48,276 - #4 }
+INFO  13:41:48,277 - #4 }
+INFO  13:41:48,277 - #18 const
+INFO  13:41:48,279 - #41 char
+INFO  13:41:48,279 - #41 karakter
+INFO  13:41:48,279 - #22 =
+INFO  13:41:48,279 - #44 c
+INFO  13:41:48,279 - #5 ;
+INFO  13:41:48,280 - #41 int
+INFO  13:41:48,280 - #41 a
+INFO  13:41:48,281 - #5 ;
+INFO  13:41:48,281 - #3 {
+INFO  13:41:48,283 - #15 void
+INFO  13:41:48,284 - #41 main
+INFO  13:41:48,284 - #6 (
+INFO  13:41:48,284 - #7 )
+INFO  13:41:48,286 - #41 int
+INFO  13:41:48,287 - #41 bodovi
+INFO  13:41:48,288 - #5 ;
+INFO  13:41:48,288 - #41 bool
+INFO  13:41:48,290 - #41 bt
+INFO  13:41:48,290 - #5 ;
+INFO  13:41:48,290 - #3 {
+INFO  13:41:48,290 - #41 bodovi
+INFO  13:41:48,291 - #22 =
+INFO  13:41:48,293 - #41 bodovi
+INFO  13:41:48,295 - #36 *
+INFO  13:41:48,296 - #41 Konstante
+INFO  13:41:48,298 - #20 ::
+INFO  13:41:48,298 - #41 pet
+INFO  13:41:48,299 - #5 ;
+INFO  13:41:48,299 - #4 }
+INFO  13:41:48,300 - #4 }
+INFO  13:41:48,305 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NamespaceListt(
+    NoNamespaceListt(
+    ) [NoNamespaceListt]
+    Namespace(
+      NamespaceName(
+       Konstante
+      ) [NamespaceName]
+      DeclListt(
+        DeclListt(
+          DeclListt(
+            NoDeclListt(
+            ) [NoDeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               nula
+                IntValue(
+                 0
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclConstt(
+            ConstDecll(
+              ConstType(
+                Type(
+                 int
+                ) [Type]
+              ) [ConstType]
+             jedan
+              IntValue(
+               1
+              ) [IntValue]
+              NoConstDeclExtensionn(
+              ) [NoConstDeclExtensionn]
+              ConstDeclListEndd(
+              ) [ConstDeclListEndd]
+            ) [ConstDecll]
+          ) [DeclConstt]
+        ) [DeclListt]
+        DeclConstt(
+          ConstDecll(
+            ConstType(
+              Type(
+               int
+              ) [Type]
+            ) [ConstType]
+           pet
+            IntValue(
+             5
+            ) [IntValue]
+            NoConstDeclExtensionn(
+            ) [NoConstDeclExtensionn]
+            ConstDeclListEndd(
+            ) [ConstDeclListEndd]
+          ) [ConstDecll]
+        ) [DeclConstt]
+      ) [DeclListt]
+      NoMethodDeclListt(
+      ) [NoMethodDeclListt]
+    ) [Namespace]
+  ) [NamespaceListt]
+  DeclListt(
+    DeclListt(
+      NoDeclListt(
+      ) [NoDeclListt]
+      DeclConstt(
+        ConstDecll(
+          ConstType(
+            Type(
+             char
+            ) [Type]
+          ) [ConstType]
+         karakter
+          CharValue(
+           c
+          ) [CharValue]
+          NoConstDeclExtensionn(
+          ) [NoConstDeclExtensionn]
+          ConstDeclListEndd(
+          ) [ConstDeclListEndd]
+        ) [ConstDecll]
+      ) [DeclConstt]
+    ) [DeclListt]
+    DeclVarr(
+      VarDecll(
+        VarType(
+          Type(
+           int
+          ) [Type]
+        ) [VarType]
+        VarDeclListOneVar(
+         a
+        ) [VarDeclListOneVar]
+        VarDeclEndDerived1(
+        ) [VarDeclEndDerived1]
+      ) [VarDecll]
+    ) [DeclVarr]
+  ) [DeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          NoMethodVarDeclListt(
+          ) [NoMethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarr(
+               bodovi
+              ) [MethodVarr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           bool
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             bt
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        EmptyStatementList(
+        ) [EmptyStatementList]
+        MatchedStm(
+          DesigStatement(
+            DesigStatementAssign(
+              Designatorr(
+                DesignatorNameNoNs(
+                 bodovi
+                ) [DesignatorNameNoNs]
+                NoDesignatorList(
+                ) [NoDesignatorList]
+              ) [Designatorr]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                Termm(
+                  MulFacList(
+                    MulFacListOne(
+                      FactDesig(
+                        Designatorr(
+                          DesignatorNameNoNs(
+                           bodovi
+                          ) [DesignatorNameNoNs]
+                          NoDesignatorList(
+                          ) [NoDesignatorList]
+                        ) [Designatorr]
+                      ) [FactDesig]
+                    ) [MulFacListOne]
+                    MulopMul(
+                    ) [MulopMul]
+                    FactDesig(
+                      Designatorr(
+                        DesignatorNameNs(
+                         Konstante
+                         pet
+                        ) [DesignatorNameNs]
+                        NoDesignatorList(
+                        ) [NoDesignatorList]
+                      ) [Designatorr]
+                    ) [FactDesig]
+                  ) [MulFacList]
+                ) [Termm]
+              ) [ExprTerm]
+            ) [DesigStatementAssign]
+          ) [DesigStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  13:41:48,318 - Constant [nula] in namespace:Konstante detected line 4
+INFO  13:41:48,318 - Constant [jedan] in namespace:Konstante detected line 5
+INFO  13:41:48,319 - Constant [pet] in namespace:Konstante detected line 6
+INFO  13:41:48,320 - Constant [karakter] detected line 11
+INFO  13:41:48,320 - Variable [a] detected line 12
+INFO  13:41:48,322 - Variable [bodovi] access line 19
+INFO  13:41:48,322 - Variable [bodovi] access line 19
+INFO  13:41:48,322 - Const [Konstante::pet] access line 19
+INFO  13:41:48,322 - Variable [bodovi] assigned new value! line 19

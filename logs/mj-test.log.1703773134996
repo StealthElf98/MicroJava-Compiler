@@ -1,0 +1,30 @@
+INFO  15:17:01,776 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  15:17:01,830 - #2 program
+INFO  15:17:01,830 - #41 MJProgram
+INFO  15:17:01,830 - #17 namespace
+INFO  15:17:01,831 - #41 testNamespace1
+INFO  15:17:01,831 - #3 {
+INFO  15:17:01,832 - #18 const
+INFO  15:17:01,833 - #41 int
+INFO  15:17:01,833 - #41 zz
+INFO  15:17:01,834 - #22 =
+INFO  15:17:01,834 - #42 4
+INFO  15:17:01,834 - #10 ,
+INFO  15:17:01,835 - #41 uu
+INFO  15:17:01,836 - #22 =
+INFO  15:17:01,836 - #42 10
+INFO  15:17:01,836 - #5 ;
+INFO  15:17:01,836 - #41 double
+INFO  15:17:01,838 - #41 dd
+INFO  15:17:01,838 - #5 ;
+INFO  15:17:01,839 - #41 int
+INFO  15:17:01,841 - #41 xx
+INFO  15:17:01,843 - #10 ,
+INFO  15:17:01,843 - #41 yy
+INFO  15:17:01,843 - #5 ;
+INFO  15:17:01,843 - #15 void
+ERROR 15:17:01,843 - 
+Sintaksna greska na liniji 9
+ERROR 15:17:01,843 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9
+INFO  15:17:01,871 - Print calls = 0
+ERROR 15:17:01,872 - Parsiranje NIJE uspesno zavrseno!

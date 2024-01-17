@@ -1,0 +1,208 @@
+INFO  21:30:25,892 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  21:30:26,039 - #2 program
+INFO  21:30:26,041 - #41 test301
+INFO  21:30:26,041 - #17 namespace
+INFO  21:30:26,044 - #41 Konstante
+INFO  21:30:26,046 - #3 {
+INFO  21:30:26,048 - #18 const
+INFO  21:30:26,051 - #41 int
+INFO  21:30:26,053 - #41 nula
+INFO  21:30:26,060 - #22 =
+INFO  21:30:26,060 - #42 0
+INFO  21:30:26,060 - #5 ;
+INFO  21:30:26,062 - #18 const
+INFO  21:30:26,067 - #41 int
+INFO  21:30:26,067 - #41 jedan
+INFO  21:30:26,070 - #22 =
+INFO  21:30:26,071 - #42 1
+INFO  21:30:26,071 - #5 ;
+INFO  21:30:26,072 - #18 const
+INFO  21:30:26,072 - #41 int
+INFO  21:30:26,072 - #41 pet
+INFO  21:30:26,075 - #22 =
+INFO  21:30:26,075 - #42 5
+INFO  21:30:26,075 - #5 ;
+INFO  21:30:26,075 - #3 {
+INFO  21:30:26,075 - #4 }
+INFO  21:30:26,076 - #4 }
+INFO  21:30:26,076 - #3 {
+INFO  21:30:26,077 - #15 void
+INFO  21:30:26,077 - #41 main
+INFO  21:30:26,077 - #6 (
+INFO  21:30:26,078 - #7 )
+INFO  21:30:26,079 - #41 int
+INFO  21:30:26,079 - #41 bodovi
+INFO  21:30:26,080 - #5 ;
+INFO  21:30:26,080 - #3 {
+INFO  21:30:26,082 - #41 bodovi
+INFO  21:30:26,083 - #22 =
+INFO  21:30:26,086 - #41 bodovi
+INFO  21:30:26,088 - #13 +
+INFO  21:30:26,089 - #41 Konstante
+INFO  21:30:26,091 - #20 ::
+INFO  21:30:26,091 - #41 jedan
+INFO  21:30:26,092 - #5 ;
+INFO  21:30:26,092 - #4 }
+INFO  21:30:26,093 - #4 }
+INFO  21:30:26,102 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NamespaceListt(
+    NoNamespaceListt(
+    ) [NoNamespaceListt]
+    Namespace(
+      NamespaceName(
+       Konstante
+      ) [NamespaceName]
+      DeclListt(
+        DeclListt(
+          DeclListt(
+            NoDeclListt(
+            ) [NoDeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               nula
+                IntValue(
+                 0
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclConstt(
+            ConstDecll(
+              ConstType(
+                Type(
+                 int
+                ) [Type]
+              ) [ConstType]
+             jedan
+              IntValue(
+               1
+              ) [IntValue]
+              NoConstDeclExtensionn(
+              ) [NoConstDeclExtensionn]
+              ConstDeclListEndd(
+              ) [ConstDeclListEndd]
+            ) [ConstDecll]
+          ) [DeclConstt]
+        ) [DeclListt]
+        DeclConstt(
+          ConstDecll(
+            ConstType(
+              Type(
+               int
+              ) [Type]
+            ) [ConstType]
+           pet
+            IntValue(
+             5
+            ) [IntValue]
+            NoConstDeclExtensionn(
+            ) [NoConstDeclExtensionn]
+            ConstDeclListEndd(
+            ) [ConstDeclListEndd]
+          ) [ConstDecll]
+        ) [DeclConstt]
+      ) [DeclListt]
+      NoMethodDeclListt(
+      ) [NoMethodDeclListt]
+    ) [Namespace]
+  ) [NamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        NoMethodVarDeclListt(
+        ) [NoMethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           int
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             bodovi
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        EmptyStatementList(
+        ) [EmptyStatementList]
+        MatchedStm(
+          DesigStatement(
+            DesigStatementAssign(
+              Designatorr(
+                DesignatorNameNoNs(
+                 bodovi
+                ) [DesignatorNameNoNs]
+                NoDesignatorList(
+                ) [NoDesignatorList]
+              ) [Designatorr]
+              Assignop(
+              ) [Assignop]
+              AddopExpr(
+                ExprTerm(
+                  Termm(
+                    MulFacListOne(
+                      FactDesig(
+                        Designatorr(
+                          DesignatorNameNoNs(
+                           bodovi
+                          ) [DesignatorNameNoNs]
+                          NoDesignatorList(
+                          ) [NoDesignatorList]
+                        ) [Designatorr]
+                      ) [FactDesig]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [ExprTerm]
+                AddopPlus(
+                ) [AddopPlus]
+                Termm(
+                  MulFacListOne(
+                    FactDesig(
+                      Designatorr(
+                        DesignatorNameNs(
+                         Konstante
+                         jedan
+                        ) [DesignatorNameNs]
+                        NoDesignatorList(
+                        ) [NoDesignatorList]
+                      ) [Designatorr]
+                    ) [FactDesig]
+                  ) [MulFacListOne]
+                ) [Termm]
+              ) [AddopExpr]
+            ) [DesigStatementAssign]
+          ) [DesigStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  21:30:26,138 - Constant [nula] in namespace:Konstante detected line 4
+INFO  21:30:26,138 - Constant [jedan] in namespace:Konstante detected line 5
+INFO  21:30:26,138 - Constant [pet] in namespace:Konstante detected line 6
+INFO  21:30:26,138 - Variable [bodovi] access line 15
+INFO  21:30:26,138 - Variable [bodovi] access line 15
+INFO  21:30:26,138 - Const [Konstante::jedan] access line 15
+ERROR 21:30:35,435 - ERROR: Operands must be of type int! line 15
+INFO  21:30:40,496 - Variable [bodovi] assigned new value! line 15

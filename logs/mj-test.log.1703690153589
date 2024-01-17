@@ -1,0 +1,6 @@
+INFO  16:08:02,733 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  16:08:02,765 - #2 program
+INFO  16:08:02,766 - #41 MJProgram
+ERROR 16:08:02,766 - 
+Sintaksna greska na liniji 1
+ERROR 16:08:02,766 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 1

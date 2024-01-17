@@ -1,0 +1,16 @@
+INFO  15:46:54,554 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  15:46:54,584 - #2 program
+INFO  15:46:54,586 - #15 MJProgram
+INFO  15:46:54,588 - #15 int
+INFO  15:46:54,592 - #15 x
+INFO  15:46:54,594 - #5 ;
+INFO  15:46:54,594 - #15 int
+INFO  15:46:54,596 - #15 y
+INFO  15:46:54,596 - #5 ;
+INFO  15:46:54,596 - #3 {
+INFO  15:46:54,596 - #4 }
+INFO  15:46:54,625 - Deklarisana promenljiva x na liniji 2
+INFO  15:46:54,625 - Deklarisana promenljiva y na liniji 2
+INFO  15:46:54,625 - Print calls = 0
+INFO  15:46:54,628 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  15:46:54,645 - Parsiranje uspesno zavrseno!
