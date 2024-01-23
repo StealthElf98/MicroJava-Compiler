@@ -63,20 +63,20 @@ public class SemanticPass extends VisitorAdaptor {
 
 	public void visit(Program program) {
 		nVars = Tab.currentScope.getnVars();
-		
+
 		Obj main = Tab.find("main");
-		if(main == Tab.noObj) {
+		if (main == Tab.noObj) {
 			report_error("ERROR: Main method not defined!", null);
 		} else if (main.getLevel() != 0) {
 			report_error("ERROR: Main method must be in global scope!", null);
-		} else if(main.getKind() != Obj.Meth) {
+		} else if (main.getKind() != Obj.Meth) {
 			report_error("ERROR: Main can only be of type method!", null);
-		} else if(main.getType() != Tab.noType) {
+		} else if (main.getType() != Tab.noType) {
 			report_error("ERROR: Main must have void return type!", null);
 		} else {
 			report_info("Main method exists! ", null);
 		}
-		
+
 		Tab.chainLocalSymbols(program.getProgName().obj);
 		Tab.closeScope();
 	}
@@ -112,7 +112,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, currentType));
-			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace : "[" + varDecla.getVName() + "]";
+			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
+					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
 		}
 	}
@@ -126,7 +127,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, currentType);
-			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace : "[" + varDecla.getVName() + "]";
+			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
+					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
 		}
 	}
@@ -140,7 +142,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, currentType);
-			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace : "[" + varDecla.getVName() + "]";
+			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
+					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
 		}
 	}
@@ -154,7 +157,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, currentType));
-			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace : "[" + varDecla.getVName() + "]";
+			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
+					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
 		}
 	}
@@ -256,7 +260,8 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
-	// Designator -------------------------------------------------------------------------------------
+	// Designator
+	// -------------------------------------------------------------------------------------
 	public void visit(Designatorr designator) {
 		Obj temp = designator.getDesignatorName().obj;
 		Obj newTemp = Tab.find(temp.getName());
@@ -293,20 +298,21 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(DesigStatementAssign desigStmAssign) {
 		Obj leftOp = desigStmAssign.getDesignator().obj;
 		Struct rightOp = desigStmAssign.getExpr().struct;
-		
-		if(leftOp.getKind() == Obj.Con) {
+
+		if (leftOp.getKind() == Obj.Con) {
 			report_error("ERROR: Left operand is const value, can't assigne value!", null);
-		} else if(leftOp.getType() != Tab.intType &&  rightOp != Tab.intType) {
+		} else if (leftOp.getType() != Tab.intType && rightOp != Tab.intType) {
 			report_error("ERROR: Bad types", desigStmAssign);
 		} else {
-			report_info("Assigned new value to variable [" + desigStmAssign.getDesignator().obj.getName() + "] on", desigStmAssign);
+			report_info("Assigned new value to variable [" + desigStmAssign.getDesignator().obj.getName() + "] on",
+					desigStmAssign);
 		}
 	}
 
 	public void visit(DesignatorStatementInc designator) {
-		if(designator.getDesignator().obj.getType() != Tab.intType) {
+		if (designator.getDesignator().obj.getType() != Tab.intType) {
 			report_error("ERROR: Incremented variable must be int type!", designator);
-		} else if(designator.getDesignator().obj.getKind() == Obj.Con) {
+		} else if (designator.getDesignator().obj.getKind() == Obj.Con) {
 			report_error("ERROR: Can't increment const type!", designator);
 		} else {
 			report_info("Incremented variable [" + designator.getDesignator().obj.getName() + "] on", designator);
@@ -314,17 +320,18 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorStatementDec designator) {
-		if(designator.getDesignator().obj.getType() != Tab.intType) {
+		if (designator.getDesignator().obj.getType() != Tab.intType) {
 			report_error("ERROR: Decremented variable must be int type!", designator);
-		} else if(designator.getDesignator().obj.getKind() == Obj.Con) {
+		} else if (designator.getDesignator().obj.getKind() == Obj.Con) {
 			report_error("ERROR: Can't decremente const type!", designator);
 		} else {
 			report_info("Decremented variable [" + designator.getDesignator().obj.getName() + "] on", designator);
 		}
 	}
 
-	// Expr -------------------------------------------------------------------------------------------------------
-	
+	// Expr
+	// -------------------------------------------------------------------------------------------------------
+
 	public void visit(ExprTerm expr) {
 		expr.struct = expr.getTerm().struct;
 	}
@@ -334,27 +341,29 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("ERROR: Operand must be of type int!", expr);
 			expr.struct = Tab.noType;
 		} else {
-			expr.struct = expr.getTerm().struct;			
+			expr.struct = expr.getTerm().struct;
 		}
 	}
 
 	public void visit(AddopExpr expr) {
 		if (expr.getExpr().struct != Tab.intType && expr.getTerm().struct != Tab.intType) {
 			report_error("ERROR: Operands must be of type int!", expr);
-			
+
 			expr.struct = Tab.noType;
 		} else {
 			expr.struct = Tab.intType;
 		}
 	}
 
-	// Term -------------------------------------------------------------------------------------------------------
+	// Term
+	// -------------------------------------------------------------------------------------------------------
 	public void visit(Termm term) {
 		term.struct = term.getMulFactorList().struct;
 	}
 
-	// Factor -----------------------------------------------------------------------------------------------------
-	
+	// Factor
+	// -----------------------------------------------------------------------------------------------------
+
 	public void visit(MulFacList mulFacList) {
 		if (mulFacList.getMulFactorList().struct != mulFacList.getFactor().struct) {
 //			System.out.println("MulFacList " + mulFacList.struct);
@@ -365,10 +374,10 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("ERROR: Operands must be of type int!", mulFacList);
 			mulFacList.struct = Tab.noType;
 		} else {
-			mulFacList.struct = Tab.intType;			
+			mulFacList.struct = Tab.intType;
 		}
 	}
-	
+
 	public void visit(MulFacListOne mulFacListOne) {
 		mulFacListOne.struct = mulFacListOne.getFactor().struct;
 	}
@@ -396,14 +405,16 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(FactDesig dactDesig) {
 		dactDesig.struct = dactDesig.getDesignator().obj.getType();
 	}
-	
-	// Print ------------------------------------------------------------------------------------------
-	
+
+	// Print
+	// ------------------------------------------------------------------------------------------
+
 	public void visit(PrintStatementNum printStatementNum) {
-		
+
 	}
-	
-	// Help Methods -----------------------------------------------------------------------------------
+
+	// Help Methods
+	// -----------------------------------------------------------------------------------
 
 	private boolean okRValue(Struct value, SyntaxNode node) {
 		if (value == currentType)
@@ -420,5 +431,9 @@ public class SemanticPass extends VisitorAdaptor {
 		report_error("ERROR: Symbol with this name already exists in this scope " + name, node);
 		return true;
 	}
-	
+
+	public boolean passed() {
+		return !errorDetected;
+	}
+
 }

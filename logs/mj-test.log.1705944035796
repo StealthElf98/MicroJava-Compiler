@@ -1,0 +1,58 @@
+INFO  18:05:10,370 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  18:05:10,424 - #2 program
+INFO  18:05:10,424 - #41 test301
+INFO  18:05:10,424 - #3 {
+INFO  18:05:10,427 - #15 void
+INFO  18:05:10,428 - #41 main
+INFO  18:05:10,428 - #6 (
+INFO  18:05:10,428 - #7 )
+INFO  18:05:10,429 - #3 {
+INFO  18:05:10,430 - #11 print
+INFO  18:05:10,431 - #6 (
+INFO  18:05:10,431 - #42 10
+INFO  18:05:10,431 - #7 )
+INFO  18:05:10,432 - #5 ;
+INFO  18:05:10,432 - #4 }
+INFO  18:05:10,433 - #4 }
+INFO  18:05:10,436 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      NoMethodVarDeclListt(
+      ) [NoMethodVarDeclListt]
+      StmList(
+        EmptyStatementList(
+        ) [EmptyStatementList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              Termm(
+                MulFacListOne(
+                  FactorInt(
+                   10
+                  ) [FactorInt]
+                ) [MulFacListOne]
+              ) [Termm]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  18:05:10,449 - Main method exists! 
+INFO  18:05:10,450 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  18:05:10,455 - Parsiranje uspesno zavrseno!

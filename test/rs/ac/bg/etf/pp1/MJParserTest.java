@@ -52,24 +52,24 @@ public class MJParserTest {
 	        prog.traverseBottomUp(v);
 
 	        Tab.dump();
-	        System.out.println("=======================GENERATING CODE===========================");
-//	        if (!p.errorDetected && semanticCheck.passed()) {
-//	        	File objFile = new File(args[1]);
-//	        	log.info("Generating bytecode file: " + objFile.getAbsolutePath());
-//	        	if (objFile.exists())
-//	        		objFile.delete();
-//	        	
-	        	// Code generation...
-//	        	CodeGenerator codeGenerator = new CodeGenerator();
-//	        	prog.traverseBottomUp(codeGenerator);
-//	        	Code.dataSize = semanticCheck.nVars;
-//	        	Code.mainPc = codeGenerator.getMainPc();
-//	        	Code.write(new FileOutputStream(objFile));
-//	        	log.info("Parsiranje uspesno zavrseno!");
-//	        }
-//	        else {
-//	        	log.error("Parsiranje NIJE uspesno zavrseno!");
-//	        }
+	        System.out.println("=======================GENERATING CODE===========================" + "\n");
+	        if (!p.errorDetected && v.passed()) {
+	        	File objFile = new File(args[1]);
+	        	log.info("Generating bytecode file: " + objFile.getAbsolutePath());
+	        	if (objFile.exists())
+	        		objFile.delete();
+	        	
+	        	//Code generation...
+	        	CodeGenerator codeGenerator = new CodeGenerator();
+	        	prog.traverseBottomUp(codeGenerator);
+	        	Code.dataSize = v.nVars;
+	        	Code.mainPc = codeGenerator.getMainPc();
+	        	Code.write(new FileOutputStream(objFile));
+	        	log.info("Parsiranje uspesno zavrseno!");
+	        }
+	        else {
+	        	log.error("Parsiranje NIJE uspesno zavrseno!");
+	        }
 		}
 	}
 }
