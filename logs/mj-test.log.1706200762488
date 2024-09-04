@@ -1,0 +1,103 @@
+INFO  17:39:03,987 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:39:04,049 - #2 program
+INFO  17:39:04,049 - #41 test301
+INFO  17:39:04,050 - #3 {
+INFO  17:39:04,053 - #15 void
+INFO  17:39:04,054 - #41 main
+INFO  17:39:04,054 - #6 (
+INFO  17:39:04,054 - #7 )
+INFO  17:39:04,055 - #41 bool
+INFO  17:39:04,055 - #41 niz
+INFO  17:39:04,057 - #8 [
+INFO  17:39:04,057 - #9 ]
+INFO  17:39:04,057 - #5 ;
+INFO  17:39:04,057 - #3 {
+INFO  17:39:04,059 - #41 niz
+INFO  17:39:04,061 - #22 =
+INFO  17:39:04,063 - #35 new
+INFO  17:39:04,064 - #41 bool
+INFO  17:39:04,064 - #8 [
+INFO  17:39:04,065 - #42 2
+INFO  17:39:04,065 - #9 ]
+INFO  17:39:04,065 - #5 ;
+INFO  17:39:04,066 - #4 }
+INFO  17:39:04,067 - #4 }
+INFO  17:39:04,070 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        NoMethodVarDeclListt(
+        ) [NoMethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           bool
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarArr(
+             niz
+            ) [MethodVarArr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        EmptyStatementList(
+        ) [EmptyStatementList]
+        MatchedStm(
+          DesigStatement(
+            DesigStatementAssign(
+              Designatorr(
+                DesignatorNameNoNs(
+                 niz
+                ) [DesignatorNameNoNs]
+                NoDesignatorList(
+                ) [NoDesignatorList]
+              ) [Designatorr]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                Termm(
+                  MulFacListOne(
+                    FactorNewExpr(
+                      Type(
+                       bool
+                      ) [Type]
+                      ExprTerm(
+                        Termm(
+                          MulFacListOne(
+                            FactorInt(
+                             2
+                            ) [FactorInt]
+                          ) [MulFacListOne]
+                        ) [Termm]
+                      ) [ExprTerm]
+                    ) [FactorNewExpr]
+                  ) [MulFacListOne]
+                ) [Termm]
+              ) [ExprTerm]
+            ) [DesigStatementAssign]
+          ) [DesigStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  17:39:04,084 - Accessing variable [niz] on line 6
+INFO  17:39:04,084 - Created new array! line 6
+INFO  17:39:04,084 - Assigned new value to variable [niz] on line 6
+INFO  17:39:04,085 - Main method exists! 
+INFO  17:39:04,086 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  17:39:04,090 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,186 @@
+INFO  12:53:41,483 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  12:53:41,644 - #2 program
+INFO  12:53:41,644 - #41 test301
+INFO  12:53:41,645 - #3 {
+INFO  12:53:41,648 - #15 void
+INFO  12:53:41,652 - #41 main
+INFO  12:53:41,652 - #6 (
+INFO  12:53:41,652 - #7 )
+INFO  12:53:41,653 - #41 int
+INFO  12:53:41,654 - #41 niz
+INFO  12:53:41,655 - #8 [
+INFO  12:53:41,656 - #9 ]
+INFO  12:53:41,658 - #5 ;
+INFO  12:53:41,659 - #3 {
+INFO  12:53:41,663 - #41 niz
+INFO  12:53:41,664 - #22 =
+INFO  12:53:41,669 - #35 new
+INFO  12:53:41,674 - #41 int
+INFO  12:53:41,674 - #8 [
+INFO  12:53:41,674 - #42 4
+INFO  12:53:41,674 - #9 ]
+INFO  12:53:41,676 - #5 ;
+INFO  12:53:41,679 - #41 niz
+INFO  12:53:41,680 - #8 [
+INFO  12:53:41,681 - #42 0
+INFO  12:53:41,681 - #9 ]
+INFO  12:53:41,681 - #22 =
+INFO  12:53:41,681 - #42 1
+INFO  12:53:41,681 - #5 ;
+INFO  12:53:41,681 - #11 print
+INFO  12:53:41,682 - #6 (
+INFO  12:53:41,683 - #41 niz
+INFO  12:53:41,683 - #8 [
+INFO  12:53:41,684 - #42 0
+INFO  12:53:41,689 - #9 ]
+INFO  12:53:41,689 - #7 )
+INFO  12:53:41,689 - #5 ;
+INFO  12:53:41,689 - #4 }
+INFO  12:53:41,690 - #4 }
+INFO  12:53:41,694 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        NoMethodVarDeclListt(
+        ) [NoMethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           int
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarArr(
+             niz
+            ) [MethodVarArr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        StmList(
+          StmList(
+            EmptyStatementList(
+            ) [EmptyStatementList]
+            MatchedStm(
+              DesigStatement(
+                DesigStatementAssign(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     niz
+                      NoDesignatorList(
+                      ) [NoDesignatorList]
+                    ) [DesignatorNameNoNs]
+                  ) [Designatorr]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    Termm(
+                      MulFacListOne(
+                        FactorNewExpr(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprTerm(
+                            Termm(
+                              MulFacListOne(
+                                FactorInt(
+                                 4
+                                ) [FactorInt]
+                              ) [MulFacListOne]
+                            ) [Termm]
+                          ) [ExprTerm]
+                        ) [FactorNewExpr]
+                      ) [MulFacListOne]
+                    ) [Termm]
+                  ) [ExprTerm]
+                ) [DesigStatementAssign]
+              ) [DesigStatement]
+            ) [MatchedStm]
+          ) [StmList]
+          MatchedStm(
+            DesigStatement(
+              DesigStatementAssign(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   niz
+                    DesignatorListExpr(
+                      ExprTerm(
+                        Termm(
+                          MulFacListOne(
+                            FactorInt(
+                             0
+                            ) [FactorInt]
+                          ) [MulFacListOne]
+                        ) [Termm]
+                      ) [ExprTerm]
+                    ) [DesignatorListExpr]
+                  ) [DesignatorNameNoNs]
+                ) [Designatorr]
+                Assignop(
+                ) [Assignop]
+                ExprTerm(
+                  Termm(
+                    MulFacListOne(
+                      FactorInt(
+                       1
+                      ) [FactorInt]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [ExprTerm]
+              ) [DesigStatementAssign]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              Termm(
+                MulFacListOne(
+                  FactDesig(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       niz
+                        DesignatorListExpr(
+                          ExprTerm(
+                            Termm(
+                              MulFacListOne(
+                                FactorInt(
+                                 0
+                                ) [FactorInt]
+                              ) [MulFacListOne]
+                            ) [Termm]
+                          ) [ExprTerm]
+                        ) [DesignatorListExpr]
+                      ) [DesignatorNameNoNs]
+                    ) [Designatorr]
+                  ) [FactDesig]
+                ) [MulFacListOne]
+              ) [Termm]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  12:53:41,720 - Accessing variable [niz] on line 6
+INFO  12:53:41,720 - Created new array! line 6
+INFO  12:53:41,720 - Assigned new value to variable [niz] on line 6
+INFO  12:53:41,721 - Accessing variable [niz] on line 8
+INFO  12:53:41,721 - Assigned new value to variable [niz] on line 8
+INFO  12:53:41,721 - Accessing variable [niz] on line 10
+INFO  12:53:41,721 - Main method exists! 
+INFO  12:53:41,722 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  12:53:41,728 - Parsiranje uspesno zavrseno!

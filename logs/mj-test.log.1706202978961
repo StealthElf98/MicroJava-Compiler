@@ -1,0 +1,329 @@
+INFO  18:14:57,510 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  18:14:57,570 - #2 program
+INFO  18:14:57,570 - #41 test301
+INFO  18:14:57,571 - #3 {
+INFO  18:14:57,573 - #15 void
+INFO  18:14:57,574 - #41 main
+INFO  18:14:57,574 - #6 (
+INFO  18:14:57,574 - #7 )
+INFO  18:14:57,576 - #41 int
+INFO  18:14:57,576 - #41 niz
+INFO  18:14:57,578 - #8 [
+INFO  18:14:57,578 - #9 ]
+INFO  18:14:57,579 - #5 ;
+INFO  18:14:57,579 - #41 int
+INFO  18:14:57,580 - #41 jedan
+INFO  18:14:57,581 - #5 ;
+INFO  18:14:57,582 - #3 {
+INFO  18:14:57,582 - #41 jedan
+INFO  18:14:57,583 - #22 =
+INFO  18:14:57,587 - #34 -
+INFO  18:14:57,588 - #42 1
+INFO  18:14:57,588 - #5 ;
+INFO  18:14:57,591 - #41 niz
+INFO  18:14:57,591 - #22 =
+INFO  18:14:57,591 - #35 new
+INFO  18:14:57,591 - #41 int
+INFO  18:14:57,591 - #8 [
+INFO  18:14:57,592 - #42 3
+INFO  18:14:57,592 - #9 ]
+INFO  18:14:57,592 - #5 ;
+INFO  18:14:57,592 - #41 niz
+INFO  18:14:57,592 - #8 [
+INFO  18:14:57,592 - #42 0
+INFO  18:14:57,592 - #9 ]
+INFO  18:14:57,592 - #22 =
+INFO  18:14:57,593 - #41 jedan
+INFO  18:14:57,593 - #5 ;
+INFO  18:14:57,593 - #41 niz
+INFO  18:14:57,593 - #8 [
+INFO  18:14:57,593 - #42 1
+INFO  18:14:57,594 - #9 ]
+INFO  18:14:57,594 - #22 =
+INFO  18:14:57,594 - #42 2
+INFO  18:14:57,594 - #5 ;
+INFO  18:14:57,594 - #41 niz
+INFO  18:14:57,594 - #8 [
+INFO  18:14:57,594 - #42 2
+INFO  18:14:57,594 - #9 ]
+INFO  18:14:57,594 - #22 =
+INFO  18:14:57,595 - #42 3
+INFO  18:14:57,595 - #5 ;
+INFO  18:14:57,595 - #11 print
+INFO  18:14:57,595 - #6 (
+INFO  18:14:57,595 - #41 niz
+INFO  18:14:57,595 - #8 [
+INFO  18:14:57,595 - #42 0
+INFO  18:14:57,595 - #9 ]
+INFO  18:14:57,595 - #7 )
+INFO  18:14:57,595 - #5 ;
+INFO  18:14:57,596 - #4 }
+INFO  18:14:57,596 - #4 }
+INFO  18:14:57,599 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          NoMethodVarDeclListt(
+          ) [NoMethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarArr(
+               niz
+              ) [MethodVarArr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           int
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             jedan
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        StmList(
+          StmList(
+            StmList(
+              StmList(
+                StmList(
+                  EmptyStatementList(
+                  ) [EmptyStatementList]
+                  MatchedStm(
+                    DesigStatement(
+                      DesigStatementAssign(
+                        Designatorr(
+                          DesignatorNameNoNs(
+                           jedan
+                          ) [DesignatorNameNoNs]
+                          NoDesignatorList(
+                          ) [NoDesignatorList]
+                        ) [Designatorr]
+                        Assignop(
+                        ) [Assignop]
+                        MinusExpr(
+                          Termm(
+                            MulFacListOne(
+                              FactorInt(
+                               1
+                              ) [FactorInt]
+                            ) [MulFacListOne]
+                          ) [Termm]
+                        ) [MinusExpr]
+                      ) [DesigStatementAssign]
+                    ) [DesigStatement]
+                  ) [MatchedStm]
+                ) [StmList]
+                MatchedStm(
+                  DesigStatement(
+                    DesigStatementAssign(
+                      Designatorr(
+                        DesignatorNameNoNs(
+                         niz
+                        ) [DesignatorNameNoNs]
+                        NoDesignatorList(
+                        ) [NoDesignatorList]
+                      ) [Designatorr]
+                      Assignop(
+                      ) [Assignop]
+                      ExprTerm(
+                        Termm(
+                          MulFacListOne(
+                            FactorNewExpr(
+                              Type(
+                               int
+                              ) [Type]
+                              ExprTerm(
+                                Termm(
+                                  MulFacListOne(
+                                    FactorInt(
+                                     3
+                                    ) [FactorInt]
+                                  ) [MulFacListOne]
+                                ) [Termm]
+                              ) [ExprTerm]
+                            ) [FactorNewExpr]
+                          ) [MulFacListOne]
+                        ) [Termm]
+                      ) [ExprTerm]
+                    ) [DesigStatementAssign]
+                  ) [DesigStatement]
+                ) [MatchedStm]
+              ) [StmList]
+              MatchedStm(
+                DesigStatement(
+                  DesigStatementAssign(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       niz
+                      ) [DesignatorNameNoNs]
+                      DesignatorListExpr(
+                        ExprTerm(
+                          Termm(
+                            MulFacListOne(
+                              FactorInt(
+                               0
+                              ) [FactorInt]
+                            ) [MulFacListOne]
+                          ) [Termm]
+                        ) [ExprTerm]
+                      ) [DesignatorListExpr]
+                    ) [Designatorr]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      Termm(
+                        MulFacListOne(
+                          FactDesig(
+                            Designatorr(
+                              DesignatorNameNoNs(
+                               jedan
+                              ) [DesignatorNameNoNs]
+                              NoDesignatorList(
+                              ) [NoDesignatorList]
+                            ) [Designatorr]
+                          ) [FactDesig]
+                        ) [MulFacListOne]
+                      ) [Termm]
+                    ) [ExprTerm]
+                  ) [DesigStatementAssign]
+                ) [DesigStatement]
+              ) [MatchedStm]
+            ) [StmList]
+            MatchedStm(
+              DesigStatement(
+                DesigStatementAssign(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     niz
+                    ) [DesignatorNameNoNs]
+                    DesignatorListExpr(
+                      ExprTerm(
+                        Termm(
+                          MulFacListOne(
+                            FactorInt(
+                             1
+                            ) [FactorInt]
+                          ) [MulFacListOne]
+                        ) [Termm]
+                      ) [ExprTerm]
+                    ) [DesignatorListExpr]
+                  ) [Designatorr]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    Termm(
+                      MulFacListOne(
+                        FactorInt(
+                         2
+                        ) [FactorInt]
+                      ) [MulFacListOne]
+                    ) [Termm]
+                  ) [ExprTerm]
+                ) [DesigStatementAssign]
+              ) [DesigStatement]
+            ) [MatchedStm]
+          ) [StmList]
+          MatchedStm(
+            DesigStatement(
+              DesigStatementAssign(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   niz
+                  ) [DesignatorNameNoNs]
+                  DesignatorListExpr(
+                    ExprTerm(
+                      Termm(
+                        MulFacListOne(
+                          FactorInt(
+                           2
+                          ) [FactorInt]
+                        ) [MulFacListOne]
+                      ) [Termm]
+                    ) [ExprTerm]
+                  ) [DesignatorListExpr]
+                ) [Designatorr]
+                Assignop(
+                ) [Assignop]
+                ExprTerm(
+                  Termm(
+                    MulFacListOne(
+                      FactorInt(
+                       3
+                      ) [FactorInt]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [ExprTerm]
+              ) [DesigStatementAssign]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              Termm(
+                MulFacListOne(
+                  FactDesig(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       niz
+                      ) [DesignatorNameNoNs]
+                      DesignatorListExpr(
+                        ExprTerm(
+                          Termm(
+                            MulFacListOne(
+                              FactorInt(
+                               0
+                              ) [FactorInt]
+                            ) [MulFacListOne]
+                          ) [Termm]
+                        ) [ExprTerm]
+                      ) [DesignatorListExpr]
+                    ) [Designatorr]
+                  ) [FactDesig]
+                ) [MulFacListOne]
+              ) [Termm]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  18:14:57,612 - Accessing variable [jedan] on line 6
+INFO  18:14:57,612 - Assigned new value to variable [jedan] on line 6
+INFO  18:14:57,615 - Accessing variable [niz] on line 8
+INFO  18:14:57,615 - Created new array! line 8
+INFO  18:14:57,615 - Assigned new value to variable [niz] on line 8
+INFO  18:14:57,615 - Accessing variable array[niz] on line 10
+INFO  18:14:57,616 - Accessing variable [jedan] on line 10
+INFO  18:14:57,616 - Assigned new value to variable [niz] on line 10
+INFO  18:14:57,616 - Accessing variable array[niz] on line 11
+INFO  18:14:57,616 - Assigned new value to variable [niz] on line 11
+INFO  18:14:57,616 - Accessing variable array[niz] on line 12
+INFO  18:14:57,616 - Assigned new value to variable [niz] on line 12
+INFO  18:14:57,616 - Accessing variable array[niz] on line 14
+INFO  18:14:57,617 - Main method exists! 
+INFO  18:14:57,618 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  18:14:57,623 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,331 @@
+INFO  00:23:38,999 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  00:23:39,105 - #2 program
+INFO  00:23:39,105 - #41 test301
+INFO  00:23:39,106 - #18 const
+INFO  00:23:39,108 - #41 int
+INFO  00:23:39,109 - #41 nula
+INFO  00:23:39,112 - #22 =
+INFO  00:23:39,112 - #42 0
+INFO  00:23:39,113 - #5 ;
+INFO  00:23:39,114 - #18 const
+INFO  00:23:39,115 - #41 int
+INFO  00:23:39,116 - #41 jedan
+INFO  00:23:39,116 - #22 =
+INFO  00:23:39,116 - #42 1
+INFO  00:23:39,119 - #5 ;
+INFO  00:23:39,120 - #18 const
+INFO  00:23:39,120 - #41 int
+INFO  00:23:39,120 - #41 pet
+INFO  00:23:39,122 - #22 =
+INFO  00:23:39,122 - #42 5
+INFO  00:23:39,123 - #5 ;
+INFO  00:23:39,123 - #41 int
+INFO  00:23:39,126 - #41 niz
+INFO  00:23:39,128 - #8 [
+INFO  00:23:39,128 - #9 ]
+INFO  00:23:39,128 - #5 ;
+INFO  00:23:39,129 - #41 char
+INFO  00:23:39,130 - #41 nizch
+INFO  00:23:39,131 - #8 [
+INFO  00:23:39,131 - #9 ]
+INFO  00:23:39,131 - #5 ;
+INFO  00:23:39,131 - #3 {
+INFO  00:23:39,131 - #15 void
+INFO  00:23:39,132 - #41 main
+INFO  00:23:39,132 - #6 (
+INFO  00:23:39,133 - #7 )
+INFO  00:23:39,134 - #3 {
+INFO  00:23:39,135 - #41 niz
+INFO  00:23:39,136 - #22 =
+INFO  00:23:39,137 - #35 new
+INFO  00:23:39,138 - #41 int
+INFO  00:23:39,138 - #8 [
+INFO  00:23:39,138 - #42 3
+INFO  00:23:39,138 - #9 ]
+INFO  00:23:39,139 - #5 ;
+INFO  00:23:39,141 - #41 niz
+INFO  00:23:39,142 - #8 [
+INFO  00:23:39,143 - #41 niz
+INFO  00:23:39,143 - #8 [
+INFO  00:23:39,143 - #41 jedan
+INFO  00:23:39,143 - #9 ]
+INFO  00:23:39,143 - #9 ]
+INFO  00:23:39,144 - #22 =
+INFO  00:23:39,145 - #41 niz
+INFO  00:23:39,145 - #8 [
+INFO  00:23:39,145 - #41 niz
+INFO  00:23:39,145 - #8 [
+INFO  00:23:39,146 - #42 0
+INFO  00:23:39,146 - #9 ]
+INFO  00:23:39,146 - #9 ]
+INFO  00:23:39,147 - #36 *
+INFO  00:23:39,147 - #42 3
+INFO  00:23:39,149 - #5 ;
+INFO  00:23:39,150 - #4 }
+INFO  00:23:39,153 - #4 }
+INFO  00:23:39,159 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  DeclListt(
+    DeclListt(
+      DeclListt(
+        DeclListt(
+          DeclListt(
+            NoDeclListt(
+            ) [NoDeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               nula
+                IntValue(
+                 0
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclConstt(
+            ConstDecll(
+              ConstType(
+                Type(
+                 int
+                ) [Type]
+              ) [ConstType]
+             jedan
+              IntValue(
+               1
+              ) [IntValue]
+              NoConstDeclExtensionn(
+              ) [NoConstDeclExtensionn]
+              ConstDeclListEndd(
+              ) [ConstDeclListEndd]
+            ) [ConstDecll]
+          ) [DeclConstt]
+        ) [DeclListt]
+        DeclConstt(
+          ConstDecll(
+            ConstType(
+              Type(
+               int
+              ) [Type]
+            ) [ConstType]
+           pet
+            IntValue(
+             5
+            ) [IntValue]
+            NoConstDeclExtensionn(
+            ) [NoConstDeclExtensionn]
+            ConstDeclListEndd(
+            ) [ConstDeclListEndd]
+          ) [ConstDecll]
+        ) [DeclConstt]
+      ) [DeclListt]
+      DeclVarr(
+        VarDecll(
+          VarType(
+            Type(
+             int
+            ) [Type]
+          ) [VarType]
+          VarDeclListOneArr(
+           niz
+          ) [VarDeclListOneArr]
+          VarDeclEndDerived1(
+          ) [VarDeclEndDerived1]
+        ) [VarDecll]
+      ) [DeclVarr]
+    ) [DeclListt]
+    DeclVarr(
+      VarDecll(
+        VarType(
+          Type(
+           char
+          ) [Type]
+        ) [VarType]
+        VarDeclListOneArr(
+         nizch
+        ) [VarDeclListOneArr]
+        VarDeclEndDerived1(
+        ) [VarDeclEndDerived1]
+      ) [VarDecll]
+    ) [DeclVarr]
+  ) [DeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      NoMethodVarDeclListt(
+      ) [NoMethodVarDeclListt]
+      StmList(
+        StmList(
+          EmptyStatementList(
+          ) [EmptyStatementList]
+          MatchedStm(
+            DesigStatement(
+              DesigStatementAssign(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   niz
+                  ) [DesignatorNameNoNs]
+                ) [Designatorr]
+                Assignop(
+                ) [Assignop]
+                ExprTerm(
+                  Termm(
+                    MulFacListOne(
+                      FactorNewExpr(
+                        Type(
+                         int
+                        ) [Type]
+                        ExprTerm(
+                          Termm(
+                            MulFacListOne(
+                              FactorInt(
+                               3
+                              ) [FactorInt]
+                            ) [MulFacListOne]
+                          ) [Termm]
+                        ) [ExprTerm]
+                        NoFactorMatt(
+                        ) [NoFactorMatt]
+                      ) [FactorNewExpr]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [ExprTerm]
+              ) [DesigStatementAssign]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          DesigStatement(
+            DesigStatementAssign(
+              Designatorr(
+                DesignatorArray(
+                  NestingArray(
+                    DesignatorNameNoNs(
+                     niz
+                    ) [DesignatorNameNoNs]
+                  ) [NestingArray]
+                  ExprTerm(
+                    Termm(
+                      MulFacListOne(
+                        FactDesig(
+                          Designatorr(
+                            DesignatorArray(
+                              NestingArray(
+                                DesignatorNameNoNs(
+                                 niz
+                                ) [DesignatorNameNoNs]
+                              ) [NestingArray]
+                              ExprTerm(
+                                Termm(
+                                  MulFacListOne(
+                                    FactDesig(
+                                      Designatorr(
+                                        DesignatorNameNoNs(
+                                         jedan
+                                        ) [DesignatorNameNoNs]
+                                      ) [Designatorr]
+                                    ) [FactDesig]
+                                  ) [MulFacListOne]
+                                ) [Termm]
+                              ) [ExprTerm]
+                            ) [DesignatorArray]
+                          ) [Designatorr]
+                        ) [FactDesig]
+                      ) [MulFacListOne]
+                    ) [Termm]
+                  ) [ExprTerm]
+                ) [DesignatorArray]
+              ) [Designatorr]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                Termm(
+                  MulFacList(
+                    MulFacListOne(
+                      FactDesig(
+                        Designatorr(
+                          DesignatorArray(
+                            NestingArray(
+                              DesignatorNameNoNs(
+                               niz
+                              ) [DesignatorNameNoNs]
+                            ) [NestingArray]
+                            ExprTerm(
+                              Termm(
+                                MulFacListOne(
+                                  FactDesig(
+                                    Designatorr(
+                                      DesignatorArray(
+                                        NestingArray(
+                                          DesignatorNameNoNs(
+                                           niz
+                                          ) [DesignatorNameNoNs]
+                                        ) [NestingArray]
+                                        ExprTerm(
+                                          Termm(
+                                            MulFacListOne(
+                                              FactorInt(
+                                               0
+                                              ) [FactorInt]
+                                            ) [MulFacListOne]
+                                          ) [Termm]
+                                        ) [ExprTerm]
+                                      ) [DesignatorArray]
+                                    ) [Designatorr]
+                                  ) [FactDesig]
+                                ) [MulFacListOne]
+                              ) [Termm]
+                            ) [ExprTerm]
+                          ) [DesignatorArray]
+                        ) [Designatorr]
+                      ) [FactDesig]
+                    ) [MulFacListOne]
+                    MulopMul(
+                    ) [MulopMul]
+                    FactorInt(
+                     3
+                    ) [FactorInt]
+                  ) [MulFacList]
+                ) [Termm]
+              ) [ExprTerm]
+            ) [DesigStatementAssign]
+          ) [DesigStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  00:23:39,174 - Detected new constant [nula] on line 5
+INFO  00:23:39,175 - Detected new constant [jedan] on line 6
+INFO  00:23:39,175 - Detected new constant [pet] on line 7
+INFO  00:23:39,175 - Detected new variable [niz] on line 9
+INFO  00:23:39,176 - Detected new variable [nizch] on line 10
+INFO  00:23:39,176 - Accessing variable [niz] on line 16
+INFO  00:23:39,176 - Created new array! line 16
+INFO  00:23:39,177 - Assigned new value to variable [niz] on line 16
+INFO  00:23:39,178 - Accessing const [jedan] on line 18
+INFO  00:23:39,178 - Accessing variable [niz] on line 18
+INFO  00:23:39,178 - Accessing variable [niz] on line 18
+INFO  00:23:39,178 - Accessing variable [niz] on line 18
+INFO  00:23:39,178 - Accessing variable [niz] on line 18
+ERROR 00:23:39,179 - ERROR: Operands are different type! line 18
+INFO  00:23:39,179 - Assigned new value to variable [niz] on line 18
+INFO  00:23:39,179 - Main method exists! 
+ERROR 00:23:39,180 - Parsiranje NIJE uspesno zavrseno!

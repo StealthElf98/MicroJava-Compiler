@@ -1,0 +1,323 @@
+INFO  19:15:06,101 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  19:15:06,178 - #2 program
+INFO  19:15:06,178 - #41 test301
+INFO  19:15:06,178 - #18 const
+INFO  19:15:06,181 - #41 int
+INFO  19:15:06,181 - #41 nula
+INFO  19:15:06,182 - #22 =
+INFO  19:15:06,183 - #42 0
+INFO  19:15:06,183 - #5 ;
+INFO  19:15:06,184 - #18 const
+INFO  19:15:06,185 - #41 int
+INFO  19:15:06,185 - #41 jedan
+INFO  19:15:06,185 - #22 =
+INFO  19:15:06,186 - #42 1
+INFO  19:15:06,186 - #5 ;
+INFO  19:15:06,186 - #18 const
+INFO  19:15:06,186 - #41 int
+INFO  19:15:06,186 - #41 pet
+INFO  19:15:06,186 - #22 =
+INFO  19:15:06,187 - #42 5
+INFO  19:15:06,187 - #5 ;
+INFO  19:15:06,187 - #41 int
+INFO  19:15:06,187 - #41 niz
+INFO  19:15:06,189 - #8 [
+INFO  19:15:06,189 - #9 ]
+INFO  19:15:06,189 - #5 ;
+INFO  19:15:06,190 - #41 char
+INFO  19:15:06,191 - #41 nizch
+INFO  19:15:06,191 - #8 [
+INFO  19:15:06,191 - #9 ]
+INFO  19:15:06,191 - #5 ;
+INFO  19:15:06,192 - #41 int
+INFO  19:15:06,192 - #41 mat
+INFO  19:15:06,192 - #8 [
+INFO  19:15:06,192 - #9 ]
+INFO  19:15:06,192 - #8 [
+INFO  19:15:06,192 - #9 ]
+INFO  19:15:06,192 - #5 ;
+INFO  19:15:06,192 - #41 int
+INFO  19:15:06,193 - #41 a
+INFO  19:15:06,193 - #5 ;
+INFO  19:15:06,193 - #3 {
+INFO  19:15:06,193 - #15 void
+INFO  19:15:06,196 - #41 main
+INFO  19:15:06,196 - #6 (
+INFO  19:15:06,197 - #7 )
+INFO  19:15:06,199 - #41 int
+INFO  19:15:06,201 - #41 bodovi
+INFO  19:15:06,201 - #5 ;
+INFO  19:15:06,201 - #41 bool
+INFO  19:15:06,202 - #41 bt
+INFO  19:15:06,202 - #5 ;
+INFO  19:15:06,202 - #3 {
+INFO  19:15:06,202 - #41 bodovi
+INFO  19:15:06,203 - #22 =
+INFO  19:15:06,203 - #42 0
+INFO  19:15:06,204 - #5 ;
+INFO  19:15:06,205 - #41 bodovi
+INFO  19:15:06,205 - #30 ++
+INFO  19:15:06,205 - #5 ;
+INFO  19:15:06,206 - #41 bodovi
+INFO  19:15:06,206 - #31 --
+INFO  19:15:06,206 - #5 ;
+INFO  19:15:06,206 - #11 print
+INFO  19:15:06,206 - #6 (
+INFO  19:15:06,206 - #41 bodovi
+INFO  19:15:06,207 - #7 )
+INFO  19:15:06,207 - #5 ;
+INFO  19:15:06,207 - #4 }
+INFO  19:15:06,207 - #4 }
+INFO  19:15:06,210 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  DeclListt(
+    DeclListt(
+      DeclListt(
+        DeclListt(
+          DeclListt(
+            DeclListt(
+              DeclListt(
+                NoDeclListt(
+                ) [NoDeclListt]
+                DeclConstt(
+                  ConstDecll(
+                    ConstType(
+                      Type(
+                       int
+                      ) [Type]
+                    ) [ConstType]
+                   nula
+                    IntValue(
+                     0
+                    ) [IntValue]
+                    NoConstDeclExtensionn(
+                    ) [NoConstDeclExtensionn]
+                    ConstDeclListEndd(
+                    ) [ConstDeclListEndd]
+                  ) [ConstDecll]
+                ) [DeclConstt]
+              ) [DeclListt]
+              DeclConstt(
+                ConstDecll(
+                  ConstType(
+                    Type(
+                     int
+                    ) [Type]
+                  ) [ConstType]
+                 jedan
+                  IntValue(
+                   1
+                  ) [IntValue]
+                  NoConstDeclExtensionn(
+                  ) [NoConstDeclExtensionn]
+                  ConstDeclListEndd(
+                  ) [ConstDeclListEndd]
+                ) [ConstDecll]
+              ) [DeclConstt]
+            ) [DeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               pet
+                IntValue(
+                 5
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclVarr(
+            VarDecll(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              VarDeclListOneArr(
+               niz
+              ) [VarDeclListOneArr]
+              VarDeclEndDerived1(
+              ) [VarDeclEndDerived1]
+            ) [VarDecll]
+          ) [DeclVarr]
+        ) [DeclListt]
+        DeclVarr(
+          VarDecll(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            VarDeclListOneArr(
+             nizch
+            ) [VarDeclListOneArr]
+            VarDeclEndDerived1(
+            ) [VarDeclEndDerived1]
+          ) [VarDecll]
+        ) [DeclVarr]
+      ) [DeclListt]
+      DeclVarr(
+        VarDecll(
+          VarType(
+            Type(
+             int
+            ) [Type]
+          ) [VarType]
+          VarDeclListOneMat(
+           mat
+          ) [VarDeclListOneMat]
+          VarDeclEndDerived1(
+          ) [VarDeclEndDerived1]
+        ) [VarDecll]
+      ) [DeclVarr]
+    ) [DeclListt]
+    DeclVarr(
+      VarDecll(
+        VarType(
+          Type(
+           int
+          ) [Type]
+        ) [VarType]
+        VarDeclListOneVar(
+         a
+        ) [VarDeclListOneVar]
+        VarDeclEndDerived1(
+        ) [VarDeclEndDerived1]
+      ) [VarDecll]
+    ) [DeclVarr]
+  ) [DeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          NoMethodVarDeclListt(
+          ) [NoMethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarr(
+               bodovi
+              ) [MethodVarr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           bool
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             bt
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        StmList(
+          StmList(
+            StmList(
+              EmptyStatementList(
+              ) [EmptyStatementList]
+              MatchedStm(
+                DesigStatement(
+                  DesigStatementAssign(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       bodovi
+                      ) [DesignatorNameNoNs]
+                    ) [Designatorr]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      TermOne(
+                        FactorInt(
+                         0
+                        ) [FactorInt]
+                      ) [TermOne]
+                    ) [ExprTerm]
+                  ) [DesigStatementAssign]
+                ) [DesigStatement]
+              ) [MatchedStm]
+            ) [StmList]
+            MatchedStm(
+              DesigStatement(
+                DesignatorStatementInc(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     bodovi
+                    ) [DesignatorNameNoNs]
+                  ) [Designatorr]
+                ) [DesignatorStatementInc]
+              ) [DesigStatement]
+            ) [MatchedStm]
+          ) [StmList]
+          MatchedStm(
+            DesigStatement(
+              DesignatorStatementDec(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   bodovi
+                  ) [DesignatorNameNoNs]
+                ) [Designatorr]
+              ) [DesignatorStatementDec]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              TermOne(
+                FactDesig(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     bodovi
+                    ) [DesignatorNameNoNs]
+                  ) [Designatorr]
+                ) [FactDesig]
+              ) [TermOne]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  19:15:06,219 - Detected new constant [nula] on line 5
+INFO  19:15:06,219 - Detected new constant [jedan] on line 6
+INFO  19:15:06,219 - Detected new constant [pet] on line 7
+INFO  19:15:06,220 - Detected new variable [niz] on line 9
+INFO  19:15:06,220 - Detected new variable [nizch] on line 10
+INFO  19:15:06,220 - Detected new matrix variable [mat] on line 11
+INFO  19:15:06,220 - Detected new variable [a] on line 13
+INFO  19:15:06,220 - Detected new method variable [bodovi] in [main] on line 17
+INFO  19:15:06,220 - Detected new method variable [bt] in [main] on line 18
+INFO  19:15:06,220 - Accessing variable [bodovi] on line 20
+INFO  19:15:06,221 - Assigned new value to variable [bodovi] on line 20
+INFO  19:15:06,221 - Accessing variable [bodovi] on line 21
+INFO  19:15:06,221 - Incremented variable [bodovi] on line 21
+INFO  19:15:06,221 - Accessing variable [bodovi] on line 23
+INFO  19:15:06,221 - Decremented variable [bodovi] on line 23
+INFO  19:15:06,221 - Accessing variable [bodovi] on line 24
+INFO  19:15:06,221 - Main method exists! 
+INFO  19:15:06,222 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  19:15:06,226 - Parsiranje uspesno zavrseno!

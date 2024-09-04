@@ -1,0 +1,145 @@
+INFO  17:53:52,800 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:53:52,906 - #2 program
+INFO  17:53:52,906 - #41 test301
+INFO  17:53:52,906 - #3 {
+INFO  17:53:52,913 - #15 void
+INFO  17:53:52,914 - #41 main
+INFO  17:53:52,915 - #6 (
+INFO  17:53:52,915 - #7 )
+INFO  17:53:52,916 - #41 int
+INFO  17:53:52,918 - #41 jedan
+INFO  17:53:52,920 - #5 ;
+INFO  17:53:52,923 - #41 int
+INFO  17:53:52,928 - #41 dva
+INFO  17:53:52,928 - #5 ;
+INFO  17:53:52,928 - #41 int
+INFO  17:53:52,929 - #41 tri
+INFO  17:53:52,929 - #5 ;
+INFO  17:53:52,929 - #41 int
+INFO  17:53:52,929 - #41 cetiri
+INFO  17:53:52,929 - #5 ;
+INFO  17:53:52,929 - #41 int
+INFO  17:53:52,931 - #41 rez
+INFO  17:53:52,933 - #5 ;
+INFO  17:53:52,933 - #3 {
+INFO  17:53:52,934 - #41 jedan
+INFO  17:53:52,935 - #22 =
+INFO  17:53:52,939 - #42 1
+INFO  17:53:52,941 - #5 ;
+INFO  17:53:52,944 - #4 }
+INFO  17:53:52,945 - #4 }
+INFO  17:53:52,950 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  NoDeclListt(
+  ) [NoDeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          MethodVarDeclListt(
+            MethodVarDeclListt(
+              MethodVarDeclListt(
+                NoMethodVarDeclListt(
+                ) [NoMethodVarDeclListt]
+                MethodVarDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  SignleMethodVarList(
+                    MethodVarr(
+                     jedan
+                    ) [MethodVarr]
+                  ) [SignleMethodVarList]
+                ) [MethodVarDecl]
+              ) [MethodVarDeclListt]
+              MethodVarDecl(
+                Type(
+                 int
+                ) [Type]
+                SignleMethodVarList(
+                  MethodVarr(
+                   dva
+                  ) [MethodVarr]
+                ) [SignleMethodVarList]
+              ) [MethodVarDecl]
+            ) [MethodVarDeclListt]
+            MethodVarDecl(
+              Type(
+               int
+              ) [Type]
+              SignleMethodVarList(
+                MethodVarr(
+                 tri
+                ) [MethodVarr]
+              ) [SignleMethodVarList]
+            ) [MethodVarDecl]
+          ) [MethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarr(
+               cetiri
+              ) [MethodVarr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           int
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             rez
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
+      StmList(
+        EmptyStatementList(
+        ) [EmptyStatementList]
+        MatchedStm(
+          DesigStatement(
+            DesigStatementAssign(
+              Designatorr(
+                DesignatorNameNoNs(
+                 jedan
+                ) [DesignatorNameNoNs]
+                NoDesignatorList(
+                ) [NoDesignatorList]
+              ) [Designatorr]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                Termm(
+                  MulFacListOne(
+                    FactorInt(
+                     1
+                    ) [FactorInt]
+                  ) [MulFacListOne]
+                ) [Termm]
+              ) [ExprTerm]
+            ) [DesigStatementAssign]
+          ) [DesigStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  17:53:52,972 - Accessing variable [jedan] on line 7
+INFO  17:53:52,973 - Assigned new value to variable [jedan] on line 7
+INFO  17:53:52,973 - Main method exists! 
+INFO  17:53:52,980 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  17:53:52,989 - Parsiranje uspesno zavrseno!

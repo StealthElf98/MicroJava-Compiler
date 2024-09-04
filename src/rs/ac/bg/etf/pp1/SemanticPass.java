@@ -162,6 +162,24 @@ public class SemanticPass extends VisitorAdaptor {
 			report_info("Detected new variable " + temp + " on", varDecla);
 		}
 	}
+	
+	public void visit(VarDeclListOneMat varDecla) {
+		String name = varDecla.getVName();
+		
+		if (!symbolInSameScope(name, varDecla)) {
+			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+			report_info("Detected new matrix variable " + "[" + varDecla.getVName() + "]" + " on", varDecla);
+		}
+	}
+	
+	public void visit(VarDeclListMat varDecla) {
+		String name = varDecla.getVName();
+		
+		if (!symbolInSameScope(name, varDecla)) {
+			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+			report_info("Detected new matrix variable " + "[" + varDecla.getVName() + "]" + " on", varDecla);
+		}
+	}
 
 	// ConstDecl-----------------------------------------------------------------------------------------------------------
 
@@ -191,6 +209,18 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!symbolInSameScope(name, constDecla)) {
 			if (okRValue(constDecla.getRValue().struct, constDecla)) {
 				constDecla.obj = Tab.insert(Obj.Con, name, currentType);
+				
+				if(constDecla.getRValue() instanceof IntValue) {
+					IntValue temp = (IntValue)constDecla.getRValue();
+					constDecla.obj.setAdr(temp.getValue());
+				} else if(constDecla.getRValue() instanceof CharValue) {
+					CharValue temp = (CharValue)constDecla.getRValue();
+					constDecla.obj.setAdr(temp.getValue());
+				} else {
+					BoolValue temp = (BoolValue)constDecla.getRValue();
+					constDecla.obj.setAdr(temp.getValue() ? 1 : 0);
+				}
+				
 				String temp = isNamespace ? "[" + constDecla.getCName() + "]" + " in namespace:" + currentNamespace
 						: "[" + constDecla.getCName() + "]";
 				report_info("Detected new constant " + temp + " on", constDecla);
@@ -207,6 +237,18 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (!symbolInSameScope(name, constDecla)) {
 			constDecla.obj = Tab.insert(Obj.Con, name, currentType);
+			
+			if(constDecla.getRValue() instanceof IntValue) {
+				IntValue temp = (IntValue)constDecla.getRValue();
+				constDecla.obj.setAdr(temp.getValue());
+			} else if(constDecla.getRValue() instanceof CharValue) {
+				CharValue temp = (CharValue)constDecla.getRValue();
+				constDecla.obj.setAdr(temp.getValue());
+			} else {
+				BoolValue temp = (BoolValue)constDecla.getRValue();
+				constDecla.obj.setAdr(temp.getValue() ? 1 : 0);
+			}
+			
 			String temp = isNamespace ? "[" + constDecla.getCName() + "]" + " in namespace:" + currentNamespace
 					: "[" + constDecla.getCName() + "]";
 			report_info("Detected new constant " + temp + " on", constDecla);
@@ -251,12 +293,14 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(MethodVarr methodVarr) {
 		if (!symbolInSameScope(methodVarr.getVName(), methodVarr)) {
 			Obj elem = Tab.insert(Obj.Var, methodVarr.getVName(), currentType);
-		}
+			report_info("Detected new method variable [" + methodVarr.getVName() + "] in [" + currentMethod.getName() + "] on", methodVarr);
+		}		
 	}
 
 	public void visit(MethodVarArr methodVarr) {
 		if (!symbolInSameScope(methodVarr.getVName(), methodVarr)) {
 			Obj elem = Tab.insert(Obj.Var, methodVarr.getVName(), new Struct(Struct.Array, currentType));
+			report_info("Detected new method array [" + methodVarr.getVName()+ "] in [" + currentMethod.getName() + "] on", methodVarr);
 		}
 	}
 
@@ -266,28 +310,39 @@ public class SemanticPass extends VisitorAdaptor {
 		Obj temp = designator.getDesignatorName().obj;
 		Obj newTemp = Tab.find(temp.getName());
 		if (newTemp != Tab.noObj) {
-			String array = (designator.getDesignatorList() instanceof DesignatorListExpr) ? "array" : "";
 			if (newTemp.getKind() == Obj.Con) {
-				report_info("Accessing const " + array + "[" + newTemp.getName() + "]" + " on", designator);
-				designator.obj = new Obj(Obj.Con, newTemp.getName(), Tab.intType);
+				report_info("Accessing const [" + newTemp.getName() + "]" + " on", designator);
 			} else {
-				report_info("Accessing variable " + array + "[" + newTemp.getName() + "]" + " on", designator);
-				designator.obj = new Obj(Obj.Var, newTemp.getName(), Tab.intType);
+				report_info("Accessing variable [" + newTemp.getName() + "]" + " on", designator);
 			}
+			designator.obj = designator.getDesignatorName().obj;
 		} else {
 			report_info("Var/Con " + temp.getName() + " not found!", designator);
 		}
 	}
-
-	public void visit(DesignatorListExpr designator) {
-		// Tab.intType = new Struct(Struct.Int) nije isto ovde ??????????????
-		if (designator.getExpr().struct != Tab.intType) {
-			report_error("ERROR: Value inside [] must be int!", designator);
+	
+	
+	public void visit(DesignatorArray designator) {
+		if (designator.getExpr().struct.getKind() == Struct.Array) {
+			if(designator.getExpr().struct.getElemType() != Tab.intType)
+				report_error("ERROR: Value of array element must be int,", designator);
+		} else if(designator.getExpr().struct != Tab.intType) {
+			report_error("ERROR: Value inside [] must be int,", designator);
 		}
+		
+		designator.obj = new Obj(Obj.Elem, designator.getNestingArray().obj.getName(), designator.getExpr().struct);
 	}
 
+		
+	public void visit(NestingArray nArray) {
+		nArray.obj = nArray.getDesignatorName().obj;
+	}
+	
 	public void visit(DesignatorNameNoNs designator) {
-		designator.obj = new Obj(Obj.Var, designator.getDName(), new Struct(Struct.None));
+		Obj temp = Tab.find(designator.getDName());
+		if(temp != Tab.noObj) {
+			designator.obj = new Obj(Obj.Var, designator.getDName(), temp.getType());			
+		}
 	}
 
 	public void visit(DesignatorNameNs designator) {
@@ -298,11 +353,12 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(DesigStatementAssign desigStmAssign) {
 		Obj leftOp = desigStmAssign.getDesignator().obj;
 		Struct rightOp = desigStmAssign.getExpr().struct;
-
+ 
 		if (leftOp.getKind() == Obj.Con) {
 			report_error("ERROR: Left operand is const value, can't assigne value!", null);
-		} else if (leftOp.getType() != Tab.intType && rightOp != Tab.intType) {
-			report_error("ERROR: Bad types", desigStmAssign);
+		// OVAJ FUNKCIJA MORA DA SE ISPRAVI
+//		} else if (!canAssign(leftOp.getType(),rightOp)) {
+//			report_error("ERROR: Bad types", desigStmAssign);
 		} else {
 			report_info("Assigned new value to variable [" + desigStmAssign.getDesignator().obj.getName() + "] on",
 					desigStmAssign);
@@ -310,7 +366,13 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorStatementInc designator) {
-		if (designator.getDesignator().obj.getType() != Tab.intType) {
+		Struct temp;
+		temp = designator.getDesignator().obj.getType().getElemType();
+		if(temp == null) {
+			temp = new Struct(designator.getDesignator().obj.getKind());
+		}
+		
+		if (temp.getKind() != Tab.intType.getKind()) {
 			report_error("ERROR: Incremented variable must be int type!", designator);
 		} else if (designator.getDesignator().obj.getKind() == Obj.Con) {
 			report_error("ERROR: Can't increment const type!", designator);
@@ -320,7 +382,13 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(DesignatorStatementDec designator) {
-		if (designator.getDesignator().obj.getType() != Tab.intType) {
+		Struct temp;
+		temp = designator.getDesignator().obj.getType().getElemType();
+		if(temp == null) {
+			temp = designator.getDesignator().obj.getType();
+		}
+		
+		if (temp != Tab.intType) {
 			report_error("ERROR: Decremented variable must be int type!", designator);
 		} else if (designator.getDesignator().obj.getKind() == Obj.Con) {
 			report_error("ERROR: Can't decremente const type!", designator);
@@ -358,29 +426,38 @@ public class SemanticPass extends VisitorAdaptor {
 	// Term
 	// -------------------------------------------------------------------------------------------------------
 	public void visit(Termm term) {
-		term.struct = term.getMulFactorList().struct;
+		if(term.getTerm().struct !=  term.getFactor().struct) 
+			report_error("ERROR: Operands are different type!", term);	
+		
+		term.struct = term.getTerm().struct;
 	}
 
-	// Factor
-	// -----------------------------------------------------------------------------------------------------
+	// Factor 	
+	// -------------------------------------------------------------------------------------------------------
 
-	public void visit(MulFacList mulFacList) {
-		if (mulFacList.getMulFactorList().struct != mulFacList.getFactor().struct) {
+//	public void visit(MulFacList mulFacList) {
+//		if (mulFacList.getMulFactorList().struct != mulFacList.getFactor().struct) {
 //			System.out.println("MulFacList " + mulFacList.struct);
-//			System.out.println("Factor " + mulFacList.getFactor().struct);
-			report_error("ERROR: Operands are different type!", mulFacList);
-			mulFacList.struct = Tab.noType;
-		} else if (mulFacList.struct != Tab.intType && mulFacList.getFactor().struct != Tab.intType) {
-			report_error("ERROR: Operands must be of type int!", mulFacList);
-			mulFacList.struct = Tab.noType;
-		} else {
-			mulFacList.struct = Tab.intType;
-		}
-	}
+//			System.out.println("Factor " + mulFacList.getFactor().struct.getKind());
+//			report_error("ERROR: Operands are different type!", mulFacList);
+//			mulFacList.struct = Tab.noType;
+//		} 
+//			else if (mulFacList.struct != Tab.intType && mulFacList.getFactor().struct != Tab.intType) {
+//			report_error("ERROR: Operands must be of type int!", mulFacList);
+//			mulFacList.struct = Tab.noType;
+//		} else {
+//			mulFacList.struct = mulFacList.getMulFactorList().struct;
+//		}
+//	}
 
-	public void visit(MulFacListOne mulFacListOne) {
-		mulFacListOne.struct = mulFacListOne.getFactor().struct;
+//	public void visit(MulFacListOne mulFacListOne) {
+//		mulFacListOne.struct = mulFacListOne.getFactor().struct;
+//	}
+	
+	public void visit(TermOne term) {
+		term.struct = term.getFactor().struct;
 	}
+	
 
 	public void visit(FactorInt factorInt) {
 		factorInt.struct = Tab.intType;
@@ -395,7 +472,22 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(FactorNewExpr factorNewExpr) {
-		// ??????????
+		if(factorNewExpr.getExpr().struct != Tab.intType) {
+			report_error("ERROR: Array length must be int value!", factorNewExpr);
+		} else {
+			factorNewExpr.struct = new Struct(Struct.Array, factorNewExpr.getType().struct);
+			report_info("Created new array!", factorNewExpr);			
+		}
+		
+//		if(factorNewExpr.getType().struct != Tab.intType && factorNewExpr.getType().struct != Tab.charType && factorNewExpr.getType().struct != boolType) {
+//			//OSTALO DA SE PROVERI TIPOVI OVDE
+//			report_error("ERROR: Elements of array must be of type: int, char or bool!", factorNewExpr);
+//		} else if (factorNewExpr.getExpr().struct != Tab.intType ) {
+//			
+//		} else {
+//			factorNewExpr.struct = new Struct(Struct.Array, factorNewExpr.getType().struct);
+//			report_info("Created new array!", factorNewExpr);
+//		}
 	}
 
 	public void visit(FactorExpr factorExpr) {
@@ -416,6 +508,14 @@ public class SemanticPass extends VisitorAdaptor {
 	// Help Methods
 	// -----------------------------------------------------------------------------------
 
+	private boolean checkIfArray(Obj obj, SyntaxNode node) {
+		if(obj.getType().getKind() == Struct.Array)
+			return true;
+		
+		report_error("ERROR: Can't assigne value to non element from array!", node);
+		return false;
+	}
+	
 	private boolean okRValue(Struct value, SyntaxNode node) {
 		if (value == currentType)
 			return true;
@@ -432,6 +532,21 @@ public class SemanticPass extends VisitorAdaptor {
 		return true;
 	}
 
+	private boolean canAssign(Struct left, Struct right) {
+		if (left.getKind() == Struct.Array && right.getKind() == Struct.Array) {
+			left = left.getElemType();
+			right = right.getElemType();
+		} else if(left.getKind() == Struct.Array && right.getKind() != Struct.Array) {
+			left = left.getElemType();
+		}
+		
+		if(left == right) {
+			return true;
+		} 
+		
+		return false;
+	}
+	
 	public boolean passed() {
 		return !errorDetected;
 	}

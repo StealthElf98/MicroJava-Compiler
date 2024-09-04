@@ -95,9 +95,9 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal Assignop Assignop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, DesignatorList, VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, NestingArray, VarDeclList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstDecl, ConstDeclExtension, MethodTypeName, DesignatorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor, FactorMat;
 
 Program ::= (Program) PROG ProgName:p NamespaceList:N1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(p, N1, D2, M3); RESULT.setLine(pleft); :} 
 ;
@@ -153,13 +153,17 @@ VarDecl ::= (VarDecll) VarType:V1 VarDeclList:V2 VarDeclEnd:V3 {: RESULT=new Var
 VarType ::= (VarType) Type:T1 {: RESULT=new VarType(T1); RESULT.setLine(T1left); :}
 ;
 
-VarDeclList ::= (VarDeclListArr) VarDeclList:V1 COMMA IDENT:vName LBRACKET RBRACKET {: RESULT=new VarDeclListArr(V1, vName); RESULT.setLine(V1left); :}
+VarDeclList ::= (VarDeclListMat) VarDeclList:V1 COMMA IDENT:vName LBRACKET RBRACKET LBRACKET RBRACKET {: RESULT=new VarDeclListMat(V1, vName); RESULT.setLine(V1left); :}
+			    |
+				(VarDeclListArr) VarDeclList:V1 COMMA IDENT:vName LBRACKET RBRACKET {: RESULT=new VarDeclListArr(V1, vName); RESULT.setLine(V1left); :}
 			    |
 			    (VarDeclListVar) VarDeclList:V1 COMMA IDENT:vName {: RESULT=new VarDeclListVar(V1, vName); RESULT.setLine(V1left); :}
 			    |
 			    (VarDeclListOneVar) IDENT:vName {: RESULT=new VarDeclListOneVar(vName); RESULT.setLine(vNameleft); :}
 			    |
 			    (VarDeclListOneArr) IDENT:vName LBRACKET RBRACKET {: RESULT=new VarDeclListOneArr(vName); RESULT.setLine(vNameleft); :}
+			    |
+			    (VarDeclListOneMat) IDENT:vName LBRACKET RBRACKET LBRACKET RBRACKET {: RESULT=new VarDeclListOneMat(vName); RESULT.setLine(vNameleft); :}
 ;
 
 VarDeclEnd ::= SEMI {: RESULT=new VarDeclEndDerived1(); :}
@@ -263,19 +267,17 @@ DesignatorStatement ::= (DesigStatementAssign) Designator:D1 Assignop:A2 Expr:E3
 						(DesignatorStatementDec) Designator:D1 DEC {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :}
 ;
 
-Designator ::= (Designatorr) DesignatorName:D1 DesignatorList:D2 {: RESULT=new Designatorr(D1, D2); RESULT.setLine(D1left); :}
+Designator ::= (Designatorr) DesignatorName:D1 {: RESULT=new Designatorr(D1); RESULT.setLine(D1left); :}
 ;
 
 DesignatorName ::= (DesignatorNameNoNs) IDENT:dName {: RESULT=new DesignatorNameNoNs(dName); RESULT.setLine(dNameleft); :}
 				   |
 				   (DesignatorNameNs) IDENT:nsName DDOT IDENT:dName {: RESULT=new DesignatorNameNs(nsName, dName); RESULT.setLine(nsNameleft); :}
+				   |
+				   (DesignatorArray) NestingArray:N1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(N1, E2); RESULT.setLine(N1left); :}
 ;
 
-DesignatorList ::= (DesignatorListDot) DesignatorList:D1 DOT IDENT:I2 {: RESULT=new DesignatorListDot(D1, I2); RESULT.setLine(D1left); :}
-				   |
-				   (DesignatorListExpr) LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorListExpr(E1); RESULT.setLine(E1left); :}
-				   |
-				   (NoDesignatorList) {: RESULT=new NoDesignatorList(); :} /* epsilon */
+NestingArray ::= (NestingArray) DesignatorName:dName {: RESULT=new NestingArray(dName); RESULT.setLine(dNameleft); :}
 ;
 
 ActPars ::= (ActParss) ExprList:E1 {: RESULT=new ActParss(E1); RESULT.setLine(E1left); :}
@@ -311,12 +313,9 @@ Expr ::= (ExprTerm) Term:T1 {: RESULT=new ExprTerm(T1); RESULT.setLine(T1left); 
 ;
 
 
-Term ::= (Termm) MulFactorList:M1 {: RESULT=new Termm(M1); RESULT.setLine(M1left); :}
-;
-
-MulFactorList ::= (MulFacList) MulFactorList:M1 Mulop:M2 Factor:F3 {: RESULT=new MulFacList(M1, M2, F3); RESULT.setLine(M1left); :}
-			      |
-			      (MulFacListOne) Factor:F1 {: RESULT=new MulFacListOne(F1); RESULT.setLine(F1left); :}
+Term ::= (Termm) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new Termm(T1, M2, F3); RESULT.setLine(T1left); :}
+		 |
+	     (TermOne) Factor:F1 {: RESULT=new TermOne(F1); RESULT.setLine(F1left); :}
 ;
 
 Factor ::= (FactDesig) Designator:D1 {: RESULT=new FactDesig(D1); RESULT.setLine(D1left); :}
@@ -329,11 +328,16 @@ Factor ::= (FactDesig) Designator:D1 {: RESULT=new FactDesig(D1); RESULT.setLine
     	   |
     	   (FactorBool) BOOL:B1 {: RESULT=new FactorBool(B1); RESULT.setLine(B1left); :}
     	   |
-    	   (FactorNewExpr) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new FactorNewExpr(T1, E2); RESULT.setLine(T1left); :}
+    	   (FactorNewExpr) NEW Type:T1 LBRACKET Expr:E2 RBRACKET FactorMat:F3 {: RESULT=new FactorNewExpr(T1, E2, F3); RESULT.setLine(T1left); :}
     	   |
     	   (FactorNewActPars) NEW Type:T1 LPARENT ActPars:A2 RPARENT {: RESULT=new FactorNewActPars(T1, A2); RESULT.setLine(T1left); :}
     	   |
     	   (FactorExpr) LPARENT Expr:E1 FactorEnd:F2 {: RESULT=new FactorExpr(E1, F2); RESULT.setLine(E1left); :}
+;
+
+FactorMat ::= (FactorMatt) LBRACKET Expr:E1 RBRACKET {: RESULT=new FactorMatt(E1); RESULT.setLine(E1left); :}
+			  |
+			  (NoFactorMatt) {: RESULT=new NoFactorMatt(); :} /* epsilon */
 ;
 
 FactorEnd ::= (FactorEndd) RPARENT {: RESULT=new FactorEndd(); :}

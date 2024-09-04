@@ -64,7 +64,7 @@ import java_cup.runtime.Symbol;
 "<"			{ return new_symbol(sym.LESS, yytext()); }
 "<="		{ return new_symbol(sym.LESS_EQUAL, yytext()); }
 "::"		{ return new_symbol(sym.DDOT, yytext()); }
-"."		{ return new_symbol(sym.DOT, yytext()); }
+"."			{ return new_symbol(sym.DOT, yytext()); }
 
 
 "new" 		{ return new_symbol(sym.NEW, yytext()); }

@@ -1,0 +1,203 @@
+INFO  17:03:12,262 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  17:03:12,366 - #2 program
+INFO  17:03:12,366 - #41 test301
+INFO  17:03:12,367 - #41 int
+INFO  17:03:12,369 - #41 x
+INFO  17:03:12,370 - #10 ,
+INFO  17:03:12,371 - #41 y
+INFO  17:03:12,371 - #10 ,
+INFO  17:03:12,372 - #41 z
+INFO  17:03:12,372 - #5 ;
+INFO  17:03:12,374 - #41 int
+INFO  17:03:12,386 - #41 arr
+INFO  17:03:12,388 - #8 [
+INFO  17:03:12,388 - #9 ]
+INFO  17:03:12,388 - #5 ;
+INFO  17:03:12,389 - #3 {
+INFO  17:03:12,389 - #15 void
+INFO  17:03:12,394 - #41 main
+INFO  17:03:12,394 - #6 (
+INFO  17:03:12,395 - #7 )
+INFO  17:03:12,398 - #3 {
+INFO  17:03:12,399 - #41 x
+INFO  17:03:12,402 - #22 =
+INFO  17:03:12,404 - #42 10
+INFO  17:03:12,405 - #5 ;
+INFO  17:03:12,406 - #41 x
+INFO  17:03:12,407 - #22 =
+INFO  17:03:12,407 - #41 x
+INFO  17:03:12,407 - #13 +
+INFO  17:03:12,407 - #42 1
+INFO  17:03:12,413 - #5 ;
+INFO  17:03:12,413 - #11 print
+INFO  17:03:12,413 - #6 (
+INFO  17:03:12,415 - #41 x
+INFO  17:03:12,415 - #7 )
+INFO  17:03:12,415 - #5 ;
+INFO  17:03:12,415 - #4 }
+INFO  17:03:12,415 - #4 }
+INFO  17:03:12,419 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoNamespaceListt(
+  ) [NoNamespaceListt]
+  DeclListt(
+    DeclListt(
+      NoDeclListt(
+      ) [NoDeclListt]
+      DeclVarr(
+        VarDecll(
+          VarType(
+            Type(
+             int
+            ) [Type]
+          ) [VarType]
+          VarDeclListVar(
+            VarDeclListVar(
+              VarDeclListOneVar(
+               x
+              ) [VarDeclListOneVar]
+             y
+            ) [VarDeclListVar]
+           z
+          ) [VarDeclListVar]
+          VarDeclEndDerived1(
+          ) [VarDeclEndDerived1]
+        ) [VarDecll]
+      ) [DeclVarr]
+    ) [DeclListt]
+    DeclVarr(
+      VarDecll(
+        VarType(
+          Type(
+           int
+          ) [Type]
+        ) [VarType]
+        VarDeclListOneArr(
+         arr
+        ) [VarDeclListOneArr]
+        VarDeclEndDerived1(
+        ) [VarDeclEndDerived1]
+      ) [VarDecll]
+    ) [DeclVarr]
+  ) [DeclListt]
+  MethodDeclListt(
+    NoMethodDeclListt(
+    ) [NoMethodDeclListt]
+    MethodDecl(
+      VoidMethodType(
+       main
+      ) [VoidMethodType]
+      NoFormParss(
+      ) [NoFormParss]
+      NoMethodVarDeclListt(
+      ) [NoMethodVarDeclListt]
+      StmList(
+        StmList(
+          StmList(
+            EmptyStatementList(
+            ) [EmptyStatementList]
+            MatchedStm(
+              DesigStatement(
+                DesigStatementAssign(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     x
+                    ) [DesignatorNameNoNs]
+                    NoDesignatorList(
+                    ) [NoDesignatorList]
+                  ) [Designatorr]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    Termm(
+                      MulFacListOne(
+                        FactorInt(
+                         10
+                        ) [FactorInt]
+                      ) [MulFacListOne]
+                    ) [Termm]
+                  ) [ExprTerm]
+                ) [DesigStatementAssign]
+              ) [DesigStatement]
+            ) [MatchedStm]
+          ) [StmList]
+          MatchedStm(
+            DesigStatement(
+              DesigStatementAssign(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   x
+                  ) [DesignatorNameNoNs]
+                  NoDesignatorList(
+                  ) [NoDesignatorList]
+                ) [Designatorr]
+                Assignop(
+                ) [Assignop]
+                AddopExpr(
+                  ExprTerm(
+                    Termm(
+                      MulFacListOne(
+                        FactDesig(
+                          Designatorr(
+                            DesignatorNameNoNs(
+                             x
+                            ) [DesignatorNameNoNs]
+                            NoDesignatorList(
+                            ) [NoDesignatorList]
+                          ) [Designatorr]
+                        ) [FactDesig]
+                      ) [MulFacListOne]
+                    ) [Termm]
+                  ) [ExprTerm]
+                  AddopPlus(
+                  ) [AddopPlus]
+                  Termm(
+                    MulFacListOne(
+                      FactorInt(
+                       1
+                      ) [FactorInt]
+                    ) [MulFacListOne]
+                  ) [Termm]
+                ) [AddopExpr]
+              ) [DesigStatementAssign]
+            ) [DesigStatement]
+          ) [MatchedStm]
+        ) [StmList]
+        MatchedStm(
+          PrintStatement(
+            ExprTerm(
+              Termm(
+                MulFacListOne(
+                  FactDesig(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       x
+                      ) [DesignatorNameNoNs]
+                      NoDesignatorList(
+                      ) [NoDesignatorList]
+                    ) [Designatorr]
+                  ) [FactDesig]
+                ) [MulFacListOne]
+              ) [Termm]
+            ) [ExprTerm]
+          ) [PrintStatement]
+        ) [MatchedStm]
+      ) [StmList]
+    ) [MethodDecl]
+  ) [MethodDeclListt]
+) [Program]
+INFO  17:03:12,438 - Detected new variable [x] on line 2
+INFO  17:03:12,438 - Detected new variable [y] on line 2
+INFO  17:03:12,439 - Detected new variable [z] on line 2
+INFO  17:03:12,439 - Detected new variable [arr] on line 3
+INFO  17:03:12,440 - Accessing variable [x] on line 7
+INFO  17:03:12,443 - Assigned new value to variable [x] on line 7
+INFO  17:03:12,444 - Accessing variable [x] on line 9
+INFO  17:03:12,444 - Accessing variable [x] on line 9
+INFO  17:03:12,444 - Assigned new value to variable [x] on line 9
+INFO  17:03:12,446 - Accessing variable [x] on line 11
+INFO  17:03:12,446 - Main method exists! 
+INFO  17:03:12,448 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  17:03:12,455 - Parsiranje uspesno zavrseno!

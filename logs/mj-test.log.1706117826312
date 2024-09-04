@@ -1,0 +1,15 @@
+INFO  18:37:04,842 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  18:37:04,933 - #2 program
+INFO  18:37:04,933 - #41 test301
+INFO  18:37:04,934 - #18 const
+INFO  18:37:04,937 - #41 int
+INFO  18:37:04,937 - #41 deset
+INFO  18:37:04,942 - #22 =
+INFO  18:37:04,942 - #42 10
+INFO  18:37:04,943 - #5 ;
+INFO  18:37:04,944 - #18 const
+INFO  18:37:04,947 - #41 bool
+INFO  18:37:04,947 - #41 tacno
+INFO  18:37:04,947 - #22 =
+INFO  18:37:04,947 - #43 true
+INFO  18:37:04,948 - #5 ;

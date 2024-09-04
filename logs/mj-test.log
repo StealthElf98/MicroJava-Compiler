@@ -1,53 +1,86 @@
-INFO  18:55:40,832 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
-INFO  18:55:40,890 - #2 program
-INFO  18:55:40,890 - #41 test301
-INFO  18:55:40,890 - #41 int
-INFO  18:55:40,892 - #41 x
-INFO  18:55:40,894 - #5 ;
-INFO  18:55:40,894 - #41 int
-INFO  18:55:40,895 - #41 y
-INFO  18:55:40,896 - #5 ;
-INFO  18:55:40,896 - #3 {
-INFO  18:55:40,896 - #15 void
-INFO  18:55:40,897 - #41 main
-INFO  18:55:40,897 - #6 (
-INFO  18:55:40,897 - #7 )
-INFO  18:55:40,898 - #3 {
-INFO  18:55:40,901 - #41 x
-INFO  18:55:40,902 - #22 =
-INFO  18:55:40,906 - #42 10
-INFO  18:55:40,908 - #13 +
-INFO  18:55:40,908 - #42 2
-INFO  18:55:40,911 - #5 ;
-INFO  18:55:40,911 - #41 x
-INFO  18:55:40,914 - #22 =
-INFO  18:55:40,914 - #41 x
-INFO  18:55:40,914 - #36 *
-INFO  18:55:40,915 - #42 6
-INFO  18:55:40,916 - #5 ;
-INFO  18:55:40,916 - #11 print
-INFO  18:55:40,917 - #6 (
-INFO  18:55:40,917 - #42 1
-INFO  18:55:40,917 - #7 )
-INFO  18:55:40,917 - #5 ;
-INFO  18:55:40,917 - #11 print
-INFO  18:55:40,918 - #6 (
-INFO  18:55:40,918 - #41 x
-INFO  18:55:40,918 - #7 )
-INFO  18:55:40,918 - #5 ;
-INFO  18:55:40,918 - #11 print
-INFO  18:55:40,918 - #6 (
-INFO  18:55:40,918 - #44 c
-INFO  18:55:40,918 - #7 )
-INFO  18:55:40,919 - #5 ;
-INFO  18:55:40,919 - #11 print
-INFO  18:55:40,919 - #6 (
-INFO  18:55:40,919 - #42 3
-INFO  18:55:40,919 - #7 )
-INFO  18:55:40,919 - #5 ;
-INFO  18:55:40,920 - #4 }
-INFO  18:55:40,920 - #4 }
-INFO  18:55:40,924 - Program(
+INFO  19:47:31,980 - Compiling source file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  19:47:32,051 - #2 program
+INFO  19:47:32,052 - #41 test301
+INFO  19:47:32,052 - #18 const
+INFO  19:47:32,055 - #41 int
+INFO  19:47:32,055 - #41 nula
+INFO  19:47:32,057 - #22 =
+INFO  19:47:32,057 - #42 0
+INFO  19:47:32,057 - #5 ;
+INFO  19:47:32,058 - #18 const
+INFO  19:47:32,060 - #41 int
+INFO  19:47:32,060 - #41 jedan
+INFO  19:47:32,060 - #22 =
+INFO  19:47:32,060 - #42 1
+INFO  19:47:32,060 - #5 ;
+INFO  19:47:32,060 - #18 const
+INFO  19:47:32,061 - #41 int
+INFO  19:47:32,061 - #41 pet
+INFO  19:47:32,061 - #22 =
+INFO  19:47:32,061 - #42 5
+INFO  19:47:32,061 - #5 ;
+INFO  19:47:32,061 - #41 int
+INFO  19:47:32,062 - #41 niz
+INFO  19:47:32,063 - #8 [
+INFO  19:47:32,063 - #9 ]
+INFO  19:47:32,063 - #5 ;
+INFO  19:47:32,063 - #41 char
+INFO  19:47:32,067 - #41 nizch
+INFO  19:47:32,068 - #8 [
+INFO  19:47:32,068 - #9 ]
+INFO  19:47:32,069 - #5 ;
+INFO  19:47:32,069 - #41 int
+INFO  19:47:32,069 - #41 mat
+INFO  19:47:32,069 - #8 [
+INFO  19:47:32,070 - #9 ]
+INFO  19:47:32,070 - #8 [
+INFO  19:47:32,070 - #9 ]
+INFO  19:47:32,070 - #5 ;
+INFO  19:47:32,071 - #41 int
+INFO  19:47:32,071 - #41 a
+INFO  19:47:32,072 - #5 ;
+INFO  19:47:32,072 - #3 {
+INFO  19:47:32,072 - #15 void
+INFO  19:47:32,074 - #41 main
+INFO  19:47:32,074 - #6 (
+INFO  19:47:32,074 - #7 )
+INFO  19:47:32,076 - #41 int
+INFO  19:47:32,077 - #41 bodovi
+INFO  19:47:32,077 - #5 ;
+INFO  19:47:32,077 - #41 bool
+INFO  19:47:32,078 - #41 bt
+INFO  19:47:32,078 - #5 ;
+INFO  19:47:32,078 - #3 {
+INFO  19:47:32,078 - #41 bodovi
+INFO  19:47:32,079 - #22 =
+INFO  19:47:32,079 - #42 0
+INFO  19:47:32,080 - #5 ;
+INFO  19:47:32,082 - #41 bodovi
+INFO  19:47:32,084 - #30 ++
+INFO  19:47:32,084 - #5 ;
+INFO  19:47:32,084 - #41 bodovi
+INFO  19:47:32,084 - #22 =
+INFO  19:47:32,084 - #41 bodovi
+INFO  19:47:32,085 - #13 +
+INFO  19:47:32,085 - #41 jedan
+INFO  19:47:32,087 - #5 ;
+INFO  19:47:32,087 - #41 bodovi
+INFO  19:47:32,087 - #22 =
+INFO  19:47:32,087 - #41 bodovi
+INFO  19:47:32,087 - #36 *
+INFO  19:47:32,087 - #41 pet
+INFO  19:47:32,089 - #5 ;
+INFO  19:47:32,089 - #41 bodovi
+INFO  19:47:32,089 - #31 --
+INFO  19:47:32,090 - #5 ;
+INFO  19:47:32,090 - #11 print
+INFO  19:47:32,090 - #6 (
+INFO  19:47:32,090 - #41 bodovi
+INFO  19:47:32,090 - #7 )
+INFO  19:47:32,090 - #5 ;
+INFO  19:47:32,090 - #4 }
+INFO  19:47:32,091 - #4 }
+INFO  19:47:32,095 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -55,8 +88,97 @@ INFO  18:55:40,924 - Program(
   ) [NoNamespaceListt]
   DeclListt(
     DeclListt(
-      NoDeclListt(
-      ) [NoDeclListt]
+      DeclListt(
+        DeclListt(
+          DeclListt(
+            DeclListt(
+              DeclListt(
+                NoDeclListt(
+                ) [NoDeclListt]
+                DeclConstt(
+                  ConstDecll(
+                    ConstType(
+                      Type(
+                       int
+                      ) [Type]
+                    ) [ConstType]
+                   nula
+                    IntValue(
+                     0
+                    ) [IntValue]
+                    NoConstDeclExtensionn(
+                    ) [NoConstDeclExtensionn]
+                    ConstDeclListEndd(
+                    ) [ConstDeclListEndd]
+                  ) [ConstDecll]
+                ) [DeclConstt]
+              ) [DeclListt]
+              DeclConstt(
+                ConstDecll(
+                  ConstType(
+                    Type(
+                     int
+                    ) [Type]
+                  ) [ConstType]
+                 jedan
+                  IntValue(
+                   1
+                  ) [IntValue]
+                  NoConstDeclExtensionn(
+                  ) [NoConstDeclExtensionn]
+                  ConstDeclListEndd(
+                  ) [ConstDeclListEndd]
+                ) [ConstDecll]
+              ) [DeclConstt]
+            ) [DeclListt]
+            DeclConstt(
+              ConstDecll(
+                ConstType(
+                  Type(
+                   int
+                  ) [Type]
+                ) [ConstType]
+               pet
+                IntValue(
+                 5
+                ) [IntValue]
+                NoConstDeclExtensionn(
+                ) [NoConstDeclExtensionn]
+                ConstDeclListEndd(
+                ) [ConstDeclListEndd]
+              ) [ConstDecll]
+            ) [DeclConstt]
+          ) [DeclListt]
+          DeclVarr(
+            VarDecll(
+              VarType(
+                Type(
+                 int
+                ) [Type]
+              ) [VarType]
+              VarDeclListOneArr(
+               niz
+              ) [VarDeclListOneArr]
+              VarDeclEndDerived1(
+              ) [VarDeclEndDerived1]
+            ) [VarDecll]
+          ) [DeclVarr]
+        ) [DeclListt]
+        DeclVarr(
+          VarDecll(
+            VarType(
+              Type(
+               char
+              ) [Type]
+            ) [VarType]
+            VarDeclListOneArr(
+             nizch
+            ) [VarDeclListOneArr]
+            VarDeclEndDerived1(
+            ) [VarDeclEndDerived1]
+          ) [VarDecll]
+        ) [DeclVarr]
+      ) [DeclListt]
       DeclVarr(
         VarDecll(
           VarType(
@@ -64,9 +186,9 @@ INFO  18:55:40,924 - Program(
              int
             ) [Type]
           ) [VarType]
-          VarDeclListOneVar(
-           x
-          ) [VarDeclListOneVar]
+          VarDeclListOneMat(
+           mat
+          ) [VarDeclListOneMat]
           VarDeclEndDerived1(
           ) [VarDeclEndDerived1]
         ) [VarDecll]
@@ -80,7 +202,7 @@ INFO  18:55:40,924 - Program(
           ) [Type]
         ) [VarType]
         VarDeclListOneVar(
-         y
+         a
         ) [VarDeclListOneVar]
         VarDeclEndDerived1(
         ) [VarDeclEndDerived1]
@@ -96,8 +218,32 @@ INFO  18:55:40,924 - Program(
       ) [VoidMethodType]
       NoFormParss(
       ) [NoFormParss]
-      NoMethodVarDeclListt(
-      ) [NoMethodVarDeclListt]
+      MethodVarDeclListt(
+        MethodVarDeclListt(
+          NoMethodVarDeclListt(
+          ) [NoMethodVarDeclListt]
+          MethodVarDecl(
+            Type(
+             int
+            ) [Type]
+            SignleMethodVarList(
+              MethodVarr(
+               bodovi
+              ) [MethodVarr]
+            ) [SignleMethodVarList]
+          ) [MethodVarDecl]
+        ) [MethodVarDeclListt]
+        MethodVarDecl(
+          Type(
+           bool
+          ) [Type]
+          SignleMethodVarList(
+            MethodVarr(
+             bt
+            ) [MethodVarr]
+          ) [SignleMethodVarList]
+        ) [MethodVarDecl]
+      ) [MethodVarDeclListt]
       StmList(
         StmList(
           StmList(
@@ -111,133 +257,132 @@ INFO  18:55:40,924 - Program(
                       DesigStatementAssign(
                         Designatorr(
                           DesignatorNameNoNs(
-                           x
+                           bodovi
                           ) [DesignatorNameNoNs]
-                          NoDesignatorList(
-                          ) [NoDesignatorList]
                         ) [Designatorr]
                         Assignop(
                         ) [Assignop]
-                        AddopExpr(
-                          ExprTerm(
-                            Termm(
-                              MulFacListOne(
-                                FactorInt(
-                                 10
-                                ) [FactorInt]
-                              ) [MulFacListOne]
-                            ) [Termm]
-                          ) [ExprTerm]
-                          AddopPlus(
-                          ) [AddopPlus]
-                          Termm(
-                            MulFacListOne(
-                              FactorInt(
-                               2
-                              ) [FactorInt]
-                            ) [MulFacListOne]
-                          ) [Termm]
-                        ) [AddopExpr]
+                        ExprTerm(
+                          TermOne(
+                            FactorInt(
+                             0
+                            ) [FactorInt]
+                          ) [TermOne]
+                        ) [ExprTerm]
                       ) [DesigStatementAssign]
                     ) [DesigStatement]
                   ) [MatchedStm]
                 ) [StmList]
                 MatchedStm(
                   DesigStatement(
-                    DesigStatementAssign(
+                    DesignatorStatementInc(
                       Designatorr(
                         DesignatorNameNoNs(
-                         x
+                         bodovi
                         ) [DesignatorNameNoNs]
-                        NoDesignatorList(
-                        ) [NoDesignatorList]
                       ) [Designatorr]
-                      Assignop(
-                      ) [Assignop]
-                      ExprTerm(
-                        Termm(
-                          MulFacList(
-                            MulFacListOne(
-                              FactDesig(
-                                Designatorr(
-                                  DesignatorNameNoNs(
-                                   x
-                                  ) [DesignatorNameNoNs]
-                                  NoDesignatorList(
-                                  ) [NoDesignatorList]
-                                ) [Designatorr]
-                              ) [FactDesig]
-                            ) [MulFacListOne]
-                            MulopMul(
-                            ) [MulopMul]
-                            FactorInt(
-                             6
-                            ) [FactorInt]
-                          ) [MulFacList]
-                        ) [Termm]
-                      ) [ExprTerm]
-                    ) [DesigStatementAssign]
+                    ) [DesignatorStatementInc]
                   ) [DesigStatement]
                 ) [MatchedStm]
               ) [StmList]
               MatchedStm(
-                PrintStatement(
-                  ExprTerm(
-                    Termm(
-                      MulFacListOne(
-                        FactorInt(
-                         1
-                        ) [FactorInt]
-                      ) [MulFacListOne]
-                    ) [Termm]
-                  ) [ExprTerm]
-                ) [PrintStatement]
+                DesigStatement(
+                  DesigStatementAssign(
+                    Designatorr(
+                      DesignatorNameNoNs(
+                       bodovi
+                      ) [DesignatorNameNoNs]
+                    ) [Designatorr]
+                    Assignop(
+                    ) [Assignop]
+                    AddopExpr(
+                      ExprTerm(
+                        TermOne(
+                          FactDesig(
+                            Designatorr(
+                              DesignatorNameNoNs(
+                               bodovi
+                              ) [DesignatorNameNoNs]
+                            ) [Designatorr]
+                          ) [FactDesig]
+                        ) [TermOne]
+                      ) [ExprTerm]
+                      AddopPlus(
+                      ) [AddopPlus]
+                      TermOne(
+                        FactDesig(
+                          Designatorr(
+                            DesignatorNameNoNs(
+                             jedan
+                            ) [DesignatorNameNoNs]
+                          ) [Designatorr]
+                        ) [FactDesig]
+                      ) [TermOne]
+                    ) [AddopExpr]
+                  ) [DesigStatementAssign]
+                ) [DesigStatement]
               ) [MatchedStm]
             ) [StmList]
             MatchedStm(
-              PrintStatement(
-                ExprTerm(
-                  Termm(
-                    MulFacListOne(
+              DesigStatement(
+                DesigStatementAssign(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     bodovi
+                    ) [DesignatorNameNoNs]
+                  ) [Designatorr]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    Termm(
+                      TermOne(
+                        FactDesig(
+                          Designatorr(
+                            DesignatorNameNoNs(
+                             bodovi
+                            ) [DesignatorNameNoNs]
+                          ) [Designatorr]
+                        ) [FactDesig]
+                      ) [TermOne]
+                      MulopMul(
+                      ) [MulopMul]
                       FactDesig(
                         Designatorr(
                           DesignatorNameNoNs(
-                           x
+                           pet
                           ) [DesignatorNameNoNs]
-                          NoDesignatorList(
-                          ) [NoDesignatorList]
                         ) [Designatorr]
                       ) [FactDesig]
-                    ) [MulFacListOne]
-                  ) [Termm]
-                ) [ExprTerm]
-              ) [PrintStatement]
+                    ) [Termm]
+                  ) [ExprTerm]
+                ) [DesigStatementAssign]
+              ) [DesigStatement]
             ) [MatchedStm]
           ) [StmList]
           MatchedStm(
-            PrintStatement(
-              ExprTerm(
-                Termm(
-                  MulFacListOne(
-                    FactorChar(
-                     c
-                    ) [FactorChar]
-                  ) [MulFacListOne]
-                ) [Termm]
-              ) [ExprTerm]
-            ) [PrintStatement]
+            DesigStatement(
+              DesignatorStatementDec(
+                Designatorr(
+                  DesignatorNameNoNs(
+                   bodovi
+                  ) [DesignatorNameNoNs]
+                ) [Designatorr]
+              ) [DesignatorStatementDec]
+            ) [DesigStatement]
           ) [MatchedStm]
         ) [StmList]
         MatchedStm(
           PrintStatement(
             ExprTerm(
-              Termm(
-                MulFacListOne(
-                  FactorInt(
-                   3
-                  ) [FactorInt]
-                ) [MulFacListOne]
-              ) [Termm]
+              TermOne(
+                FactDesig(
+                  Designatorr(
+                    DesignatorNameNoNs(
+                     bodovi
+                    ) [DesignatorNameNoNs]
+                  ) [Designatorr]
+                ) [FactDesig]
+              ) [TermOne]
             ) [ExprTerm]
           ) [PrintStatement]
         ) [MatchedStm]
@@ -245,14 +390,30 @@ INFO  18:55:40,924 - Program(
     ) [MethodDecl]
   ) [MethodDeclListt]
 ) [Program]
-INFO  18:55:40,939 - Detected new variable [x] on line 2
-INFO  18:55:40,939 - Detected new variable [y] on line 2
-INFO  18:55:40,939 - Accessing variable [x] on line 6
-INFO  18:55:40,940 - Assigned new value to variable [x] on line 6
-INFO  18:55:40,940 - Accessing variable [x] on line 8
-INFO  18:55:40,940 - Accessing variable [x] on line 8
-INFO  18:55:40,940 - Assigned new value to variable [x] on line 8
-INFO  18:55:40,940 - Accessing variable [x] on line 12
-INFO  18:55:40,941 - Main method exists! 
-INFO  18:55:40,942 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
-INFO  18:55:40,949 - Parsiranje uspesno zavrseno!
+INFO  19:47:32,111 - Detected new constant [nula] on line 5
+INFO  19:47:32,112 - Detected new constant [jedan] on line 6
+INFO  19:47:32,112 - Detected new constant [pet] on line 7
+INFO  19:47:32,112 - Detected new variable [niz] on line 9
+INFO  19:47:32,112 - Detected new variable [nizch] on line 10
+INFO  19:47:32,112 - Detected new matrix variable [mat] on line 11
+INFO  19:47:32,112 - Detected new variable [a] on line 13
+INFO  19:47:32,112 - Detected new method variable [bodovi] in [main] on line 17
+INFO  19:47:32,112 - Detected new method variable [bt] in [main] on line 18
+INFO  19:47:32,112 - Accessing variable [bodovi] on line 20
+INFO  19:47:32,113 - Assigned new value to variable [bodovi] on line 20
+INFO  19:47:32,113 - Accessing variable [bodovi] on line 21
+INFO  19:47:32,113 - Incremented variable [bodovi] on line 21
+INFO  19:47:32,116 - Accessing variable [bodovi] on line 22
+INFO  19:47:32,117 - Accessing variable [bodovi] on line 22
+INFO  19:47:32,118 - Accessing const [jedan] on line 22
+INFO  19:47:32,118 - Assigned new value to variable [bodovi] on line 22
+INFO  19:47:32,118 - Accessing variable [bodovi] on line 23
+INFO  19:47:32,119 - Accessing variable [bodovi] on line 23
+INFO  19:47:32,119 - Accessing const [pet] on line 23
+INFO  19:47:32,120 - Assigned new value to variable [bodovi] on line 23
+INFO  19:47:32,120 - Accessing variable [bodovi] on line 24
+INFO  19:47:32,120 - Decremented variable [bodovi] on line 24
+INFO  19:47:32,120 - Accessing variable [bodovi] on line 25
+INFO  19:47:32,121 - Main method exists! 
+INFO  19:47:32,126 - Generating bytecode file: C:\Users\Sergej\Desktop\pp2k23\pp1lab.templateAST\workspace\MJCompiler\test\program.obj
+INFO  19:47:32,134 - Parsiranje uspesno zavrseno!

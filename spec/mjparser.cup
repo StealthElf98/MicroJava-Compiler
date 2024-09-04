@@ -70,9 +70,9 @@ nonterminal StaticInitializer, Condition, CondTerm, CondFact;
 nonterminal ExprList, Label, FactorEnd;
 nonterminal Relop, Addop, Mulop, Assignop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, DesignatorList, VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, NestingArray, VarDeclList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstDecl, ConstDeclExtension, MethodTypeName, DesignatorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor, FactorMat;
 
 Program ::= (Program) PROG ProgName:p NamespaceList DeclList LBRACE MethodDeclList RBRACE 
 ;
@@ -128,13 +128,17 @@ VarDecl ::= (VarDecll) VarType VarDeclList VarDeclEnd
 VarType ::= (VarType) Type
 ;
 
-VarDeclList ::= (VarDeclListArr) VarDeclList COMMA IDENT:vName LBRACKET RBRACKET
+VarDeclList ::= (VarDeclListMat) VarDeclList COMMA IDENT:vName LBRACKET RBRACKET LBRACKET RBRACKET
+			    |
+				(VarDeclListArr) VarDeclList COMMA IDENT:vName LBRACKET RBRACKET
 			    |
 			    (VarDeclListVar) VarDeclList COMMA IDENT:vName
 			    |
 			    (VarDeclListOneVar) IDENT:vName
 			    |
 			    (VarDeclListOneArr) IDENT:vName LBRACKET RBRACKET
+			    |
+			    (VarDeclListOneMat) IDENT:vName LBRACKET RBRACKET LBRACKET RBRACKET
 ;
 
 VarDeclEnd ::= SEMI
@@ -238,19 +242,17 @@ DesignatorStatement ::= (DesigStatementAssign) Designator Assignop Expr
 						(DesignatorStatementDec) Designator DEC
 ;
 
-Designator ::= (Designatorr) DesignatorName DesignatorList
+Designator ::= (Designatorr) DesignatorName
 ;
 
 DesignatorName ::= (DesignatorNameNoNs) IDENT:dName
 				   |
 				   (DesignatorNameNs) IDENT:nsName DDOT IDENT:dName
+				   |
+				   (DesignatorArray) NestingArray LBRACKET Expr RBRACKET
 ;
 
-DesignatorList ::= (DesignatorListDot) DesignatorList DOT IDENT
-				   |
-				   (DesignatorListExpr) LBRACKET Expr RBRACKET
-				   |
-				   (NoDesignatorList) /* epsilon */
+NestingArray ::= (NestingArray) DesignatorName:dName
 ;
 
 ActPars ::= (ActParss) ExprList
@@ -286,12 +288,9 @@ Expr ::= (ExprTerm) Term
 ;
 
 
-Term ::= (Termm) MulFactorList
-;
-
-MulFactorList ::= (MulFacList) MulFactorList Mulop Factor
-			      |
-			      (MulFacListOne) Factor
+Term ::= (Termm) Term Mulop Factor
+		 |
+	     (TermOne) Factor
 ;
 
 Factor ::= (FactDesig) Designator
@@ -304,11 +303,16 @@ Factor ::= (FactDesig) Designator
     	   |
     	   (FactorBool) BOOL
     	   |
-    	   (FactorNewExpr) NEW Type LBRACKET Expr RBRACKET
+    	   (FactorNewExpr) NEW Type LBRACKET Expr RBRACKET FactorMat
     	   |
     	   (FactorNewActPars) NEW Type LPARENT ActPars RPARENT
     	   |
     	   (FactorExpr) LPARENT Expr FactorEnd
+;
+
+FactorMat ::= (FactorMatt) LBRACKET Expr RBRACKET
+			  |
+			  (NoFactorMatt) /* epsilon */
 ;
 
 FactorEnd ::= (FactorEndd) RPARENT

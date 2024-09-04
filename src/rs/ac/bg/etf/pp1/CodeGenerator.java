@@ -1,26 +1,32 @@
 package rs.ac.bg.etf.pp1;
 
-import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
 import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.ac.bg.etf.pp1.ast.AddopExpr;
 import rs.ac.bg.etf.pp1.ast.AddopPlus;
 import rs.ac.bg.etf.pp1.ast.DesigStatementAssign;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementDec;
 import rs.ac.bg.etf.pp1.ast.DesignatorStatementInc;
-import rs.ac.bg.etf.pp1.ast.Designatorr;
+import rs.ac.bg.etf.pp1.ast.FactDesig;
 import rs.ac.bg.etf.pp1.ast.FactorBool;
 import rs.ac.bg.etf.pp1.ast.FactorChar;
 import rs.ac.bg.etf.pp1.ast.FactorInt;
+import rs.ac.bg.etf.pp1.ast.FactorNewExpr;
 import rs.ac.bg.etf.pp1.ast.MethodDecl;
-import rs.ac.bg.etf.pp1.ast.MulFacList;
+import rs.ac.bg.etf.pp1.ast.MinusExpr;
+//import rs.ac.bg.etf.pp1.ast.MulFacList;
 import rs.ac.bg.etf.pp1.ast.MulopDiv;
 import rs.ac.bg.etf.pp1.ast.MulopMul;
+import rs.ac.bg.etf.pp1.ast.NestingArray;
 import rs.ac.bg.etf.pp1.ast.PrintStatement;
+import rs.ac.bg.etf.pp1.ast.PrintStatementNum;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
+import rs.ac.bg.etf.pp1.ast.Termm;
 import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.ac.bg.etf.pp1.ast.VoidMethodType;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
 
@@ -36,13 +42,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 
 		voidMethodType.obj.setAdr(Code.pc);
-		SyntaxNode methodNode = voidMethodType.getParent();
-		VarCounter varCnt = new VarCounter();
-		methodNode.traverseTopDown(varCnt);
 
 		Code.put(Code.enter);
 		Code.put(0);
-		Code.put(varCnt.getCount());
+		Code.put(voidMethodType.obj.getLocalSymbols().size());
 	}
 
 	public void visit(MethodDecl methodDecl) {
@@ -51,7 +54,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(PrintStatement printStatement) {
-		Code.put(Code.const_5);
+		Code.loadConst(1);
+		Code.put(Code.print);
+	}
+	
+	public void visit(PrintStatementNum printStatement) {
+		Code.loadConst(printStatement.getN2());
 		Code.put(Code.print);
 	}
 
@@ -68,19 +76,48 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.loadConst(val);
 	}
 	
+	public void visit(FactDesig factDesig) {
+		Code.load(factDesig.getDesignator().obj);
+	}
+	
+	public void visit(FactorNewExpr factorNewExpr) {
+		Code.put(Code.newarray);
+		
+		if (factorNewExpr.getType().struct == Tab.charType) 
+			Code.put(0);
+		else
+			Code.put(1);
+	}
+	
 	public void visit(DesigStatementAssign desig) {
 		Code.store(desig.getDesignator().obj);
 	}
 	
+	public void visit(NestingArray nArray) {
+		Code.load(nArray.getDesignatorName().obj);
+	}
 	
+	public void visit(DesignatorStatementInc desig) {
+		if(isElemInArray(desig.getDesignator().obj)) {
+			Code.put(Code.dup2);
+		}
+		
+		Code.load(desig.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(desig.getDesignator().obj);
+	}
 	
-//	public void visit(DesignatorStatementInc desig) {
-//		Code.store(desig.getDesignator().obj);
-//	}
-//	
-//	public void visit(DesignatorStatementDec desig) {
-//		Code.store(desig.getDesignator().obj);
-//	}
+	public void visit(DesignatorStatementDec desig) {
+		if(isElemInArray(desig.getDesignator().obj)) {
+			Code.put(Code.dup2);
+		}
+		
+		Code.load(desig.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(desig.getDesignator().obj);
+	}
 	
 	public void visit(AddopExpr expr) {
 		if(expr.getAddop() instanceof AddopPlus) {
@@ -90,21 +127,21 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	public void visit(MulFacList mulFacList) {
-		if(mulFacList.getMulop() instanceof MulopMul) {
+	public void visit(Termm term) {
+		if(term.getMulop() instanceof MulopMul) {
 			Code.put(Code.mul);
-		} else if(mulFacList.getMulop() instanceof MulopDiv) {
+		} else if(term.getMulop() instanceof MulopDiv) {
 			Code.put(Code.div);
 		} else {
 			Code.put(Code.rem);
 		}
 	}
+
+	public void visit(MinusExpr minusExpr) {
+		 Code.put(Code.neg);
+	}
 	
-	public void visit(Designatorr designator) {
-		SyntaxNode parent = designator.getParent();
-		
-		if(parent.getClass() != DesigStatementAssign.class) {
-			Code.load(designator.obj);
-		}
+	private boolean isElemInArray(Obj obj) {
+		return obj.getKind() == Obj.Elem;
 	}
 }

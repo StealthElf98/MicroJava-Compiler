@@ -1,18 +1,30 @@
+// Test301
+
 program test301
-	int x; int y;
+
+	const int nula = 0;
+	const int jedan = 1;
+	const int pet = 5;
+
+	int niz[];
+	char nizch[];
+	int mat[][];
+
+	int a;
+	
 {
 	void main()	
+		int bodovi;
+		bool bt;
 	{
-		x = 10 + 2;
+		bodovi = 0;
+		bodovi++;
+		bodovi = bodovi + jedan;
+		bodovi = bodovi * pet;
+		bodovi--;
+		print(bodovi);
 		
-		x = x * 6;
-		
-		print(1);
-		
-		print(x);
-		
-		print('c');
-		
-		print(3);
 	}
 }
+
+
