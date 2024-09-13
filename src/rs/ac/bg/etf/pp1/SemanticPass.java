@@ -1,30 +1,36 @@
 package rs.ac.bg.etf.pp1;
 
+import java.util.HashMap;
+
 import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.*;
+import rs.etf.pp1.symboltable.visitors.DumpSymbolTableVisitor;
 
 public class SemanticPass extends VisitorAdaptor {
 
-	boolean errorDetected = false;
 	int printCallCount = 0;
+	int globalCnt = 0;
+	int localCnt = 0;
+	int constCnt = 0;
+	boolean errorDetected = false;
 	Struct currentType = null;
 	Obj currentMethod = null;
 	String currentNamespace = null;
 	boolean isNamespace = false;
-	int methodParamCnt = 0;
 	int nVars;
+	
+	HashMap<Obj, DesigStatementAssign> map = new HashMap<>();
 
 	Struct boolType = new Struct(5);
 	Obj boolObj = new Obj(Obj.Type, "bool", boolType);
-
-	public SemanticPass() {
+	Logger log = Logger.getLogger(getClass());
+	
+	SemanticPass() {
 		Tab.currentScope().addToLocals(boolObj);
 	}
-
-	Logger log = Logger.getLogger(getClass());
 
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
@@ -46,14 +52,14 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(Type type) {
 		Obj typeNode = Tab.find(type.getTypeName());
 		if (typeNode == Tab.noObj) {
-			report_error("Type " + type.getTypeName() + " not found in symbol table!", null);
+			report_error("Error: Type " + type.getTypeName() + " not found in symbol table!", type);
 			type.struct = Tab.noType;
 		} else {
 			if (Obj.Type == typeNode.getKind()) {
 				currentType = typeNode.getType();
 				type.struct = currentType;
 			} else {
-				report_error("ERROR: Name " + type.getTypeName() + " is not a type!", null);
+				report_error("ERROR: Name " + type.getTypeName() + " is not a type!", type);
 				type.struct = Tab.noType;
 			}
 		}
@@ -115,6 +121,11 @@ public class SemanticPass extends VisitorAdaptor {
 			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
 					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
+
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 
@@ -130,6 +141,11 @@ public class SemanticPass extends VisitorAdaptor {
 			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
 					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
+			
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 
@@ -145,6 +161,11 @@ public class SemanticPass extends VisitorAdaptor {
 			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
 					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
+			
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 
@@ -160,6 +181,11 @@ public class SemanticPass extends VisitorAdaptor {
 			String temp = isNamespace ? "[" + varDecla.getVName() + "]" + " in namespace:" + currentNamespace
 					: "[" + varDecla.getVName() + "]";
 			report_info("Detected new variable " + temp + " on", varDecla);
+			
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 	
@@ -168,7 +194,15 @@ public class SemanticPass extends VisitorAdaptor {
 		
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
+//			System.out.println("Tip je: " + varDecla.obj.getType().getKind());
+//			System.out.println("Tip tipa je: " + varDecla.obj.getType().getElemType().getKind());
+//			System.out.println("Elem je: " + varDecla.obj.getType().getElemType().getElemType().getKind());
 			report_info("Detected new matrix variable " + "[" + varDecla.getVName() + "]" + " on", varDecla);
+			
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 	
@@ -178,6 +212,11 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!symbolInSameScope(name, varDecla)) {
 			varDecla.obj = Tab.insert(Obj.Var, name, new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
 			report_info("Detected new matrix variable " + "[" + varDecla.getVName() + "]" + " on", varDecla);
+			
+			if (currentMethod != null) 
+				localCnt++;
+			else 
+				globalCnt++;
 		}
 	}
 
@@ -188,73 +227,69 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	public void visit(IntValue intValue) {
-		intValue.struct = Tab.intType;
+		String name;
+		if (isNamespace)
+			name = currentNamespace + "::" + intValue.getName();
+		else
+			name = intValue.getName();
+
+		if (!symbolInSameScope(name, intValue)) {
+			if(intValue.getValue() instanceof Integer) {
+				Obj obj = Tab.insert(Obj.Con, name, currentType);
+				
+				obj.setAdr(intValue.getValue());
+					
+				String temp = isNamespace ? "[" + intValue.getName() + "]" + " in namespace:" + currentNamespace
+						: "[" + intValue.getName() + "]";
+				report_info("Detected new constant " + temp + " on", intValue);
+				constCnt++;
+			}
+		}
 	}
 
 	public void visit(CharValue charValue) {
-		charValue.struct = Tab.charType;
+		String name;
+		if (isNamespace)
+			name = currentNamespace + "::" + charValue.getName();
+		else
+			name = charValue.getName();
+
+		if (!symbolInSameScope(name, charValue)) {
+			if(charValue.getValue() instanceof Character) {
+				Obj obj = Tab.insert(Obj.Con, name, currentType);
+				
+				obj.setAdr(charValue.getValue());
+					
+				String temp = isNamespace ? "[" + charValue.getName() + "]" + " in namespace:" + currentNamespace
+						: "[" + charValue.getName() + "]";
+				report_info("Detected new constant " + temp + " on", charValue);
+				constCnt++;
+			}
+		}
 	}
 
 	public void visit(BoolValue boolValue) {
-		boolValue.struct = boolType;
-	}
-
-	public void visit(ConstDecll constDecla) {
 		String name;
 		if (isNamespace)
-			name = currentNamespace + "::" + constDecla.getCName();
+			name = currentNamespace + "::" + boolValue.getName();
 		else
-			name = constDecla.getCName();
+			name = boolValue.getName();
 
-		if (!symbolInSameScope(name, constDecla)) {
-			if (okRValue(constDecla.getRValue().struct, constDecla)) {
-				constDecla.obj = Tab.insert(Obj.Con, name, currentType);
+		if (!symbolInSameScope(name, boolValue)) {
+			if(boolValue.getValue() instanceof Boolean) {
+				Obj obj = Tab.insert(Obj.Con, name, currentType);
 				
-				if(constDecla.getRValue() instanceof IntValue) {
-					IntValue temp = (IntValue)constDecla.getRValue();
-					constDecla.obj.setAdr(temp.getValue());
-				} else if(constDecla.getRValue() instanceof CharValue) {
-					CharValue temp = (CharValue)constDecla.getRValue();
-					constDecla.obj.setAdr(temp.getValue());
-				} else {
-					BoolValue temp = (BoolValue)constDecla.getRValue();
-					constDecla.obj.setAdr(temp.getValue() ? 1 : 0);
-				}
-				
-				String temp = isNamespace ? "[" + constDecla.getCName() + "]" + " in namespace:" + currentNamespace
-						: "[" + constDecla.getCName() + "]";
-				report_info("Detected new constant " + temp + " on", constDecla);
+				obj.setAdr(boolValue.getValue() ? 1 : 0);
+					
+				String temp = isNamespace ? "[" + boolValue.getName() + "]" + " in namespace:" + currentNamespace
+						: "[" + boolValue.getName() + "]";
+				report_info("Detected new constant " + temp + " on", boolValue);
+				constCnt++;
 			}
 		}
 	}
 
-	public void visit(ConstDeclExtensionn constDecla) {
-		String name;
-		if (isNamespace)
-			name = currentNamespace + "::" + constDecla.getCName();
-		else
-			name = constDecla.getCName();
-
-		if (!symbolInSameScope(name, constDecla)) {
-			constDecla.obj = Tab.insert(Obj.Con, name, currentType);
-			
-			if(constDecla.getRValue() instanceof IntValue) {
-				IntValue temp = (IntValue)constDecla.getRValue();
-				constDecla.obj.setAdr(temp.getValue());
-			} else if(constDecla.getRValue() instanceof CharValue) {
-				CharValue temp = (CharValue)constDecla.getRValue();
-				constDecla.obj.setAdr(temp.getValue());
-			} else {
-				BoolValue temp = (BoolValue)constDecla.getRValue();
-				constDecla.obj.setAdr(temp.getValue() ? 1 : 0);
-			}
-			
-			String temp = isNamespace ? "[" + constDecla.getCName() + "]" + " in namespace:" + currentNamespace
-					: "[" + constDecla.getCName() + "]";
-			report_info("Detected new constant " + temp + " on", constDecla);
-		}
-	}
-
+	
 	// MethodDecl-----------------------------------------------------------------------------------------------
 
 	public void visit(NonVoidMethodType methodTypeName) {
@@ -273,18 +308,7 @@ public class SemanticPass extends VisitorAdaptor {
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		methodDecl.obj = currentMethod;
-		methodParamCnt = 0;
 	}
-
-//	public void visit(FormParamDeclVar formPar) {
-//		Obj elem = Tab.insert(Obj.Var, formPar.getPName(), formPar.getType().struct);
-//		methodParamCnt++;
-//	}
-//
-//	public void visit(FormParamDeclArr formPar) {
-//		Obj elem = Tab.insert(Obj.Var, formPar.getPName(), new Struct(Struct.Array, formPar.getType().struct));
-//		methodParamCnt++;
-//	}
 
 	public void visit(MethodVarDecl methodVarDecl) {
 		currentType = methodVarDecl.getType().struct;
@@ -294,6 +318,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!symbolInSameScope(methodVarr.getVName(), methodVarr)) {
 			Obj elem = Tab.insert(Obj.Var, methodVarr.getVName(), currentType);
 			report_info("Detected new method variable [" + methodVarr.getVName() + "] in [" + currentMethod.getName() + "] on", methodVarr);
+			localCnt++;
 		}		
 	}
 
@@ -301,76 +326,128 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!symbolInSameScope(methodVarr.getVName(), methodVarr)) {
 			Obj elem = Tab.insert(Obj.Var, methodVarr.getVName(), new Struct(Struct.Array, currentType));
 			report_info("Detected new method array [" + methodVarr.getVName()+ "] in [" + currentMethod.getName() + "] on", methodVarr);
+			localCnt++;
 		}
 	}
 
 	// Designator
 	// -------------------------------------------------------------------------------------
-	public void visit(Designatorr designator) {
-		Obj temp = designator.getDesignatorName().obj;
-		Obj newTemp = Tab.find(temp.getName());
-		if (newTemp != Tab.noObj) {
-			if (newTemp.getKind() == Obj.Con) {
-				report_info("Accessing const [" + newTemp.getName() + "]" + " on", designator);
-			} else {
-				report_info("Accessing variable [" + newTemp.getName() + "]" + " on", designator);
+//	public void visit(Designatorr designator) {		
+//		if (Tab.find(designator.getDesignatorName().obj.getName()) == Tab.noObj) {
+//			report_error("ERROR: Var/Arr " + designator.getDesignatorName().obj.getName() + " not found!", designator);
+//		}
+//		
+//		designator.obj = designator.getDesignatorName().obj;
+//	}
+//	
+//	public void visit(DesignatorrArr designator) {
+//		designator.obj = designator.getDesignatorName().obj;
+//		
+//		if (Tab.find(designator.getDesignatorName().obj.getName()) == Tab.noObj) {
+//			report_error("ERROR: Array " + designator.getDesignatorName().obj.getName() + " not found!", designator);
+//		}
+//		
+//		designator.obj = new Obj(Obj.Elem, "arrayElem", designator.obj.getType().getElemType());
+//	}
+//
+//	public void visit(DesignatorrMat designator) {
+//		Obj desig = Tab.find(designator.getDesignatorName().obj.getName());
+//
+//		if (desig == Tab.noObj) {
+//			report_error("ERROR: Matrix " + designator.getDesignatorName().obj.getName() + " not found!", designator);
+//		} else if(desig.getType().getElemType().getKind() != Struct.Array) {
+//			report_error("ERROR: " + designator.getDesignatorName().obj.getName() + " isn't matrix.", designator);
+//		} else if(designator.getExpr().struct != Tab.intType || designator.getExpr1().struct != Tab.intType) {
+//			report_error("ERROR: Matrix rows and columns must be int type.", designator);
+//		}
+//		
+//		designator.obj = new Obj(Obj.Elem, "", desig.getType().getElemType().getElemType());
+//	}
+		
+	public void visit(DesignatorNameNoNs desig){
+		Obj obj = Tab.find(desig.getName());
+		if (obj == Tab.noObj)
+			report_error("ERROR: This var/con "+ desig.getName() + " doesn't exist!", desig);
+		else {
+			String gloloc = obj.getLevel() == 0 ? "local" : "global";
+			if(obj.getKind() == Obj.Con)
+				report_info("Using " + gloloc + " constant [" + obj.getName() + "]", desig);
+			
+			if( obj.getKind() == Obj.Var) 
+				report_info("Using " + gloloc + " variable [" + obj.getName() + "]", desig);
+			
+			if(desig.getParent() instanceof DesignatorStatementDec || desig.getParent() instanceof DesignatorStatementInc || desig.getParent() instanceof FactDesig) {
+				DesigStatementAssign desigStatementAssign = map.get(obj);
+				if (desigStatementAssign != null)
+					desigStatementAssign.obj = obj;
 			}
-			designator.obj = designator.getDesignatorName().obj;
-		} else {
-			report_info("Var/Con " + temp.getName() + " not found!", designator);
 		}
+		desig.obj = obj;
 	}
 	
-	
-	public void visit(DesignatorArray designator) {
-		if (designator.getExpr().struct.getKind() == Struct.Array) {
-			if(designator.getExpr().struct.getElemType() != Tab.intType)
-				report_error("ERROR: Value of array element must be int,", designator);
-		} else if(designator.getExpr().struct != Tab.intType) {
-			report_error("ERROR: Value inside [] must be int,", designator);
-		}
-		
-		designator.obj = new Obj(Obj.Elem, designator.getNestingArray().obj.getName(), designator.getExpr().struct);
-	}
-
-		
-	public void visit(NestingArray nArray) {
-		nArray.obj = nArray.getDesignatorName().obj;
-	}
-	
-	public void visit(DesignatorNameNoNs designator) {
-		Obj temp = Tab.find(designator.getDName());
-		if(temp != Tab.noObj) {
-			designator.obj = new Obj(Obj.Var, designator.getDName(), temp.getType());			
-		}
-	}
-
 	public void visit(DesignatorNameNs designator) {
-		designator.obj = new Obj(Obj.Var, designator.getNsName() + "::" + designator.getDName(),
-				new Struct(Struct.None));
+		designator.obj = new Obj(Obj.Var, designator.getNsName() + "::" + designator.getName(), new Struct(Struct.None));
 	}
+	
+	public void visit(DesignatorArrayMatrix desig){
+		Obj arrayObj = desig.getDesignatorName().getDesignator().obj;
+		desig.obj = new Obj(Obj.Elem, "", arrayObj.getType().getElemType());
+		
+		if(arrayObj.getType().getKind() != Struct.Array ) {
+			report_error("ERROR: Must be array", desig);
+			desig.obj = Tab.noObj;
+		}
 
+		if(desig.getExpr().struct != Tab.intType){
+			report_error("ERROR: Expr in [] must be of type int", desig);
+			desig.obj = Tab.noObj;
+		}
+		
+		DesigStatementAssign desigStatementAssign = map.get(arrayObj);
+		if (desigStatementAssign != null) {
+			desigStatementAssign.obj = arrayObj;
+		}
+	}
+	
+//	public void visit(DesignatorNameNoNs designator) {
+//		Obj temp = Tab.find(designator.getDName());
+//		
+//		if(temp != Tab.noObj) {
+//			designator.obj = temp;
+//		} else {
+//			report_error("ERROR: Var/Arr " + designator.getDName() + " not found!", designator);
+//		}
+//	}
+//	
+//	public void visit(DesignatorNameNs designator) {
+//		designator.obj = new Obj(Obj.Var, designator.getNsName() + "::" + designator.getDName(),
+//				new Struct(Struct.None));
+//	}
+	
+	
 	public void visit(DesigStatementAssign desigStmAssign) {
 		Obj leftOp = desigStmAssign.getDesignator().obj;
 		Struct rightOp = desigStmAssign.getExpr().struct;
  
+//		System.out.println("Left: " + leftOp.getType().getKind());
+//		System.out.println("Right: " + rightOp.getKind());
 		if (leftOp.getKind() == Obj.Con) {
-			report_error("ERROR: Left operand is const value, can't assigne value!", null);
-		// OVAJ FUNKCIJA MORA DA SE ISPRAVI
-//		} else if (!canAssign(leftOp.getType(),rightOp)) {
-//			report_error("ERROR: Bad types", desigStmAssign);
+			report_error("ERROR: Left operand is const value, can't assigne value!", desigStmAssign);
+		} else if (!canAssign(leftOp.getType(), rightOp)) {
+			report_error("ERROR: Different types for assign", desigStmAssign);
 		} else {
-			report_info("Assigned new value to variable [" + desigStmAssign.getDesignator().obj.getName() + "] on",
+			report_info("Assigned new value to [" + desigStmAssign.getDesignator().obj.getName() + "] on",
 					desigStmAssign);
 		}
+		
+		map.put(leftOp, desigStmAssign);
 	}
 
 	public void visit(DesignatorStatementInc designator) {
 		Struct temp;
 		temp = designator.getDesignator().obj.getType().getElemType();
-		if(temp == null) {
-			temp = new Struct(designator.getDesignator().obj.getKind());
-		}
+		if(temp == null)
+			temp = Tab.intType;
 		
 		if (temp.getKind() != Tab.intType.getKind()) {
 			report_error("ERROR: Incremented variable must be int type!", designator);
@@ -384,9 +461,8 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(DesignatorStatementDec designator) {
 		Struct temp;
 		temp = designator.getDesignator().obj.getType().getElemType();
-		if(temp == null) {
-			temp = designator.getDesignator().obj.getType();
-		}
+		if(temp == null)
+			temp = Tab.intType;
 		
 		if (temp != Tab.intType) {
 			report_error("ERROR: Decremented variable must be int type!", designator);
@@ -426,39 +502,35 @@ public class SemanticPass extends VisitorAdaptor {
 	// Term
 	// -------------------------------------------------------------------------------------------------------
 	public void visit(Termm term) {
-		if(term.getTerm().struct !=  term.getFactor().struct) 
+		Struct termTemp = term.getTerm().struct;
+		Struct factTemp = term.getFactor().struct;
+
+		if(termTemp.getKind() == Struct.Array) {
+			termTemp = termTemp.getElemType();
+			if(termTemp.getKind() == Struct.Array)
+				termTemp = termTemp.getElemType();
+		}
+		
+		if(factTemp.getKind() == Struct.Array) {
+			factTemp = factTemp.getElemType();
+			if(factTemp.getKind() == Struct.Array)
+				factTemp = factTemp.getElemType();
+		}
+		
+		if(termTemp != factTemp) 
 			report_error("ERROR: Operands are different type!", term);	
 		
-		term.struct = term.getTerm().struct;
+		term.struct = termTemp;
+	}
+
+	public void visit(TermOne term) {
+		term.struct = term.getFactor().struct;
 	}
 
 	// Factor 	
 	// -------------------------------------------------------------------------------------------------------
-
-//	public void visit(MulFacList mulFacList) {
-//		if (mulFacList.getMulFactorList().struct != mulFacList.getFactor().struct) {
-//			System.out.println("MulFacList " + mulFacList.struct);
-//			System.out.println("Factor " + mulFacList.getFactor().struct.getKind());
-//			report_error("ERROR: Operands are different type!", mulFacList);
-//			mulFacList.struct = Tab.noType;
-//		} 
-//			else if (mulFacList.struct != Tab.intType && mulFacList.getFactor().struct != Tab.intType) {
-//			report_error("ERROR: Operands must be of type int!", mulFacList);
-//			mulFacList.struct = Tab.noType;
-//		} else {
-//			mulFacList.struct = mulFacList.getMulFactorList().struct;
-//		}
-//	}
-
-//	public void visit(MulFacListOne mulFacListOne) {
-//		mulFacListOne.struct = mulFacListOne.getFactor().struct;
-//	}
 	
-	public void visit(TermOne term) {
-		term.struct = term.getFactor().struct;
-	}
 	
-
 	public void visit(FactorInt factorInt) {
 		factorInt.struct = Tab.intType;
 	}
@@ -473,21 +545,29 @@ public class SemanticPass extends VisitorAdaptor {
 
 	public void visit(FactorNewExpr factorNewExpr) {
 		if(factorNewExpr.getExpr().struct != Tab.intType) {
-			report_error("ERROR: Array length must be int value!", factorNewExpr);
-		} else {
-			factorNewExpr.struct = new Struct(Struct.Array, factorNewExpr.getType().struct);
-			report_info("Created new array!", factorNewExpr);			
+			String temp = factorNewExpr.getFactorMat() instanceof FactorMatt ? "Matrix" : "Array";
+			report_error("ERROR: " + temp + " length must be int value!", factorNewExpr);
 		}
 		
-//		if(factorNewExpr.getType().struct != Tab.intType && factorNewExpr.getType().struct != Tab.charType && factorNewExpr.getType().struct != boolType) {
-//			//OSTALO DA SE PROVERI TIPOVI OVDE
-//			report_error("ERROR: Elements of array must be of type: int, char or bool!", factorNewExpr);
-//		} else if (factorNewExpr.getExpr().struct != Tab.intType ) {
-//			
-//		} else {
-//			factorNewExpr.struct = new Struct(Struct.Array, factorNewExpr.getType().struct);
-//			report_info("Created new array!", factorNewExpr);
+		if(factorNewExpr.getFactorMat() instanceof FactorMatt)
+			factorNewExpr.struct = new Struct(Struct.Array, new Struct(Struct.Array, factorNewExpr.getType().struct));
+		else
+			factorNewExpr.struct = new Struct(Struct.Array, factorNewExpr.getType().struct);
+	}
+	
+//	public void visit(FactorNewMat factorNewMat) {
+//		if(factorNewMat.getExpr().struct != Tab.intType || factorNewMat.getExpr1().struct != Tab.intType) {
+//			report_error("ERROR: Matrix row/column number must be int value!", factorNewMat);
 //		}
+//		
+//		factorNewMat.struct = new Struct(Struct.Array, new Struct(Struct.Array, currentType));
+//	}
+	
+	public void visit(FactorMatt factorMat) {
+		if(factorMat.getExpr().struct != Tab.intType)
+			report_error("ERROR: Matrix column number must be int value!", factorMat);
+	
+		factorMat.struct = factorMat.getExpr().struct;
 	}
 
 	public void visit(FactorExpr factorExpr) {
@@ -497,14 +577,45 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(FactDesig dactDesig) {
 		dactDesig.struct = dactDesig.getDesignator().obj.getType();
 	}
+	
+	public void visit(ReadStatement readStm) {
+		Obj obj = readStm.getDesignator().obj;
+		
+		if(obj.getKind() != Obj.Var && obj.getKind() != Obj.Elem) {
+			report_error("ERROR: Object in read must be variable", readStm);
+		}
+		
+		if(obj.getType() != Tab.intType && obj.getType() != Tab.charType)
+			report_error("Error: Type can't be read!", readStm);
+	}
 
 	// Print
 	// ------------------------------------------------------------------------------------------
 
 	public void visit(PrintStatementNum printStatementNum) {
-
+		Struct temp = printStatementNum.getExpr().struct;
+		if(temp.getKind() == Struct.Array) {
+			temp = temp.getElemType();
+			if(temp.getKind() == Struct.Array)
+				temp = temp.getElemType();
+		}
+		
+		if (temp != Tab.intType && temp != Tab.charType && temp.getKind() != boolType.getKind())
+			report_error("ERORR: Can't print this type", printStatementNum);
 	}
 
+	public void visit(PrintStatement printStatement) {
+		Struct temp = printStatement.getExpr().struct;
+		if(temp.getKind() == Struct.Array) {
+			temp = temp.getElemType();
+			if(temp.getKind() == Struct.Array)
+				temp = temp.getElemType();
+		}
+		
+		if (temp != Tab.intType && temp != Tab.charType && temp.getKind() != boolType.getKind())
+			report_error("ERORR: Can't print this type", printStatement);
+	}
+	
 	// Help Methods
 	// -----------------------------------------------------------------------------------
 
@@ -533,14 +644,19 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	private boolean canAssign(Struct left, Struct right) {
-		if (left.getKind() == Struct.Array && right.getKind() == Struct.Array) {
+		if(left.getKind() == Struct.Array) {
 			left = left.getElemType();
+			if(left.getKind() == Struct.Array)
+				left = left.getElemType();
+		}
+			
+		if(right.getKind() == Struct.Array) {
 			right = right.getElemType();
-		} else if(left.getKind() == Struct.Array && right.getKind() != Struct.Array) {
-			left = left.getElemType();
+			if(right.getKind() == Struct.Array)
+				right = right.getElemType();
 		}
 		
-		if(left == right) {
+		if(left.getKind() == right.getKind()) {
 			return true;
 		} 
 		
@@ -550,5 +666,4 @@ public class SemanticPass extends VisitorAdaptor {
 	public boolean passed() {
 		return !errorDetected;
 	}
-
 }

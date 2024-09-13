@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/8/2024 13:23:10
+// 13/8/2024 13:31:47
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,11 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstDeclExtensionn extends ConstDeclExtension {
 
     private ConstDeclExtension ConstDeclExtension;
-    private String cName;
     private RValue RValue;
 
-    public ConstDeclExtensionn (ConstDeclExtension ConstDeclExtension, String cName, RValue RValue) {
+    public ConstDeclExtensionn (ConstDeclExtension ConstDeclExtension, RValue RValue) {
         this.ConstDeclExtension=ConstDeclExtension;
         if(ConstDeclExtension!=null) ConstDeclExtension.setParent(this);
-        this.cName=cName;
         this.RValue=RValue;
         if(RValue!=null) RValue.setParent(this);
     }
@@ -25,14 +23,6 @@ public class ConstDeclExtensionn extends ConstDeclExtension {
 
     public void setConstDeclExtension(ConstDeclExtension ConstDeclExtension) {
         this.ConstDeclExtension=ConstDeclExtension;
-    }
-
-    public String getCName() {
-        return cName;
-    }
-
-    public void setCName(String cName) {
-        this.cName=cName;
     }
 
     public RValue getRValue() {
@@ -73,9 +63,6 @@ public class ConstDeclExtensionn extends ConstDeclExtension {
             buffer.append(ConstDeclExtension.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+cName);
         buffer.append("\n");
 
         if(RValue!=null)

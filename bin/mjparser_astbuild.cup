@@ -81,7 +81,6 @@ nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal Matched Matched;
 nonterminal Unmatched Unmatched;
-nonterminal DesignatorStatement DesignatorStatement;
 nonterminal ActPars ActPars;  
 nonterminal StaticInitializer StaticInitializer;
 nonterminal Condition Condition;
@@ -95,9 +94,10 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal Assignop Assignop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, NestingArray, VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, DesignatorStatement, VarDeclList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstDecl, ConstDeclExtension, MethodTypeName, DesignatorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor, FactorMat;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, Factor, FactorMat;
+precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p NamespaceList:N1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(p, N1, D2, M3); RESULT.setLine(pleft); :} 
 ;
@@ -126,28 +126,30 @@ Decl ::= (DeclConstt) ConstDecl:C1 {: RESULT=new DeclConstt(C1); RESULT.setLine(
          (DeclVarr) VarDecl:V1 {: RESULT=new DeclVarr(V1); RESULT.setLine(V1left); :}
 ;
 
-ConstDecl ::= (ConstDecll) CONST ConstType:C1 IDENT:cName ASSIGN RValue:value ConstDeclExtension:C2 ConstDeclListEnd:C3 {: RESULT=new ConstDecll(C1, cName, value, C2, C3); RESULT.setLine(C1left); :}
+ConstDecl ::= (ConstDecll) CONST ConstType:C1 ConstDeclExtension:C2 ConstDeclListEnd:C3 {: RESULT=new ConstDecll(C1, C2, C3); RESULT.setLine(C1left); :}
 ;
 
 ConstType ::= (ConstType) Type:T1 {: RESULT=new ConstType(T1); RESULT.setLine(T1left); :}
 ;
 
-ConstDeclExtension ::= (ConstDeclExtensionn) ConstDeclExtension:C1 COMMA IDENT:cName ASSIGN RValue:value {: RESULT=new ConstDeclExtensionn(C1, cName, value); RESULT.setLine(C1left); :}
+ConstDeclExtension ::= (ConstDeclExtensionn) ConstDeclExtension:C1 COMMA RValue:R2 {: RESULT=new ConstDeclExtensionn(C1, R2); RESULT.setLine(C1left); :}
 				       |
-				       (NoConstDeclExtensionn) {: RESULT=new NoConstDeclExtensionn(); :}  /* epsilon */
+				       (ConstDeclExtensionnOne) RValue:R1 {: RESULT=new ConstDeclExtensionnOne(R1); RESULT.setLine(R1left); :}
 ;
  
 ConstDeclListEnd ::= (ConstDeclListEndd) SEMI {: RESULT=new ConstDeclListEndd(); :}
 ;
 
-RValue ::= (IntValue) NUMBER:value {: RESULT=new IntValue(value); RESULT.setLine(valueleft); :}
+RValue ::= (IntValue) IDENT:name ASSIGN NUMBER:value {: RESULT=new IntValue(name, value); RESULT.setLine(nameleft); :}
            |
-           (BoolValue) BOOL:value {: RESULT=new BoolValue(value); RESULT.setLine(valueleft); :}
+           (BoolValue) IDENT:name ASSIGN BOOL:value {: RESULT=new BoolValue(name, value); RESULT.setLine(nameleft); :}
            |  
-		   (CharValue) CHAR:value {: RESULT=new CharValue(value); RESULT.setLine(valueleft); :}
+		   (CharValue) IDENT:name ASSIGN CHAR:value {: RESULT=new CharValue(name, value); RESULT.setLine(nameleft); :}
 ;
 
 VarDecl ::= (VarDecll) VarType:V1 VarDeclList:V2 VarDeclEnd:V3 {: RESULT=new VarDecll(V1, V2, V3); RESULT.setLine(V1left); :}
+			|
+			(ErrorVarDecl) Type:t error SEMI:l {: parser.report_error("Izvrsen oporavak od greske ; globalne promeljive, na liniji " + lleft, null); :} {: RESULT=new ErrorVarDecl(t); RESULT.setLine(tleft); :}
 ;
 
 VarType ::= (VarType) Type:T1 {: RESULT=new VarType(T1); RESULT.setLine(T1left); :}
@@ -260,6 +262,9 @@ Matched ::= (DesigStatement) DesignatorStatement:D1 SEMI {: RESULT=new DesigStat
 
 DesignatorStatement ::= (DesigStatementAssign) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesigStatementAssign(D1, A2, E3); RESULT.setLine(D1left); :}
 						|
+						(ErrorDesigStatementAssign) error SEMI:l 
+						{: parser.report_error("Izvrsen oporavak od greske ; na liniji " + lleft, null); :} {: RESULT=new ErrorDesigStatementAssign(); :}
+						|
 						(DesignatorStatementFunctionCall) Designator:D1 LPARENT ActPars:A2 RPARENT {: RESULT=new DesignatorStatementFunctionCall(D1, A2); RESULT.setLine(D1left); :}
 						|
 						(DesignatorStatementInc) Designator:D1 INC {: RESULT=new DesignatorStatementInc(D1); RESULT.setLine(D1left); :}
@@ -267,18 +272,16 @@ DesignatorStatement ::= (DesigStatementAssign) Designator:D1 Assignop:A2 Expr:E3
 						(DesignatorStatementDec) Designator:D1 DEC {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :}
 ;
 
-Designator ::= (Designatorr) DesignatorName:D1 {: RESULT=new Designatorr(D1); RESULT.setLine(D1left); :}
+Designator ::= (DesignatorArrayMatrix) DesignatorName:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArrayMatrix(D1, E2); RESULT.setLine(D1left); :}
+			   |
+			   (DesignatorNameNoNs) IDENT:name {: RESULT=new DesignatorNameNoNs(name); RESULT.setLine(nameleft); :}
+			   |
+			   (DesignatorNameNs) IDENT:nsName DDOT IDENT:name {: RESULT=new DesignatorNameNs(nsName, name); RESULT.setLine(nsNameleft); :}
+		       ;
+
+DesignatorName ::= (DesignatorName) Designator:D1 {: RESULT=new DesignatorName(D1); RESULT.setLine(D1left); :} 
 ;
 
-DesignatorName ::= (DesignatorNameNoNs) IDENT:dName {: RESULT=new DesignatorNameNoNs(dName); RESULT.setLine(dNameleft); :}
-				   |
-				   (DesignatorNameNs) IDENT:nsName DDOT IDENT:dName {: RESULT=new DesignatorNameNs(nsName, dName); RESULT.setLine(nsNameleft); :}
-				   |
-				   (DesignatorArray) NestingArray:N1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(N1, E2); RESULT.setLine(N1left); :}
-;
-
-NestingArray ::= (NestingArray) DesignatorName:dName {: RESULT=new NestingArray(dName); RESULT.setLine(dNameleft); :}
-;
 
 ActPars ::= (ActParss) ExprList:E1 {: RESULT=new ActParss(E1); RESULT.setLine(E1left); :}
 			|

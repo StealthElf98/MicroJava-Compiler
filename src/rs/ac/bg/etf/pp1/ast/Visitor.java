@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/8/2024 13:23:10
+// 13/8/2024 13:31:47
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -22,12 +22,10 @@ public interface Visitor {
     public void visit(CondTerm CondTerm);
     public void visit(DeclList DeclList);
     public void visit(Designator Designator);
-    public void visit(MulFactorList MulFactorList);
     public void visit(Term Term);
     public void visit(Condition Condition);
     public void visit(ConstDeclListEnd ConstDeclListEnd);
     public void visit(MethodVar MethodVar);
-    public void visit(DesignatorName DesignatorName);
     public void visit(ExprList ExprList);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
@@ -86,14 +84,14 @@ public interface Visitor {
     public void visit(ExprListOne ExprListOne);
     public void visit(NoActPars NoActPars);
     public void visit(ActParss ActParss);
-    public void visit(NestingArray NestingArray);
-    public void visit(DesignatorArray DesignatorArray);
+    public void visit(DesignatorName DesignatorName);
     public void visit(DesignatorNameNs DesignatorNameNs);
     public void visit(DesignatorNameNoNs DesignatorNameNoNs);
-    public void visit(Designatorr Designatorr);
+    public void visit(DesignatorArrayMatrix DesignatorArrayMatrix);
     public void visit(DesignatorStatementDec DesignatorStatementDec);
     public void visit(DesignatorStatementInc DesignatorStatementInc);
     public void visit(DesignatorStatementFunctionCall DesignatorStatementFunctionCall);
+    public void visit(ErrorDesigStatementAssign ErrorDesigStatementAssign);
     public void visit(DesigStatementAssign DesigStatementAssign);
     public void visit(MultipleStatemnets MultipleStatemnets);
     public void visit(PrintStatementNum PrintStatementNum);
@@ -139,12 +137,13 @@ public interface Visitor {
     public void visit(VarDeclListArr VarDeclListArr);
     public void visit(VarDeclListMat VarDeclListMat);
     public void visit(VarType VarType);
+    public void visit(ErrorVarDecl ErrorVarDecl);
     public void visit(VarDecll VarDecll);
     public void visit(CharValue CharValue);
     public void visit(BoolValue BoolValue);
     public void visit(IntValue IntValue);
     public void visit(ConstDeclListEndd ConstDeclListEndd);
-    public void visit(NoConstDeclExtensionn NoConstDeclExtensionn);
+    public void visit(ConstDeclExtensionnOne ConstDeclExtensionnOne);
     public void visit(ConstDeclExtensionn ConstDeclExtensionn);
     public void visit(ConstType ConstType);
     public void visit(ConstDecll ConstDecll);

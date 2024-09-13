@@ -65,14 +65,15 @@ nonterminal NamespaceList, DeclList, Decl, MethodDeclList, ConstType, VarType;
 nonterminal ConstDeclListEnd, VarDecl, VarDeclEnd;
 nonterminal FormPars, MethodVarDeclList, MethodVarDecl, MethodVarList, MethodVar;
 nonterminal FormParamList, FormParamDecl, StatementList, Statement, Matched, Unmatched;
-nonterminal DesignatorStatement, ActPars;  
+nonterminal ActPars;  
 nonterminal StaticInitializer, Condition, CondTerm, CondFact;
 nonterminal ExprList, Label, FactorEnd;
 nonterminal Relop, Addop, Mulop, Assignop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, NestingArray, VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Namespace, NamespaceName, MethodDecl, Designator, DesignatorStatement, VarDeclList;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstDecl, ConstDeclExtension, MethodTypeName, DesignatorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, MulFactorList, Factor, FactorMat;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, RValue, Expr, Term, Factor, FactorMat;
+precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p NamespaceList DeclList LBRACE MethodDeclList RBRACE 
 ;
@@ -101,28 +102,30 @@ Decl ::= (DeclConstt) ConstDecl
          (DeclVarr) VarDecl
 ;
 
-ConstDecl ::= (ConstDecll) CONST ConstType IDENT:cName ASSIGN RValue:value ConstDeclExtension ConstDeclListEnd
+ConstDecl ::= (ConstDecll) CONST ConstType ConstDeclExtension ConstDeclListEnd
 ;
 
 ConstType ::= (ConstType) Type
 ;
 
-ConstDeclExtension ::= (ConstDeclExtensionn) ConstDeclExtension COMMA IDENT:cName ASSIGN RValue:value
+ConstDeclExtension ::= (ConstDeclExtensionn) ConstDeclExtension COMMA RValue
 				       |
-				       (NoConstDeclExtensionn)  /* epsilon */
+				       (ConstDeclExtensionnOne) RValue
 ;
  
 ConstDeclListEnd ::= (ConstDeclListEndd) SEMI
 ;
 
-RValue ::= (IntValue) NUMBER:value
+RValue ::= (IntValue) IDENT:name ASSIGN NUMBER:value
            |
-           (BoolValue) BOOL:value
+           (BoolValue) IDENT:name ASSIGN BOOL:value
            |  
-		   (CharValue) CHAR:value
+		   (CharValue) IDENT:name ASSIGN CHAR:value
 ;
 
 VarDecl ::= (VarDecll) VarType VarDeclList VarDeclEnd
+			|
+			(ErrorVarDecl) Type:t error SEMI:l {: parser.report_error("Izvrsen oporavak od greske ; globalne promeljive, na liniji " + lleft, null); :}
 ;
 
 VarType ::= (VarType) Type
@@ -235,6 +238,9 @@ Matched ::= (DesigStatement) DesignatorStatement SEMI
 
 DesignatorStatement ::= (DesigStatementAssign) Designator Assignop Expr
 						|
+						(ErrorDesigStatementAssign) error SEMI:l 
+						{: parser.report_error("Izvrsen oporavak od greske ; na liniji " + lleft, null); :}
+						|
 						(DesignatorStatementFunctionCall) Designator LPARENT ActPars RPARENT
 						|
 						(DesignatorStatementInc) Designator INC
@@ -242,18 +248,16 @@ DesignatorStatement ::= (DesigStatementAssign) Designator Assignop Expr
 						(DesignatorStatementDec) Designator DEC
 ;
 
-Designator ::= (Designatorr) DesignatorName
+Designator ::= (DesignatorArrayMatrix) DesignatorName LBRACKET Expr RBRACKET
+			   |
+			   (DesignatorNameNoNs) IDENT:name
+			   |
+			   (DesignatorNameNs) IDENT:nsName DDOT IDENT:name
+		       ;
+
+DesignatorName ::= (DesignatorName) Designator 
 ;
 
-DesignatorName ::= (DesignatorNameNoNs) IDENT:dName
-				   |
-				   (DesignatorNameNs) IDENT:nsName DDOT IDENT:dName
-				   |
-				   (DesignatorArray) NestingArray LBRACKET Expr RBRACKET
-;
-
-NestingArray ::= (NestingArray) DesignatorName:dName
-;
 
 ActPars ::= (ActParss) ExprList
 			|

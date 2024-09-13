@@ -37,7 +37,7 @@ public class MJParserTest {
 		}
 			
 		log.info("Compiling source file: " + sourceCode.getAbsolutePath());
-//		
+		
 		try (BufferedReader br = new BufferedReader(new FileReader(sourceCode))) {
 			Yylex lexer = new Yylex(br);
 			MJParser p = new MJParser(lexer);
@@ -45,13 +45,18 @@ public class MJParserTest {
 	        Program prog = (Program)(s.value);
 	        
 	        log.info(prog.toString(""));
-	        System.out.println("=======================SEMANTIC PASS===========================");
+	        System.out.println("=======================SEMANTIC PASS=============================" + "\n");
 	        
-	        Tab.init(); // Universe scope
+	        MyTab.init(); // Universe scope
 	        SemanticPass v = new SemanticPass();
 	        prog.traverseBottomUp(v);
 
-	        Tab.dump();
+	        System.out.println();
+	        System.out.println("Local variables count  = " + v.localCnt);
+	        System.out.println("Global variables count = " + v.globalCnt);
+	        System.out.println("Number of consts       = " + v.constCnt);
+	        
+	        MyTab.dump();
 	        System.out.println("=======================GENERATING CODE===========================" + "\n");
 	        if (!p.errorDetected && v.passed()) {
 	        	File objFile = new File(args[1]);

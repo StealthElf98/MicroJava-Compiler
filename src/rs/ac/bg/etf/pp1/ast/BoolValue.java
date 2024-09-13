@@ -1,16 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/8/2024 13:23:10
+// 13/8/2024 13:31:47
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class BoolValue extends RValue {
 
+    private String name;
     private Boolean value;
 
-    public BoolValue (Boolean value) {
+    public BoolValue (String name, Boolean value) {
+        this.name=name;
         this.value=value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name=name;
     }
 
     public Boolean getValue() {
@@ -40,6 +50,9 @@ public class BoolValue extends RValue {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("BoolValue(\n");
+
+        buffer.append(" "+tab+name);
+        buffer.append("\n");
 
         buffer.append(" "+tab+value);
         buffer.append("\n");
